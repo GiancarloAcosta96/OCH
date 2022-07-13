@@ -1,0 +1,59 @@
+[24-Feb-2021 19:35:34 UTC] PHP Notice:  Undefined index: idusu in /home/onechann/public_html/OCH/capa_presentacion/tablaUsuario.php on line 3
+[24-Feb-2021 19:37:13 UTC] PHP Notice:  Undefined index: idusu in /home/onechann/public_html/OCH/capa_presentacion/tablaUsuario.php on line 3
+[27-Feb-2021 19:47:17 UTC] PHP Notice:  Undefined index: idusu in /home/onechann/public_html/OCH/capa_presentacion/tablaUsuario.php on line 3
+[01-Mar-2021 17:10:54 UTC] PHP Notice:  Undefined index: idusu in /home/onechann/public_html/OCH/capa_presentacion/tablaDatos.php on line 3
+[01-Mar-2021 17:10:54 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/onechann/public_html/OCH/capa_presentacion/tablaDatos.php on line 16
+[01-Mar-2021 17:11:27 UTC] PHP Notice:  Undefined index: idusu in /home/onechann/public_html/OCH/capa_presentacion/tablaDatos.php on line 3
+[01-Mar-2021 17:11:27 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/onechann/public_html/OCH/capa_presentacion/tablaDatos.php on line 16
+[01-Mar-2021 19:04:57 UTC] PHP Notice:  Undefined index: idusu in /home/onechann/public_html/OCH/capa_presentacion/tablaDatos.php on line 3
+[01-Mar-2021 19:04:57 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/onechann/public_html/OCH/capa_presentacion/tablaDatos.php on line 16
+[01-Mar-2021 20:29:47 UTC] PHP Notice:  Undefined index: idusu in /home/onechann/public_html/OCH/capa_presentacion/tablaDatos.php on line 3
+[01-Mar-2021 20:29:47 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/onechann/public_html/OCH/capa_presentacion/tablaDatos.php on line 16
+[02-Mar-2021 15:11:26 UTC] PHP Notice:  Undefined index: idusu in /home/onechann/public_html/OCH/capa_presentacion/tablaDatos.php on line 3
+[02-Mar-2021 15:11:26 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/onechann/public_html/OCH/capa_presentacion/tablaDatos.php on line 16
+[02-Mar-2021 15:19:18 UTC] PHP Notice:  Undefined index: idusu in /home/onechann/public_html/OCH/capa_presentacion/tablaDatos.php on line 3
+[02-Mar-2021 15:19:18 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/onechann/public_html/OCH/capa_presentacion/tablaDatos.php on line 16
+[02-Mar-2021 16:04:59 UTC] PHP Notice:  Undefined index: idusu in /home/onechann/public_html/OCH/capa_presentacion/tablaDatos.php on line 3
+[02-Mar-2021 16:04:59 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/onechann/public_html/OCH/capa_presentacion/tablaDatos.php on line 16
+[02-Mar-2021 16:07:34 UTC] PHP Notice:  Undefined index: idusu in /home/onechann/public_html/OCH/capa_presentacion/tablaDatos.php on line 3
+[02-Mar-2021 16:07:34 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/onechann/public_html/OCH/capa_presentacion/tablaDatos.php on line 16
+[02-Mar-2021 17:07:17 UTC] PHP Notice:  Undefined index: idusu in /home/onechann/public_html/OCH/capa_presentacion/tablaDatos.php on line 3
+[02-Mar-2021 17:07:17 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/onechann/public_html/OCH/capa_presentacion/tablaDatos.php on line 16
+[02-Mar-2021 18:40:18 UTC] PHP Notice:  Undefined index: idusu in /home/onechann/public_html/OCH/capa_presentacion/tablaDatos.php on line 3
+[02-Mar-2021 18:40:18 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/onechann/public_html/OCH/capa_presentacion/tablaDatos.php on line 16
+[02-Mar-2021 18:48:31 UTC] PHP Notice:  Undefined index: idusu in /home/onechann/public_html/OCH/capa_presentacion/tablaDatos.php on line 3
+[02-Mar-2021 18:48:31 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/onechann/public_html/OCH/capa_presentacion/tablaDatos.php on line 16
+[02-Mar-2021 19:20:11 UTC] PHP Notice:  Undefined index: idusu in /home/onechann/public_html/OCH/capa_presentacion/tablaDatos.php on line 3
+[02-Mar-2021 19:20:11 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/onechann/public_html/OCH/capa_presentacion/tablaDatos.php on line 16
+[02-Mar-2021 19:37:10 UTC] PHP Notice:  Undefined index: idusu in /home/onechann/public_html/OCH/capa_presentacion/tablaDatos.php on line 3
+[02-Mar-2021 19:37:10 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/onechann/public_html/OCH/capa_presentacion/tablaDatos.php on line 16
+[02-Mar-2021 19:48:55 UTC] PHP Notice:  Undefined index: idusu in /home/onechann/public_html/OCH/capa_presentacion/tablaDatos.php on line 3
+[02-Mar-2021 19:48:55 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/onechann/public_html/OCH/capa_presentacion/tablaDatos.php on line 16
+[02-Mar-2021 19:59:16 UTC] PHP Notice:  Undefined index: idusu in /home/onechann/public_html/OCH/capa_presentacion/tablaDatos.php on line 3
+[02-Mar-2021 19:59:16 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/onechann/public_html/OCH/capa_presentacion/tablaDatos.php on line 16
+[02-Mar-2021 23:37:32 UTC] PHP Notice:  Undefined index: idusu in /home/onechann/public_html/OCH/capa_presentacion/tablaDatos.php on line 3
+[02-Mar-2021 23:37:32 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/onechann/public_html/OCH/capa_presentacion/tablaDatos.php on line 16
+[03-Mar-2021 16:28:12 UTC] PHP Notice:  Undefined index: idusu in /home/onechann/public_html/OCH/capa_presentacion/tablaDatos.php on line 3
+[03-Mar-2021 16:28:12 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/onechann/public_html/OCH/capa_presentacion/tablaDatos.php on line 16
+[03-Mar-2021 17:45:49 UTC] PHP Notice:  Undefined index: idusu in /home/onechann/public_html/OCH/capa_presentacion/tablaDatos.php on line 3
+[03-Mar-2021 17:45:49 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/onechann/public_html/OCH/capa_presentacion/tablaDatos.php on line 16
+[03-Mar-2021 19:16:00 UTC] PHP Notice:  Undefined index: idusu in /home/onechann/public_html/OCH/capa_presentacion/tablaDatos.php on line 3
+[03-Mar-2021 19:16:00 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/onechann/public_html/OCH/capa_presentacion/tablaDatos.php on line 16
+[03-Mar-2021 19:43:20 UTC] PHP Notice:  Undefined index: idusu in /home/onechann/public_html/OCH/capa_presentacion/tablaDatos.php on line 3
+[03-Mar-2021 19:43:20 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/onechann/public_html/OCH/capa_presentacion/tablaDatos.php on line 16
+[03-Mar-2021 19:56:23 UTC] PHP Notice:  Undefined index: idusu in /home/onechann/public_html/OCH/capa_presentacion/tablaDatos.php on line 3
+[03-Mar-2021 19:56:23 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/onechann/public_html/OCH/capa_presentacion/tablaDatos.php on line 16
+[03-Mar-2021 20:40:17 UTC] PHP Notice:  Undefined index: idusu in /home/onechann/public_html/OCH/capa_presentacion/tablaDatos.php on line 3
+[03-Mar-2021 20:40:17 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/onechann/public_html/OCH/capa_presentacion/tablaDatos.php on line 16
+[03-Mar-2021 20:51:14 UTC] PHP Notice:  Undefined index: idusu in /home/onechann/public_html/OCH/capa_presentacion/tablaDatos.php on line 3
+[03-Mar-2021 20:51:14 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/onechann/public_html/OCH/capa_presentacion/tablaDatos.php on line 16
+[03-Mar-2021 20:54:36 UTC] PHP Notice:  Undefined index: idusu in /home/onechann/public_html/OCH/capa_presentacion/tablaDatos.php on line 3
+[03-Mar-2021 20:54:36 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/onechann/public_html/OCH/capa_presentacion/tablaDatos.php on line 16
+[03-Mar-2021 21:42:18 UTC] PHP Notice:  Undefined index: idusu in /home/onechann/public_html/OCH/capa_presentacion/tablaDatos.php on line 3
+[03-Mar-2021 21:42:18 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/onechann/public_html/OCH/capa_presentacion/tablaDatos.php on line 16
+[03-Mar-2021 21:47:08 UTC] PHP Notice:  Undefined index: idusu in /home/onechann/public_html/OCH/capa_presentacion/tablaDatos.php on line 3
+[03-Mar-2021 21:47:08 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/onechann/public_html/OCH/capa_presentacion/tablaDatos.php on line 16
+[03-Mar-2021 22:58:17 UTC] PHP Notice:  Undefined index: idusu in /home/onechann/public_html/OCH/capa_presentacion/tablaDatos.php on line 3
+[03-Mar-2021 22:58:17 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/onechann/public_html/OCH/capa_presentacion/tablaDatos.php on line 16
+[03-Mar-2021 23:11:52 UTC] PHP Notice:  Undefined index: idusu in /home/onechann/public_html/OCH/capa_presentacion/tablaDatos.php on line 3
+[03-Mar-2021 23:11:52 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/onechann/public_html/OCH/capa_presentacion/tablaDatos.php on line 16

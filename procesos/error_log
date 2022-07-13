@@ -1,0 +1,99 @@
+[23-Feb-2021 21:26:36 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/onechann/public_html/OCH/capa_logica/crudDatos.php on line 38
+[23-Feb-2021 21:26:36 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/onechann/public_html/OCH/capa_logica/crudDatos.php on line 39
+[23-Feb-2021 21:26:36 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/onechann/public_html/OCH/capa_logica/crudDatos.php on line 40
+[24-Feb-2021 02:20:57 UTC] PHP Notice:  Undefined index: idusu in /home/onechann/public_html/OCH/procesos/rephistoricousuexcel.php on line 3
+[24-Feb-2021 02:20:57 UTC] PHP Notice:  Undefined index: supervisor in /home/onechann/public_html/OCH/procesos/rephistoricousuexcel.php on line 12
+[24-Feb-2021 02:20:57 UTC] PHP Notice:  Undefined index: desde in /home/onechann/public_html/OCH/procesos/rephistoricousuexcel.php on line 13
+[24-Feb-2021 02:20:57 UTC] PHP Notice:  Undefined index: hasta in /home/onechann/public_html/OCH/procesos/rephistoricousuexcel.php on line 14
+[24-Feb-2021 13:48:13 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/onechann/public_html/OCH/capa_logica/crudDatos.php on line 38
+[24-Feb-2021 13:48:13 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/onechann/public_html/OCH/capa_logica/crudDatos.php on line 39
+[24-Feb-2021 13:48:13 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/onechann/public_html/OCH/capa_logica/crudDatos.php on line 40
+[24-Feb-2021 16:42:06 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/onechann/public_html/OCH/capa_logica/crudDatos.php on line 38
+[24-Feb-2021 16:42:06 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/onechann/public_html/OCH/capa_logica/crudDatos.php on line 39
+[24-Feb-2021 16:42:06 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/onechann/public_html/OCH/capa_logica/crudDatos.php on line 40
+[24-Feb-2021 19:36:37 UTC] PHP Warning:  require_once(../capa_logica/crudusuario.php): failed to open stream: No such file or directory in /home/onechann/public_html/OCH/procesos/agregarUsuario.php on line 3
+[24-Feb-2021 19:36:37 UTC] PHP Fatal error:  require_once(): Failed opening required '../capa_logica/crudusuario.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/onechann/public_html/OCH/procesos/agregarUsuario.php on line 3
+[24-Feb-2021 19:37:48 UTC] PHP Warning:  require_once(../capa_logica/crudusuario.php): failed to open stream: No such file or directory in /home/onechann/public_html/OCH/procesos/agregarUsuario.php on line 3
+[24-Feb-2021 19:37:48 UTC] PHP Fatal error:  require_once(): Failed opening required '../capa_logica/crudusuario.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/onechann/public_html/OCH/procesos/agregarUsuario.php on line 3
+[24-Feb-2021 19:39:34 UTC] PHP Warning:  require_once(../capa_logica/crudusuario.php): failed to open stream: No such file or directory in /home/onechann/public_html/OCH/procesos/agregarUsuario.php on line 3
+[24-Feb-2021 19:39:34 UTC] PHP Warning:  require_once(../capa_logica/crudusuario.php): failed to open stream: No such file or directory in /home/onechann/public_html/OCH/procesos/agregarUsuario.php on line 3
+[24-Feb-2021 19:39:34 UTC] PHP Fatal error:  require_once(): Failed opening required '../capa_logica/crudusuario.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/onechann/public_html/OCH/procesos/agregarUsuario.php on line 3
+[24-Feb-2021 19:39:34 UTC] PHP Fatal error:  require_once(): Failed opening required '../capa_logica/crudusuario.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/onechann/public_html/OCH/procesos/agregarUsuario.php on line 3
+[24-Feb-2021 19:39:34 UTC] PHP Warning:  require_once(../capa_logica/crudusuario.php): failed to open stream: No such file or directory in /home/onechann/public_html/OCH/procesos/agregarUsuario.php on line 3
+[24-Feb-2021 19:39:34 UTC] PHP Fatal error:  require_once(): Failed opening required '../capa_logica/crudusuario.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/onechann/public_html/OCH/procesos/agregarUsuario.php on line 3
+[24-Feb-2021 19:39:34 UTC] PHP Warning:  require_once(../capa_logica/crudusuario.php): failed to open stream: No such file or directory in /home/onechann/public_html/OCH/procesos/agregarUsuario.php on line 3
+[24-Feb-2021 19:39:34 UTC] PHP Fatal error:  require_once(): Failed opening required '../capa_logica/crudusuario.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/onechann/public_html/OCH/procesos/agregarUsuario.php on line 3
+[24-Feb-2021 19:39:34 UTC] PHP Warning:  require_once(../capa_logica/crudusuario.php): failed to open stream: No such file or directory in /home/onechann/public_html/OCH/procesos/agregarUsuario.php on line 3
+[24-Feb-2021 19:39:34 UTC] PHP Fatal error:  require_once(): Failed opening required '../capa_logica/crudusuario.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/onechann/public_html/OCH/procesos/agregarUsuario.php on line 3
+[24-Feb-2021 19:39:34 UTC] PHP Warning:  require_once(../capa_logica/crudusuario.php): failed to open stream: No such file or directory in /home/onechann/public_html/OCH/procesos/agregarUsuario.php on line 3
+[24-Feb-2021 19:39:34 UTC] PHP Fatal error:  require_once(): Failed opening required '../capa_logica/crudusuario.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/onechann/public_html/OCH/procesos/agregarUsuario.php on line 3
+[24-Feb-2021 19:41:02 UTC] PHP Warning:  require_once(../capa_logica/crudusuario.php): failed to open stream: No such file or directory in /home/onechann/public_html/OCH/procesos/agregarUsuario.php on line 3
+[24-Feb-2021 19:41:02 UTC] PHP Fatal error:  require_once(): Failed opening required '../capa_logica/crudusuario.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/onechann/public_html/OCH/procesos/agregarUsuario.php on line 3
+[24-Feb-2021 19:44:15 UTC] PHP Warning:  require_once(../capa_logica/crudusuario.php): failed to open stream: No such file or directory in /home/onechann/public_html/OCH/procesos/agregarUsuario.php on line 3
+[24-Feb-2021 19:44:15 UTC] PHP Fatal error:  require_once(): Failed opening required '../capa_logica/crudusuario.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/onechann/public_html/OCH/procesos/agregarUsuario.php on line 3
+[24-Feb-2021 19:44:16 UTC] PHP Warning:  require_once(../capa_logica/crudusuario.php): failed to open stream: No such file or directory in /home/onechann/public_html/OCH/procesos/agregarUsuario.php on line 3
+[24-Feb-2021 19:44:16 UTC] PHP Fatal error:  require_once(): Failed opening required '../capa_logica/crudusuario.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/onechann/public_html/OCH/procesos/agregarUsuario.php on line 3
+[24-Feb-2021 19:44:16 UTC] PHP Warning:  require_once(../capa_logica/crudusuario.php): failed to open stream: No such file or directory in /home/onechann/public_html/OCH/procesos/agregarUsuario.php on line 3
+[24-Feb-2021 19:44:16 UTC] PHP Fatal error:  require_once(): Failed opening required '../capa_logica/crudusuario.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/onechann/public_html/OCH/procesos/agregarUsuario.php on line 3
+[24-Feb-2021 19:44:16 UTC] PHP Warning:  require_once(../capa_logica/crudusuario.php): failed to open stream: No such file or directory in /home/onechann/public_html/OCH/procesos/agregarUsuario.php on line 3
+[24-Feb-2021 19:44:16 UTC] PHP Fatal error:  require_once(): Failed opening required '../capa_logica/crudusuario.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/onechann/public_html/OCH/procesos/agregarUsuario.php on line 3
+[24-Feb-2021 19:44:16 UTC] PHP Warning:  require_once(../capa_logica/crudusuario.php): failed to open stream: No such file or directory in /home/onechann/public_html/OCH/procesos/agregarUsuario.php on line 3
+[24-Feb-2021 19:44:16 UTC] PHP Fatal error:  require_once(): Failed opening required '../capa_logica/crudusuario.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/onechann/public_html/OCH/procesos/agregarUsuario.php on line 3
+[24-Feb-2021 19:44:16 UTC] PHP Warning:  require_once(../capa_logica/crudusuario.php): failed to open stream: No such file or directory in /home/onechann/public_html/OCH/procesos/agregarUsuario.php on line 3
+[24-Feb-2021 19:44:16 UTC] PHP Fatal error:  require_once(): Failed opening required '../capa_logica/crudusuario.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/onechann/public_html/OCH/procesos/agregarUsuario.php on line 3
+[24-Feb-2021 19:44:17 UTC] PHP Warning:  require_once(../capa_logica/crudusuario.php): failed to open stream: No such file or directory in /home/onechann/public_html/OCH/procesos/agregarUsuario.php on line 3
+[24-Feb-2021 19:44:17 UTC] PHP Fatal error:  require_once(): Failed opening required '../capa_logica/crudusuario.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/onechann/public_html/OCH/procesos/agregarUsuario.php on line 3
+[24-Feb-2021 19:44:17 UTC] PHP Warning:  require_once(../capa_logica/crudusuario.php): failed to open stream: No such file or directory in /home/onechann/public_html/OCH/procesos/agregarUsuario.php on line 3
+[24-Feb-2021 19:44:17 UTC] PHP Fatal error:  require_once(): Failed opening required '../capa_logica/crudusuario.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/onechann/public_html/OCH/procesos/agregarUsuario.php on line 3
+[24-Feb-2021 19:44:18 UTC] PHP Warning:  require_once(../capa_logica/crudusuario.php): failed to open stream: No such file or directory in /home/onechann/public_html/OCH/procesos/agregarUsuario.php on line 3
+[24-Feb-2021 19:44:18 UTC] PHP Fatal error:  require_once(): Failed opening required '../capa_logica/crudusuario.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/onechann/public_html/OCH/procesos/agregarUsuario.php on line 3
+[24-Feb-2021 19:44:18 UTC] PHP Warning:  require_once(../capa_logica/crudusuario.php): failed to open stream: No such file or directory in /home/onechann/public_html/OCH/procesos/agregarUsuario.php on line 3
+[24-Feb-2021 19:44:18 UTC] PHP Fatal error:  require_once(): Failed opening required '../capa_logica/crudusuario.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/onechann/public_html/OCH/procesos/agregarUsuario.php on line 3
+[24-Feb-2021 19:44:18 UTC] PHP Warning:  require_once(../capa_logica/crudusuario.php): failed to open stream: No such file or directory in /home/onechann/public_html/OCH/procesos/agregarUsuario.php on line 3
+[24-Feb-2021 19:44:18 UTC] PHP Fatal error:  require_once(): Failed opening required '../capa_logica/crudusuario.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/onechann/public_html/OCH/procesos/agregarUsuario.php on line 3
+[24-Feb-2021 19:44:18 UTC] PHP Warning:  require_once(../capa_logica/crudusuario.php): failed to open stream: No such file or directory in /home/onechann/public_html/OCH/procesos/agregarUsuario.php on line 3
+[24-Feb-2021 19:44:18 UTC] PHP Fatal error:  require_once(): Failed opening required '../capa_logica/crudusuario.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/onechann/public_html/OCH/procesos/agregarUsuario.php on line 3
+[24-Feb-2021 19:44:18 UTC] PHP Warning:  require_once(../capa_logica/crudusuario.php): failed to open stream: No such file or directory in /home/onechann/public_html/OCH/procesos/agregarUsuario.php on line 3
+[24-Feb-2021 19:44:18 UTC] PHP Fatal error:  require_once(): Failed opening required '../capa_logica/crudusuario.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/onechann/public_html/OCH/procesos/agregarUsuario.php on line 3
+[24-Feb-2021 19:44:19 UTC] PHP Warning:  require_once(../capa_logica/crudusuario.php): failed to open stream: No such file or directory in /home/onechann/public_html/OCH/procesos/agregarUsuario.php on line 3
+[24-Feb-2021 19:44:19 UTC] PHP Fatal error:  require_once(): Failed opening required '../capa_logica/crudusuario.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/onechann/public_html/OCH/procesos/agregarUsuario.php on line 3
+[24-Feb-2021 19:44:19 UTC] PHP Warning:  require_once(../capa_logica/crudusuario.php): failed to open stream: No such file or directory in /home/onechann/public_html/OCH/procesos/agregarUsuario.php on line 3
+[24-Feb-2021 19:44:19 UTC] PHP Fatal error:  require_once(): Failed opening required '../capa_logica/crudusuario.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/onechann/public_html/OCH/procesos/agregarUsuario.php on line 3
+[24-Feb-2021 19:44:19 UTC] PHP Warning:  require_once(../capa_logica/crudusuario.php): failed to open stream: No such file or directory in /home/onechann/public_html/OCH/procesos/agregarUsuario.php on line 3
+[24-Feb-2021 19:44:19 UTC] PHP Fatal error:  require_once(): Failed opening required '../capa_logica/crudusuario.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/onechann/public_html/OCH/procesos/agregarUsuario.php on line 3
+[24-Feb-2021 19:44:19 UTC] PHP Warning:  require_once(../capa_logica/crudusuario.php): failed to open stream: No such file or directory in /home/onechann/public_html/OCH/procesos/agregarUsuario.php on line 3
+[24-Feb-2021 19:44:19 UTC] PHP Fatal error:  require_once(): Failed opening required '../capa_logica/crudusuario.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/onechann/public_html/OCH/procesos/agregarUsuario.php on line 3
+[24-Feb-2021 19:48:02 UTC] PHP Warning:  require_once(../capa_logica/crudusuario.php): failed to open stream: No such file or directory in /home/onechann/public_html/OCH/procesos/AgregarRegion.php on line 3
+[24-Feb-2021 19:48:02 UTC] PHP Fatal error:  require_once(): Failed opening required '../capa_logica/crudusuario.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/onechann/public_html/OCH/procesos/AgregarRegion.php on line 3
+[24-Feb-2021 19:48:02 UTC] PHP Warning:  require_once(../capa_logica/crudusuario.php): failed to open stream: No such file or directory in /home/onechann/public_html/OCH/procesos/AgregarAcceso.php on line 3
+[24-Feb-2021 19:48:02 UTC] PHP Fatal error:  require_once(): Failed opening required '../capa_logica/crudusuario.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/onechann/public_html/OCH/procesos/AgregarAcceso.php on line 3
+[02-Mar-2021 19:37:36 UTC] PHP Notice:  Undefined index: idusu in /home/onechann/public_html/OCH/procesos/rephistoricousuexcel.php on line 3
+[02-Mar-2021 21:54:30 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/onechann/public_html/OCH/capa_logica/crudDatos.php on line 38
+[02-Mar-2021 21:54:30 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/onechann/public_html/OCH/capa_logica/crudDatos.php on line 39
+[02-Mar-2021 21:54:30 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/onechann/public_html/OCH/capa_logica/crudDatos.php on line 40
+[02-Mar-2021 23:30:54 UTC] PHP Notice:  Undefined index: idusu in /home/onechann/public_html/OCH/procesos/rephistoricousuexcel.php on line 3
+[03-Mar-2021 01:36:29 UTC] PHP Notice:  Undefined index: idusu in /home/onechann/public_html/OCH/procesos/rephistoricousuexcel.php on line 3
+[03-Mar-2021 19:39:20 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/onechann/public_html/OCH/capa_logica/crudDatos.php on line 38
+[03-Mar-2021 19:39:20 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/onechann/public_html/OCH/capa_logica/crudDatos.php on line 39
+[03-Mar-2021 19:39:20 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/onechann/public_html/OCH/capa_logica/crudDatos.php on line 40
+[03-Mar-2021 19:48:01 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/onechann/public_html/OCH/capa_logica/crudDatos.php on line 38
+[03-Mar-2021 19:48:01 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/onechann/public_html/OCH/capa_logica/crudDatos.php on line 39
+[03-Mar-2021 19:48:01 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/onechann/public_html/OCH/capa_logica/crudDatos.php on line 40
+[03-Mar-2021 20:03:20 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/onechann/public_html/OCH/capa_logica/crudDatos.php on line 38
+[03-Mar-2021 20:03:20 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/onechann/public_html/OCH/capa_logica/crudDatos.php on line 39
+[03-Mar-2021 20:03:20 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/onechann/public_html/OCH/capa_logica/crudDatos.php on line 40
+[03-Mar-2021 20:07:17 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/onechann/public_html/OCH/capa_logica/crudDatos.php on line 38
+[03-Mar-2021 20:07:17 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/onechann/public_html/OCH/capa_logica/crudDatos.php on line 39
+[03-Mar-2021 20:07:17 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/onechann/public_html/OCH/capa_logica/crudDatos.php on line 40
+[03-Mar-2021 20:15:56 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/onechann/public_html/OCH/capa_logica/crudDatos.php on line 38
+[03-Mar-2021 20:15:56 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/onechann/public_html/OCH/capa_logica/crudDatos.php on line 39
+[03-Mar-2021 20:15:56 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/onechann/public_html/OCH/capa_logica/crudDatos.php on line 40
+[03-Mar-2021 20:43:33 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/onechann/public_html/OCH/capa_logica/crudDatos.php on line 38
+[03-Mar-2021 20:43:33 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/onechann/public_html/OCH/capa_logica/crudDatos.php on line 39
+[03-Mar-2021 20:43:33 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/onechann/public_html/OCH/capa_logica/crudDatos.php on line 40
+[03-Mar-2021 21:23:42 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/onechann/public_html/OCH/capa_logica/crudDatos.php on line 38
+[03-Mar-2021 21:23:42 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/onechann/public_html/OCH/capa_logica/crudDatos.php on line 39
+[03-Mar-2021 21:23:42 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/onechann/public_html/OCH/capa_logica/crudDatos.php on line 40
+[03-Mar-2021 21:46:24 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/onechann/public_html/OCH/capa_logica/crudDatos.php on line 38
+[03-Mar-2021 21:46:24 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/onechann/public_html/OCH/capa_logica/crudDatos.php on line 39
+[03-Mar-2021 21:46:24 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/onechann/public_html/OCH/capa_logica/crudDatos.php on line 40

@@ -1,0 +1,41 @@
+[24-Feb-2021 19:35:33 UTC] PHP Notice:  Undefined index: idusu in /home/onechann/public_html/OCH/vista/mantUsuario.php on line 4
+[24-Feb-2021 19:35:33 UTC] PHP Notice:  Undefined variable: sexo in /home/onechann/public_html/OCH/vista/cabecera.php on line 42
+[24-Feb-2021 19:35:33 UTC] PHP Notice:  Undefined variable: personal in /home/onechann/public_html/OCH/vista/cabecera.php on line 49
+[24-Feb-2021 19:35:33 UTC] PHP Notice:  Undefined variable: sexo in /home/onechann/public_html/OCH/vista/cabecera.php on line 57
+[24-Feb-2021 19:35:33 UTC] PHP Notice:  Undefined variable: personal in /home/onechann/public_html/OCH/vista/cabecera.php on line 67
+[24-Feb-2021 19:35:33 UTC] PHP Notice:  Undefined variable: rol in /home/onechann/public_html/OCH/vista/cabecera.php on line 69
+[24-Feb-2021 19:37:12 UTC] PHP Notice:  Undefined index: idusu in /home/onechann/public_html/OCH/vista/mantUsuario.php on line 4
+[24-Feb-2021 19:37:12 UTC] PHP Notice:  Undefined variable: sexo in /home/onechann/public_html/OCH/vista/cabecera.php on line 42
+[24-Feb-2021 19:37:12 UTC] PHP Notice:  Undefined variable: personal in /home/onechann/public_html/OCH/vista/cabecera.php on line 49
+[24-Feb-2021 19:37:12 UTC] PHP Notice:  Undefined variable: sexo in /home/onechann/public_html/OCH/vista/cabecera.php on line 57
+[24-Feb-2021 19:37:12 UTC] PHP Notice:  Undefined variable: personal in /home/onechann/public_html/OCH/vista/cabecera.php on line 67
+[24-Feb-2021 19:37:12 UTC] PHP Notice:  Undefined variable: rol in /home/onechann/public_html/OCH/vista/cabecera.php on line 69
+[24-Feb-2021 19:49:02 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/onechann/public_html/OCH/vista/principal.php on line 28
+[24-Feb-2021 19:49:02 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/onechann/public_html/OCH/vista/principal.php on line 29
+[24-Feb-2021 19:49:29 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/onechann/public_html/OCH/vista/principal.php on line 28
+[24-Feb-2021 19:49:29 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/onechann/public_html/OCH/vista/principal.php on line 29
+[24-Feb-2021 19:58:02 UTC] PHP Notice:  Undefined variable: sexo in /home/onechann/public_html/OCH/vista/cabecera.php on line 42
+[24-Feb-2021 19:58:02 UTC] PHP Notice:  Undefined variable: personal in /home/onechann/public_html/OCH/vista/cabecera.php on line 49
+[24-Feb-2021 19:58:02 UTC] PHP Notice:  Undefined variable: sexo in /home/onechann/public_html/OCH/vista/cabecera.php on line 57
+[24-Feb-2021 19:58:02 UTC] PHP Notice:  Undefined variable: personal in /home/onechann/public_html/OCH/vista/cabecera.php on line 67
+[24-Feb-2021 19:58:02 UTC] PHP Notice:  Undefined variable: rol in /home/onechann/public_html/OCH/vista/cabecera.php on line 69
+[24-Feb-2021 20:00:10 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/onechann/public_html/OCH/vista/principal.php on line 28
+[24-Feb-2021 20:00:10 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/onechann/public_html/OCH/vista/principal.php on line 29
+[24-Feb-2021 20:00:10 UTC] PHP Notice:  Undefined variable: sexo in /home/onechann/public_html/OCH/vista/cabecera.php on line 42
+[24-Feb-2021 20:00:10 UTC] PHP Notice:  Undefined variable: personal in /home/onechann/public_html/OCH/vista/cabecera.php on line 49
+[24-Feb-2021 20:00:10 UTC] PHP Notice:  Undefined variable: sexo in /home/onechann/public_html/OCH/vista/cabecera.php on line 57
+[24-Feb-2021 20:00:10 UTC] PHP Notice:  Undefined variable: personal in /home/onechann/public_html/OCH/vista/cabecera.php on line 67
+[24-Feb-2021 20:00:10 UTC] PHP Notice:  Undefined variable: rol in /home/onechann/public_html/OCH/vista/cabecera.php on line 69
+[24-Feb-2021 20:00:10 UTC] PHP Notice:  Undefined variable: personal in /home/onechann/public_html/OCH/vista/principal.php on line 81
+[24-Feb-2021 20:00:10 UTC] PHP Notice:  Undefined variable: rol in /home/onechann/public_html/OCH/vista/principal.php on line 86
+[24-Feb-2021 20:00:10 UTC] PHP Notice:  Undefined variable: supervisor in /home/onechann/public_html/OCH/vista/principal.php on line 91
+[24-Feb-2021 20:00:10 UTC] PHP Notice:  Undefined variable: personal in /home/onechann/public_html/OCH/vista/principal.php on line 133
+[24-Feb-2021 20:41:10 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/onechann/public_html/OCH/vista/principal.php on line 28
+[24-Feb-2021 20:41:10 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/onechann/public_html/OCH/vista/principal.php on line 29
+[27-Feb-2021 19:47:08 UTC] PHP Notice:  Undefined index: idusu in /home/onechann/public_html/OCH/vista/mantUsuario.php on line 4
+[27-Feb-2021 19:47:08 UTC] PHP Notice:  Undefined variable: sexo in /home/onechann/public_html/OCH/vista/cabecera.php on line 42
+[27-Feb-2021 19:47:08 UTC] PHP Notice:  Undefined variable: personal in /home/onechann/public_html/OCH/vista/cabecera.php on line 49
+[27-Feb-2021 19:47:08 UTC] PHP Notice:  Undefined variable: sexo in /home/onechann/public_html/OCH/vista/cabecera.php on line 57
+[27-Feb-2021 19:47:08 UTC] PHP Notice:  Undefined variable: personal in /home/onechann/public_html/OCH/vista/cabecera.php on line 67
+[27-Feb-2021 19:47:08 UTC] PHP Notice:  Undefined variable: rol in /home/onechann/public_html/OCH/vista/cabecera.php on line 69
+[01-Mar-2021 20:38:00 UTC] PHP Warning:  session_start(): Failed to decode session object. Session has been destroyed in /home/onechann/public_html/OCH/vista/principal.php on line 2
