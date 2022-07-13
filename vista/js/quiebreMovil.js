@@ -194,38 +194,38 @@ function TraerDatosTabla(idquiebre) {
     data: "idquiebre=" + idquiebre,
     url: "../procesos/obtenQuiebreMovil.php",
     success: function (data) {
-      datos = jQuery.parseJSON(data);
-      $("#idquiebre").val(idquiebre);
-      $("#ncqlineass").val(datos["q_lineas"]);
-      $("#ncmodalidads").val(datos["modalidad"]);
-
-      $("#nccargofijos").val(datos["cargo_fijo"]);
-      $("#ncrucs").val(datos["ruc"]);
-      $("#ncrazonsocials").val(datos["razon_social"]);
-      $("#ncnomcontactos").val(datos["contacto"]);
-      $("#nctelefono1s").val(datos["telefono1"]);
-      $("#nctelefono1m").val(datos["telefono1"]);
-      $("#nccorreos").val(datos["correo"]);
-      $("#nccorreom").val(datos["correo"]);
-      $("#ncdnis").val(datos["dni"]);
-      $("#ncdnim").val(datos["dni"]);
-
-      $("#ncregions").val(datos["zonal"]);
-      $("#ncpersonals").val(datos["personal"]);
-      $("#ncobservacionesejes").val(datos["comentario"]);
-      $("#ncestados").val(datos["estado"]);
-      $("#ncsupervisors").val(datos["supervisor"]);
-      $("#fechaingresos").val(datos["fecha_ingreso"]);
-      $("#fechavalidacions").val(datos["fecha_validacion"]);
-      $("#ncvalidacions").val(datos["validacion"]);
-      $("#ncvalidadors").val(datos["validador"]);
-      $("#ncobservacionesvals").val(datos["comentario_validador"]);
-      $("#ncestadoacts").val(datos["estado_actual"]);
-
-      $("#ncfechaacts").val(datos["fecha_actualizacion"]);
-      $("#ncoportunidads").val(datos["oportunidad"]);
-
-      $("#nccomentariobacks").val(datos["comentario_back"]);
+      try {
+        datos = jQuery.parseJSON(data);
+        $("#idquiebre").val(idquiebre);
+        $("#ncqlineass").val(datos["q_lineas"]);
+        $("#ncmodalidads").val(datos["modalidad"]);
+        $("#nccargofijos").val(datos["cargo_fijo"]);
+        $("#ncrucs").val(datos["ruc"]);
+        $("#ncrazonsocials").val(datos["razon_social"]);
+        $("#ncnomcontactos").val(datos["contacto"]);
+        $("#nctelefono1s").val(datos["telefono1"]);
+        $("#nctelefono1m").val(datos["telefono1"]);
+        $("#nccorreos").val(datos["correo"]);
+        $("#nccorreom").val(datos["correo"]);
+        $("#ncdnis").val(datos["dni"]);
+        $("#ncdnim").val(datos["dni"]);
+        $("#ncregions").val(datos["zonal"]);
+        $("#ncpersonals").val(datos["personal"]);
+        $("#ncobservacionesejes").val(datos["comentario"]);
+        $("#ncestados").val(datos["estado"]);
+        $("#ncsupervisors").val(datos["supervisor"]);
+        $("#fechaingresos").val(datos["fecha_ingreso"]);
+        $("#fechavalidacions").val(datos["fecha_validacion"]);
+        $("#ncvalidacions").val(datos["validacion"]);
+        $("#ncvalidadors").val(datos["validador"]);
+        $("#ncobservacionesvals").val(datos["comentario_validador"]);
+        $("#ncestadoacts").val(datos["estado_actual"]);
+        $("#ncfechaacts").val(datos["fecha_actualizacion"]);
+        $("#ncoportunidads").val(datos["oportunidad"]);
+        $("#nccomentariobacks").val(datos["comentario_back"]);
+      } catch (error) {
+        console.log("Error parsing JSON:", error, data);
+      }
     },
   });
 }

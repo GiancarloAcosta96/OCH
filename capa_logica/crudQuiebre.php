@@ -62,12 +62,35 @@ class crudQuiebre
         $obj = new conectar();
         $conexion = $obj->conexion();
 
-        $sql = "SELECT ncquiebre.q_lineas,ncquiebre.modalidad,ncquiebre.cargo_fijo,ncquiebre.ruc,
-                ncquiebre.razon_social,ncquiebre.contacto,ncquiebre.telefono1,ncquiebre.correo,
-                t.nombre,usu.personal,ncquiebre.comentario_ejecutivo,ncquiebre.estado, ncquiebre.fecha_ingreso,ncquiebre.fecha_validacion,ncquiebre.validacion,ncquiebre.comentario_validador,ncquiebre.estado, ncquiebre.ejecutivo_telefonica, ncquiebre.comentario_back, ncquiebre.zonal_telefonica, ncquiebre.fecha_actualizacion, ncquiebre.oportunidad,ncquiebre.id_cartera,ncquiebre.nodo, ncquiebre.dni
-                    from quiebre_movil as ncquiebre inner join usuario as usu on ncquiebre.id_usuario=usu.id_usuario
-                    left join tienda as t on t.id_tienda=ncquiebre.zonal
-                    where id_quiebre ='$idquiebre' ";
+        $sql = "SELECT  ncquiebre.q_lineas,                 
+                        ncquiebre.modalidad,               
+                        ncquiebre.cargo_fijo,               
+                        ncquiebre.ruc,                      
+                        ncquiebre.razon_social,             
+                        ncquiebre.contacto,                
+                        ncquiebre.telefono1,                
+                        ncquiebre.correo,                   
+                        t.nombre,                           
+                        usu.personal,                       
+                        ncquiebre.comentario_ejecutivo,     
+                        ncquiebre.estado,                   
+                        ncquiebre.fecha_ingreso,            
+                        ncquiebre.fecha_validacion,         
+                        ncquiebre.validacion,               
+                        ncquiebre.comentario_validador,     
+                        ncquiebre.estado,                   
+                        ncquiebre.ejecutivo_telefonica,     
+                        ncquiebre.comentario_back,          
+                        ncquiebre.zonal_telefonica,         
+                        ncquiebre.fecha_actualizacion,      
+                        ncquiebre.oportunidad,              
+                        ncquiebre.id_cartera,               
+                        ncquiebre.nodo,                     
+                        ncquiebre.dni                       
+
+                        from quiebre_movil as ncquiebre inner join usuario as usu on ncquiebre.id_usuario=usu.id_usuario
+                        left join tienda as t on t.id_tienda=ncquiebre.zonal
+                        where id_quiebre ='$idquiebre' ";
 
         $result = mysqli_query($conexion, $sql);
         $ver = mysqli_fetch_array($result);
@@ -158,5 +181,49 @@ class crudQuiebre
         $rpta = mysqli_query($conexion, $sqlquiebreMovil);
 
         return $rpta;
+    }
+
+    public function obtenQuiebreValid($idquiebre)
+    {
+        $obj = new conectar();
+        $conexion = $obj->conexion();
+
+        $sql = "SELECT  ncquiebre.q_lineas,
+                        ncquiebre.modalidad,
+                        ncquiebre.cargo_fijo,
+                        ncquiebre.ruc,
+                        ncquiebre.razon_social,
+                        ncquiebre.contacto,
+                        ncquiebre.telefono1,
+                        ncquiebre.correo,
+                        ncquiebre.dni,
+                        t.nombre,
+                        usu.personal,
+                        ncquiebre.comentario_ejecutivo,
+                        ncquiebre.estado
+
+                        from quiebre_movil as ncquiebre inner join usuario as usu on ncquiebre.id_usuario=usu.id_usuario
+                        left join tienda as t on t.id_tienda=ncquiebre.zonal
+                        where id_quiebre ='$idquiebre' ";
+
+        $result = mysqli_query($conexion, $sql);
+        $ver = mysqli_fetch_array($result);
+
+        $datos = array(
+            'q_lineas' => $ver[0],
+            'modalidad' => $ver[1],
+            'cargo_fijo' => $ver[2],
+            'ruc' => $ver[3],
+            'razon_social' => $ver[4],
+            'contacto' => $ver[5],
+            'telefono1' => $ver[6],
+            'correo' => $ver[7],
+            'dni' => $ver[8],
+            'zonal' => $ver[9],
+            'personal' => $ver[10],
+            'comentario' => $ver[11],
+            'estado' => $ver[12]
+        );
+        return $datos;
     }
 }

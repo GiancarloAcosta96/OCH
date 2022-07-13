@@ -13,7 +13,7 @@ $tienda = $_GET["tienda"];
 
 if ($validacionf === 'PENDIENTE') {
     $sqlquiebreMovil = " SELECT ncquiebre.id_quiebre,ncquiebre.fecha_ingreso, ncquiebre.ruc,ncquiebre.razon_social,ncquiebre.modalidad,
- ncquiebre.cargo_fijo, ncquiebre.estado,ncquiebre.validacion,s.nombre,u.personal
+ ncquiebre.cargo_fijo, ncquiebre.estado,ncquiebre.validacion,s.nombre,u.personal, ncquiebre.correo
  from quiebre_movil as ncquiebre left join supervisor as s on ncquiebre.id_supervisor=s.id_supervisor
  left join usuario as u on u.id_usuario=ncquiebre.id_usuario
 where  year(ncquiebre.fecha_ingreso)<='$ano' 

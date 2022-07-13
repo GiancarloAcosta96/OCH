@@ -56,7 +56,6 @@ $("#btnRegistrar").click(function () {
           $("#nctelefono1").val("");
           $("#nccorreo").val("");
           $("#ncdni").val("");
-
           $("#ncobservacioneseje").val("");
           $("#ncpersonal").val("");
           $("#ncqlineas").val("");
@@ -138,21 +137,25 @@ function TraerDatosTabla(idquiebre) {
     data: "idquiebre=" + idquiebre,
     url: "../procesos/obtenQuiebre_validacion.php",
     success: function (data) {
-      datos = jQuery.parseJSON(data);
-      $("#idquiebre").val(idquiebre);
-      $("#ncqlineas").val(datos["q_lineas"]);
-      $("#ncmodalidad").val(datos["modalidad"]);
-      $("#nccargofijo").val(datos["cargo_fijo"]);
-      $("#ncruc").val(datos["ruc"]);
-      $("#ncrazonsocial").val(datos["razon_social"]);
-      $("#ncnomcontacto").val(datos["contacto"]);
-      $("#nctelefono1").val(datos["telefono1"]);
-      $("#nccorreo").val(datos["correo"]);
-      $("#ncdni").val(datos["dni"]);
-      $("#ncregion").val(datos["zonal"]);
-      $("#ncpersonal").val(datos["personal"]);
-      $("#ncobservacioneseje").val(datos["comentario"]);
-      $("#ncestado").val(datos["estado"]);
+      try {
+        datos = jQuery.parseJSON(data);
+        $("#idquiebre").val(idquiebre);
+        $("#ncqlineas").val(datos["q_lineas"]);
+        $("#ncmodalidad").val(datos["modalidad"]);
+        $("#nccargofijo").val(datos["cargo_fijo"]);
+        $("#ncruc").val(datos["ruc"]);
+        $("#ncrazonsocial").val(datos["razon_social"]);
+        $("#ncnomcontacto").val(datos["contacto"]);
+        $("#nctelefono1").val(datos["telefono1"]);
+        $("#nccorreo").val(datos["correo"]);
+        $("#ncdni").val(datos["dni"]);
+        $("#ncregion").val(datos["zonal"]);
+        $("#ncpersonal").val(datos["personal"]);
+        $("#ncobservacioneseje").val(datos["comentario"]);
+        $("#ncestado").val(datos["estado"]);
+      } catch (error) {
+        console.log("Error parsing JSON:", error, data);
+      }
     },
   });
 }
