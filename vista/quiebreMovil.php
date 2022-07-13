@@ -436,7 +436,7 @@ if (isset($_SESSION["idusu"])) {
 
                                                 <div class="col-xs-6">
                                                     <label>DNI</label>
-                                                    <input type="text" class="form-control input-sm" id="dnis" name="dnis" required>
+                                                    <input type="text" class="form-control input-sm" id="ncdnis" name="ncdnis" required>
                                                 </div>
 
 
@@ -542,7 +542,7 @@ if (isset($_SESSION["idusu"])) {
 
                                             <div class="col-xs-6">
                                                 <label>Telefono1</label>
-                                                <input type="text" disabled="" class="form-control input-sm" id="nctelefono1s" name="nctelefono1s" required>
+                                                <input type="text" disabled="" class="form-control input-sm" id="nctelefono1m" name="nctelefono1m" required>
 
                                             </div>
 
@@ -616,7 +616,7 @@ if (isset($_SESSION["idusu"])) {
                                             <div class="col-xs-4">
 
                                                 <label>Estado Actual</label>
-                                                <input type="text" disabled="" class="form-control input-sm" id="ncestadoactg" name="ncestadoactg">
+                                                <input type="text" disabled="" class="form-control input-sm" id="ncestadoacts" name="ncestadoacts">
 
                                             </div>
 
@@ -625,12 +625,12 @@ if (isset($_SESSION["idusu"])) {
                                             <div class="col-xs-4">
 
                                                 <label>Fecha Actualización:</label>
-                                                <input type="text" disabled="" class="form-control input-sm" id="ncfechaactg" name="ncfechaactg">
+                                                <input type="text" disabled="" class="form-control input-sm" id="ncfechaacts" name="ncfechaacts">
                                             </div>
 
                                             <div class="col-xs-4">
                                                 <label>Oportunidad</label>
-                                                <input type="text" class="form-control input-sm" id="ncoportunidadg" name="ncoportunidadg" disabled="" required>
+                                                <input type="text" class="form-control input-sm" id="ncoportunidads" name="ncoportunidads" disabled="" required>
 
                                             </div>
 

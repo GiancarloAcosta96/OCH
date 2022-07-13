@@ -198,7 +198,7 @@ function TraerDatosTabla(idquiebre) {
         datos = jQuery.parseJSON(data);
         $("#idquiebre").val(idquiebre);
         $("#ncqlineass").val(datos["q_lineas"]);
-        $("#ncmodalidads").val(datos["modalidad"]);
+        $("#ncmodalidadquiebres").val(datos["modalidad"]);
         $("#nccargofijos").val(datos["cargo_fijo"]);
         $("#ncrucs").val(datos["ruc"]);
         $("#ncrazonsocials").val(datos["razon_social"]);
@@ -237,8 +237,8 @@ $("#btnActualizar").click(function () {
       $("#nccargofijos").val() == "0" ||
       $("#nccargofijos").val() == "" ||
       $("#nctelefono1s").val() == "" ||
-      $("nccorreos").val() == "" ||
-      $("ncdnis").val() == ""
+      $("#nccorreos").val() == "" ||
+      $("#ncdnis").val() == ""
     ) {
       alertify.error("REVISE LOS DATOS");
     } else {
