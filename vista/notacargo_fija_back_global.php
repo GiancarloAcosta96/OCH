@@ -546,12 +546,18 @@ if (isset($_SESSION["idusu"])) {
 
 
 
-                        <div class="col-xs-8">
+                        <div class="col-xs-4">
 
                           <label>Ejecutivo TDP</label>
                           <select name="ncejecutivotdp" class="form-control" id='ncejecutivotdp'>
 
                           </select>
+
+                        </div>
+
+                        <div class="col-xs-4">
+                          <label>Cuenta Financiera</label>
+                          <input type="text" class="form-control input-sm" id="ncfinanciera" name="ncfinanciera">
 
                         </div>
 

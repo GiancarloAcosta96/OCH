@@ -380,8 +380,8 @@ if (isset($_SESSION["idusu"])) {
 
                         <ul class="nav nav-tabs">
                             <li class="active"><a href="#producto" data-toggle="tab">DATO PRODUCTO</a></li>
-                            <li><a href="#validacion" data-toggle="tab">DATOS VALIDACION</a></li>
-                            <li><a href="#gestionback" data-toggle="tab">GESTION BACK</a></li>
+                            <li><a href="#validacion" data-toggle="tab">GESTIÓN BACK</a></li>
+                            <!-- <li><a href="#gestionback" data-toggle="tab">GESTION BACK</a></li> -->
 
                         </ul>
 

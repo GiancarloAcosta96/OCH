@@ -243,10 +243,14 @@ class crudNotadecargo
 
         $sql = "SELECT nc.q_lineas,nc.modalidad,nc.subtipo,nc.descripcion,nc.cargo_fijo,nc.ruc,
                 nc.razon_social,nc.contacto,nc.telefono1,nc.telefono2,nc.direccion,nc.coordenadas,
-                t.nombre,usu.personal,nc.comentario,nc.estado, nc.fecha_ingreso,nc.fecha_validacion,nc.validacion,nc.comentario_validador,nc.estado, nc.peticion,nc.contrata,nc.fecha_liquidacion,nc.nasignado, nc.ejecutivo_telefonica, nc.comentario_back, nc.zonal_telefonica, nc.fecha_actualizacion,nc.tecnologia,nc.caso_sf,nc.id_cartera,nc.nodo
-                    from nc_fija as nc inner join usuario as usu on nc.id_usuario=usu.id_usuario
-                    left join tienda as t on t.id_tienda=nc.zonal
-                    where id_cargo ='$idcargo' ";
+                t.nombre,usu.personal,nc.comentario,nc.estado, nc.fecha_ingreso,nc.fecha_validacion,
+                nc.validacion,nc.comentario_validador,nc.estado, nc.peticion,nc.contrata,nc.fecha_liquidacion,nc.nasignado, 
+                nc.ejecutivo_telefonica, nc.comentario_back, nc.zonal_telefonica, nc.fecha_actualizacion,nc.tecnologia,
+                nc.caso_sf,nc.id_cartera,nc.nodo, nc.ncfinanciera
+                
+                from nc_fija as nc inner join usuario as usu on nc.id_usuario=usu.id_usuario
+                left join tienda as t on t.id_tienda=nc.zonal
+                where id_cargo ='$idcargo' ";
 
         $result = mysqli_query($conexion, $sql);
         $ver = mysqli_fetch_array($result);
@@ -305,7 +309,8 @@ class crudNotadecargo
             'fecha_actualizacion' => $ver[28],
             'tecnologia' => $ver[29],
             'caso_sf' => $ver[30],
-            'nodo' => $ver[32]
+            'nodo' => $ver[32],
+            'ncfinanciera' => $ver[33]
 
 
         );
@@ -401,7 +406,7 @@ class crudNotadecargo
         $sqlnotadecargo = "UPDATE nc_fija SET estado='$datos[2]',peticion='$datos[3]',
             contrata='$datos[4]',fecha_actualizacion='$hoy' , fecha_liquidacion='$datos[5]' 
             , nasignado='$datos[6]', comentario_back='$datos[9]' 
-            , zonal_telefonica='$datos[8]', id_back='$datos[0]',caso_sf='$datos[10]',id_cartera='$datos[7]',nodo='$datos[11]'
+            , zonal_telefonica='$datos[8]', id_back='$datos[0]',caso_sf='$datos[10]',id_cartera='$datos[7]',nodo='$datos[11]', ncfinanciera='$datos[12]'
            
 
             WHERE id_cargo='$datos[1]'
