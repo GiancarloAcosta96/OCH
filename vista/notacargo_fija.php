@@ -719,6 +719,14 @@ if (isset($_SESSION["idusu"])) {
 
                                             </div>
 
+                                            <div class="row">
+                                                <div class="col-xs-4">
+                                                    <label>Cuenta Financiera</label>
+                                                    <input type="text" disabled="" class="form-control input-sm" id="ncfinanciera" name="ncfinanciera">
+
+                                                </div>
+                                            </div>
+
 
 
 

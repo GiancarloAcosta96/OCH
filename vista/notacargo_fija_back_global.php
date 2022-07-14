@@ -474,15 +474,14 @@ if (isset($_SESSION["idusu"])) {
 
                           <label>Actualizar Estado</label>
                           <select name="ncestado" class="form-control" id='ncestado'>
-                            <option value="X_INGRESAR">X INGRESAR</option>
+                            <option value="OBSERVADO">OBSERVADO</option>
                             <option value="INSERTADO">INSERTADO</option>
                             <option value="PENDIENTE">PENDIENTE</option>
-                            <option value="AGENDADO" selected>AGENDADO</option>
-                            <option value="INICIADO">INICIADO</option>
-                            <option value="COMPLETADO">COMPLETADO</option>
+                            <option value="EMITIDO">EMITIDO</option>
+                            <option value="INSTALADO">INSTALADO</option>
+                            <option value="LIQUIDADO">LIQUIDADO</option>
                             <option value="CAIDO">CAIDO</option>
                             <option value="BOLSA">BOLSA</option>
-
                           </select>
                         </div>
 

@@ -296,6 +296,7 @@ function TraerDatosTabla(idcargo) {
       $("#ncnunasignados").val(datos["nasignado"]);
       $("#nccomentariobacks").val(datos["comentario_back"]);
       $("#nctecnlogias").val(datos["tecnologia"]);
+      $("#ncfinanciera").val(datos["ncfinanciera"]);
     },
   });
 }
