@@ -127,7 +127,7 @@ if (isset($_SESSION["idusu"])) {
 
 
                             <div class="col-xs-1">
-                                <label>ESTADO</label>
+                                <label>VALIDACION</label>
 
                             </div>
                             <div class="col-xs-2">
@@ -135,14 +135,9 @@ if (isset($_SESSION["idusu"])) {
                                 <select name="ncestado" class="form-control" id='ncestado'>
 
                                     <option value="PENDIENTE">PENDIENTE</option>
-                                    <option value="PROCESANDO">PROCESANDO</option>
-                                    <option value="INGRESADO">INGRESADO</option>
-                                    <option value="DELIVERY">DELIVERY</option>
-                                    <option value="ACTIVADO">ACTIVADO</option>
-                                    <option value="CAIDA">CAIDA</option>
-                                    <option value="BOLSA">BOLSA</option>
-                                    <option value="SALIDAANTICIPADA">SALIDA ANTICIPADA</option>
-                                    <option value="TODO" selected>TODO</option>
+                                    <option value="ATENDIDO">ATENDIDO</option>
+                                    <option value="CURSO">EN CURSO</option>
+                                    <option value="DEVUELTO">DEVUELTO</option>
                                     <option value="TODO" selected>TODO</option>
 
                                 </select>

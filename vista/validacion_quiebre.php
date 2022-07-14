@@ -61,7 +61,7 @@ if (isset($_SESSION["idusu"])) {
 
 
                 </br>
-                <form class="form form-horizontal" id='frmrepexportarvalidacionmovil' action="../procesos/repexportarvalidacionmovil.php" method="post">
+                <form class="form form-horizontal" id='frmrepexportarvalidacionmovil' action="../procesos/repexportarquiebrevalidacion.php" method="post">
                     <input type="hidden" class="form-control input-sm" id="tiendaf" name="tiendaf" value="<?php echo $tienda ?>">
                     <ol class="breadcrumb">
                         <div class="form-group">
@@ -104,12 +104,12 @@ if (isset($_SESSION["idusu"])) {
 
                                 <select name="ncvalidacionf" class="form-control" id='ncvalidacionf'>
 
-                                    <option value="PENDIENTE" selected>PENDIENTE</option>
-                                    <option value="PROCEDE">PROCEDE</option>
-                                    <option value="RECHAZADO">RECHAZADO</option>
-                                    <option value="TODO">TODO</option>
+                                    <option value="PENDIENTE">PENDIENTE</option>
+                                    <option value="ATENDIDO">ATENDIDO</option>
+                                    <option value="CURSO">EN CURSO</option>
+                                    <option value="DEVUELTO">DEVUELTO</option>
+                                    <option value="TODO" selected>TODO</option>
                                 </select>
-
 
                             </div>
                             <div class="col-xs-2">
@@ -307,9 +307,10 @@ if (isset($_SESSION["idusu"])) {
                                                     <label for="comment">VALIDACION:</label>
                                                     <select name="ncvalidacion" class="form-control" id='ncvalidacion'>
 
-                                                        <option value="PENDIENTE">PENDIENTE</option>
-                                                        <option value="PROCEDE" selected>PROCEDE</option>
-                                                        <option value="RECHAZADO">RECHAZADO</option>
+                                                        <option value="PENDIENTE" selected>PENDIENTE</option>
+                                                        <option value="ATENDIDO">ATENDIDO</option>
+                                                        <option value="CURSO">EN CURSO</option>
+                                                        <option value="DEVUELTO">DEVUELTO</option>
 
                                                     </select>
                                                 </div>

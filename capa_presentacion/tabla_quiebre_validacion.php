@@ -21,7 +21,7 @@ and ncquiebre.validacion='$validacionf' and ncquiebre.zonal='$tienda'
 ORDER BY ncquiebre.fecha_ingreso DESC";
 } else {
 
-    if ($validacionf === 'PROCEDE') {
+    if ($validacionf === 'ATENDIDO') {
 
         $sqlquiebreMovil = " SELECT ncquiebre.id_quiebre,ncquiebre.fecha_ingreso, ncquiebre.ruc,ncquiebre.razon_social,ncquiebre.modalidad,
  ncquiebre.cargo_fijo, ncquiebre.estado,ncquiebre.validacion,s.nombre,u.personal
@@ -32,7 +32,7 @@ and ncquiebre.validacion='$validacionf' and ncquiebre.zonal='$tienda'
 ORDER BY ncquiebre.fecha_ingreso DESC";
     } else {
 
-        if ($validacionf === 'RECHAZADO') {
+        if ($validacionf === 'DEVUELTO') {
 
             $sqlquiebreMovil = " SELECT ncquiebre.id_quiebre,ncquiebre.fecha_ingreso, ncquiebre.ruc,ncquiebre.razon_social,ncquiebre.modalidad,
  ncquiebre.cargo_fijo, ncquiebre.estado,ncquiebre.validacion,s.nombre,u.personal
@@ -48,7 +48,7 @@ ORDER BY ncquiebre.fecha_ingreso DESC";
  from quiebre_movil as ncquiebre left join supervisor as s on ncquiebre.id_supervisor=s.id_supervisor
   left join usuario as u on u.id_usuario=ncquiebre.id_usuario
 where year(ncquiebre.fecha_ingreso)<='$ano' 
-and ncquiebre.validacion='PENDIENTE'  and ncquiebre.zonal='$tienda'
+and ncquiebre.validacion='CURSO'  and ncquiebre.zonal='$tienda'
 
 UNION
 
@@ -57,7 +57,7 @@ ncquiebre.cargo_fijo, ncquiebre.estado,ncquiebre.validacion,s.nombre,u.personal
 from quiebre_movil as ncquiebre left join supervisor as s on ncquiebre.id_supervisor=s.id_supervisor
  left join usuario as u on u.id_usuario=ncquiebre.id_usuario
 where month(ncquiebre.fecha_validacion)='$periodo' and year(ncquiebre.fecha_validacion)='$ano' 
-and ncquiebre.validacion='PROCEDE'  and ncquiebre.zonal='$tienda'
+and ncquiebre.validacion='ATENDIDO'  and ncquiebre.zonal='$tienda'
 
 UNION
 
@@ -66,7 +66,7 @@ ncquiebre.cargo_fijo, ncquiebre.estado,ncquiebre.validacion,s.nombre,u.personal
 from quiebre_movil as ncquiebre left join supervisor as s on ncquiebre.id_supervisor=s.id_supervisor
  left join usuario as u on u.id_usuario=ncquiebre.id_usuario
 where month(ncquiebre.fecha_ingreso)='$periodo' and year(ncquiebre.fecha_ingreso)='$ano' 
-and ncquiebre.validacion='RECHAZADO' and ncquiebre.zonal='$tienda'
+and ncquiebre.validacion='DEVUELTO' and ncquiebre.zonal='$tienda'
 
 ";
         }
@@ -92,7 +92,7 @@ $resultquiebreMovil = mysqli_query($conexion, $sqlquiebreMovil);
                             <th>EJECUTIVO REAL</th>
                             <th>SUPERVISOR</th>
                             <th>CARGO FIJO</th>
-                            <th>ESTADO</th>
+                            <!-- <th>ESTADO</th> -->
                             <th>VALIDADO</th>
                             <th>DETALLE</th>
                         </tr>
@@ -108,7 +108,7 @@ $resultquiebreMovil = mysqli_query($conexion, $sqlquiebreMovil);
                                 <td><?php echo $mostrar[9] ?></td>
                                 <td><?php echo $mostrar[8] ?></td>
                                 <td><?php echo $mostrar[5] ?></td>
-                                <td><?php echo $mostrar[6] ?></td>
+                                <!-- <td>?php echo $mostrar[6] ?></td> -->
                                 <td><?php echo $mostrar[7] ?></td>
                                 <td style="text-align: center;">
                                     <span class="btn btn-success btn-sm" data-toggle="modal" data-target="#modalEditar" onclick="TraerDatosTabla('<?php echo $mostrar[0] ?>')"> <span class="fa fa-check-circle"></span>

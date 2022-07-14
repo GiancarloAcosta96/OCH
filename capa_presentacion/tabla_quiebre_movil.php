@@ -10,56 +10,56 @@ $periodo = $_GET["periodo"];
 $estado = $_GET["estado"];
 $idusu = $_GET["idusu"];
 
-if ($estado === 'INGRESADO' || $estado === 'PROCESANDO' || $estado === 'PENDIENTE' || $estado === 'DELIVERY' || $estado === 'BOLSA' || $estado === 'SALIDAANTICIPADA') {
+if ($estado === 'PENDIENTE' || $estado === 'ATENDIDO' || $estado === 'CURSO') {
 
     $sqlquiebreMovil = " SELECT ncquiebre.id_quiebre,ncquiebre.fecha_ingreso, ncquiebre.ruc,ncquiebre.razon_social,ncquiebre.modalidad,
-  ncquiebre.cargo_fijo, ncquiebre.estado,ncquiebre.validacion, ncquiebre.dni
+  ncquiebre.cargo_fijo, ncquiebre.validacion,ncquiebre.validacion, ncquiebre.dni
  from quiebre_movil as ncquiebre 
 where  year(ncquiebre.fecha_ingreso)<='$ano' and 
-ncquiebre.id_usuario='$idusu' and ncquiebre.estado='$estado'
+ncquiebre.id_usuario='$idusu' and ncquiebre.validacion='$estado'
 ORDER BY ncquiebre.fecha_ingreso DESC";
 } else {
 
-    if ($estado === 'ACTIVADO') {
+    if ($estado === 'ATENDIDO') {
         $sqlquiebreMovil = " SELECT ncquiebre.id_quiebre,ncquiebre.fecha_ingreso, ncquiebre.ruc,ncquiebre.razon_social,ncquiebre.modalidad,
-  ncquiebre.cargo_fijo, ncquiebre.estado,ncquiebre.validacion, ncquiebre.dni
+  ncquiebre.cargo_fijo, ncquiebre.validacion,ncquiebre.validacion, ncquiebre.dni
  from quiebre_movil as ncquiebre 
 where month(ncquiebre.fecha_actualizacion)='$periodo' and year(ncquiebre.fecha_actualizacion)='$ano' and 
-ncquiebre.id_usuario='$idusu' and ncquiebre.estado='$estado'
+ncquiebre.id_usuario='$idusu' and ncquiebre.validacion='$estado'
 ORDER BY ncquiebre.fecha_ingreso DESC";
     } else {
 
-        if ($estado === 'CAIDA') {
+        if ($estado === 'DEVUELTO') {
 
             $sqlquiebreMovil = " SELECT ncquiebre.id_quiebre,ncquiebre.fecha_ingreso, ncquiebre.ruc,ncquiebre.razon_social,ncquiebre.modalidad,
-  ncquiebre.cargo_fijo, ncquiebre.estado,ncquiebre.validacion, ncquiebre.dni
+  ncquiebre.cargo_fijo, ncquiebre.validacion,ncquiebre.validacion, ncquiebre.dni
  from quiebre_movil as ncquiebre 
 where month(ncquiebre.fecha_ingreso)='$periodo' and year(ncquiebre.fecha_ingreso)='$ano' and 
-ncquiebre.id_usuario='$idusu' and ncquiebre.estado='$estado'
+ncquiebre.id_usuario='$idusu' and ncquiebre.validacion='$estado'
 ORDER BY ncquiebre.fecha_ingreso DESC";
         } else {
 
             $sqlquiebreMovil = " SELECT ncquiebre.id_quiebre,ncquiebre.fecha_ingreso, ncquiebre.ruc,ncquiebre.razon_social,ncquiebre.modalidad,
-ncquiebre.cargo_fijo, ncquiebre.estado,ncquiebre.validacion, ncquiebre.dni
+ncquiebre.cargo_fijo, ncquiebre.validacion,ncquiebre.validacion, ncquiebre.dni
 from quiebre_movil as ncquiebre 
 where  year(ncquiebre.fecha_ingreso)<='$ano' and 
-ncquiebre.id_usuario='$idusu' and ncquiebre.estado in ('INGRESADO','PROCESANDO','PENDIENTE','DELIVERY','BOLSA','SALIDAANTICIPADA')
+ncquiebre.id_usuario='$idusu' and ncquiebre.validacion in ('PENDIENTE','ATENDIDO','CURSO','DEVUELTO')
 
 UNION 
 
 SELECT ncquiebre.id_quiebre,ncquiebre.fecha_ingreso, ncquiebre.ruc,ncquiebre.razon_social,ncquiebre.modalidad,
-  ncquiebre.cargo_fijo, ncquiebre.estado,ncquiebre.validacion, ncquiebre.dni
+  ncquiebre.cargo_fijo, ncquiebre.validacion,ncquiebre.validacion, ncquiebre.dni
  from quiebre_movil as ncquiebre 
 where month(ncquiebre.fecha_actualizacion)='$periodo' and year(ncquiebre.fecha_actualizacion)='$ano' and 
-ncquiebre.id_usuario='$idusu' and ncquiebre.estado='ACTIVADO'
+ncquiebre.id_usuario='$idusu' and ncquiebre.validacion='ATENDIDO'
 
 UNION
 
 SELECT ncquiebre.id_quiebre,ncquiebre.fecha_ingreso, ncquiebre.ruc,ncquiebre.razon_social,ncquiebre.modalidad,
-  ncquiebre.cargo_fijo, ncquiebre.estado,ncquiebre.validacion, ncquiebre.dni
+  ncquiebre.cargo_fijo, ncquiebre.validacion,ncquiebre.validacion, ncquiebre.dni
  from quiebre_movil as ncquiebre 
 where month(ncquiebre.fecha_ingreso)='$periodo' and year(ncquiebre.fecha_ingreso)='$ano' and 
-ncquiebre.id_usuario='$idusu' and ncquiebre.estado='DEVUELTO'
+ncquiebre.id_usuario='$idusu' and ncquiebre.validacion='DEVUELTO'
 
 
 ";
@@ -85,7 +85,7 @@ $resultquiebreMovil = mysqli_query($conexion, $sqlquiebreMovil);
                             <th>RAZON SOCIAL</th>
                             <th>MODALIDAD</th>
                             <th>CARGO FIJO</th>
-                            <th>ESTADO</th>
+                            <!-- <th>ESTADO</th> -->
                             <th>VALIDADO</th>
                             <th>DNI</th>
                             <th>DETALLE</th>
@@ -101,7 +101,7 @@ $resultquiebreMovil = mysqli_query($conexion, $sqlquiebreMovil);
                                 <td><?php echo $mostrar[3] ?></td>
                                 <td><?php echo $mostrar[4] ?></td>
                                 <td><?php echo $mostrar[5] ?></td>
-                                <td><?php echo $mostrar[6] ?></td>
+                                <!-- <td>?php echo $mostrar[6] ?></td> -->
                                 <td><?php echo $mostrar[7] ?></td>
                                 <td><?php echo $mostrar[8] ?></td>
                                 <td style="text-align: center;">
