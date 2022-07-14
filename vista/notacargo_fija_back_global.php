@@ -538,7 +538,6 @@ if (isset($_SESSION["idusu"])) {
                         <div class="col-xs-4">
                           <label>Zonal Telefónica</label>
                           <select name="nczonaltdp" class="form-control" id='nczonaltdp'>
-
                           </select>
 
                         </div>
