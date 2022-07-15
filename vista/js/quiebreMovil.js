@@ -223,6 +223,7 @@ function TraerDatosTabla(idquiebre) {
         $("#ncfechaacts").val(datos["fecha_actualizacion"]);
         $("#ncoportunidads").val(datos["oportunidad"]);
         $("#nccomentariobacks").val(datos["comentario_back"]);
+        $("#casosf").val(datos["casosf"]);
       } catch (error) {
         console.log("Error parsing JSON:", error, data);
       }

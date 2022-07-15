@@ -86,7 +86,8 @@ class crudQuiebre
                         ncquiebre.oportunidad,              
                         ncquiebre.id_cartera,               
                         ncquiebre.nodo,                     
-                        ncquiebre.dni                       
+                        ncquiebre.dni,
+                        ncquiebre.casosf                       
 
                         from quiebre_movil as ncquiebre inner join usuario as usu on ncquiebre.id_usuario=usu.id_usuario
                         left join tienda as t on t.id_tienda=ncquiebre.zonal
@@ -139,7 +140,8 @@ class crudQuiebre
             'fecha_actualizacion' => $ver[20],
             'oportunidad' => $ver[21],
             'nodo' => $ver[23],
-            'dni' => $ver[24]
+            'dni' => $ver[24],
+            'casosf' => $ver[25],
         );
         return $datos;
     }
@@ -175,8 +177,10 @@ class crudQuiebre
         $sqlquiebreMovil = "UPDATE quiebre_movil 
                             SET validacion='$datos[2]',
                                 id_validador='$datos[1]',
-                                fecha_validacion='$hoy', 
-                                comentario_validador='$datos[3]' 
+                                fecha_validacion='$hoy',
+                                casosf='$datos[5]',
+                                comentario_validador='$datos[3]'
+                                
                                 WHERE id_quiebre='$datos[4]' ";
         $rpta = mysqli_query($conexion, $sqlquiebreMovil);
 
@@ -200,7 +204,10 @@ class crudQuiebre
                         t.nombre,
                         usu.personal,
                         ncquiebre.comentario_ejecutivo,
-                        ncquiebre.estado
+                        ncquiebre.estado,
+                        ncquiebre.casosf,
+                        ncquiebre.comentario_validador
+                        
 
                         from quiebre_movil as ncquiebre inner join usuario as usu on ncquiebre.id_usuario=usu.id_usuario
                         left join tienda as t on t.id_tienda=ncquiebre.zonal
@@ -222,7 +229,10 @@ class crudQuiebre
             'zonal' => $ver[9],
             'personal' => $ver[10],
             'comentario' => $ver[11],
-            'estado' => $ver[12]
+            'estado' => $ver[12],
+            'casosf' => $ver[13],
+            'comentario_validador' => $ver[14]
+
         );
         return $datos;
     }

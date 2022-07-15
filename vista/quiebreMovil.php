@@ -545,9 +545,14 @@ if (isset($_SESSION["idusu"])) {
 
 
                                         <div class="row">
-                                            <div class="col-xs-12">
+                                            <div class="col-xs-6">
                                                 <label>Correo</label>
                                                 <input type="text" disabled="" class="form-control input-sm" id="nccorreos" name="nccorreos" required>
+                                            </div>
+
+                                            <div class="col-xs-6">
+                                                <label>Caso SF</label>
+                                                <input type="text" disabled="" class="form-control input-sm" id="casosf" name="casosf" required>
 
                                             </div>
                                         </div>

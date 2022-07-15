@@ -303,7 +303,7 @@ if (isset($_SESSION["idusu"])) {
                                             </div>
 
                                             <div class="row">
-                                                <div class="col-xs-12">
+                                                <div class="col-xs-6">
                                                     <label for="comment">VALIDACION:</label>
                                                     <select name="ncvalidacion" class="form-control" id='ncvalidacion'>
 
@@ -313,6 +313,11 @@ if (isset($_SESSION["idusu"])) {
                                                         <option value="DEVUELTO">DEVUELTO</option>
 
                                                     </select>
+                                                </div>
+
+                                                <div class="col-xs-6">
+                                                    <label>CASO SF</label>
+                                                    <input type="text" class="form-control input-sm" id="casosf" name="casosf" required>
                                                 </div>
                                             </div>
                                             <div class="row">

@@ -8,7 +8,8 @@ $datos = array(
     $_POST['idusu'], //1
     $_POST['ncvalidacion'], //2
     $_POST['ncobservacionesval'], //3
-    $_POST['idquiebre'] //4
+    $_POST['idquiebre'], //4
+    $_POST['casosf'] //5
 );
 
 try {

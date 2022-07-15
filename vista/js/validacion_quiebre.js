@@ -11,12 +11,12 @@ $("#cerrar1").click(function () {
   $("#nctelefono1").val("");
   $("#nccorreo").val("");
   $("#ncdni").val("");
-
   $("#ncobservacioneseje").val("");
   $("#ncpersonal").val("");
   $("#ncqlineas").val("");
   $("#ncmodalidad").val("");
   $("#ncobservacionesval").val("");
+  $("#casosf").val("");
 });
 
 $("#cerrar2").click(function () {
@@ -33,6 +33,7 @@ $("#cerrar2").click(function () {
   $("#ncqlineas").val("");
   $("#ncmodalidad").val("");
   $("#ncobservacionesval").val("");
+  $("#casosf").val("");
 });
 
 $("#btnRegistrar").click(function () {
@@ -47,7 +48,6 @@ $("#btnRegistrar").click(function () {
           alertify.success("Registrado con exito");
 
           $("#modalEditar").modal("hide");
-
           $("#ncregion").val("");
           $("#nccargofijo").val("");
           $("#ncruc").val("");
@@ -61,6 +61,8 @@ $("#btnRegistrar").click(function () {
           $("#ncqlineas").val("");
           $("#ncmodalidad").val("");
           $("#ncobservacionesval").val("");
+          $("#casosf").val("");
+
           var validacionf = $("#ncvalidacionf").val();
           var tienda = $("#tienda").val();
           var ano = $("#ncano").val();
@@ -153,6 +155,8 @@ function TraerDatosTabla(idquiebre) {
         $("#ncpersonal").val(datos["personal"]);
         $("#ncobservacioneseje").val(datos["comentario"]);
         $("#ncestado").val(datos["estado"]);
+        $("#casosf").val(datos["casosf"]);
+        $("#ncobservacionesval").val(datos["comentario_validador"]);
       } catch (error) {
         console.log("Error parsing JSON:", error, data);
       }
