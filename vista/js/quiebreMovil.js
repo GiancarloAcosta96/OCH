@@ -238,7 +238,7 @@ $("#btnActualizar").click(function () {
       $("#nccargofijos").val() == "0" ||
       $("#nccargofijos").val() == "" ||
       $("#nctelefono1s").val() == "" ||
-      $("#nccorreos").val() == "" ||
+      $("#nccorreos").val() == null ||
       $("#ncdnis").val() == ""
     ) {
       alertify.error("REVISE LOS DATOS");

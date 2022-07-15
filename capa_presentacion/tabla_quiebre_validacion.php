@@ -12,65 +12,159 @@ $tienda = $_GET["tienda"];
 
 
 if ($validacionf === 'PENDIENTE') {
-    $sqlquiebreMovil = " SELECT ncquiebre.id_quiebre,ncquiebre.fecha_ingreso, ncquiebre.ruc,ncquiebre.razon_social,ncquiebre.modalidad,
- ncquiebre.cargo_fijo, ncquiebre.estado,ncquiebre.validacion,s.nombre,u.personal, ncquiebre.correo
- from quiebre_movil as ncquiebre left join supervisor as s on ncquiebre.id_supervisor=s.id_supervisor
- left join usuario as u on u.id_usuario=ncquiebre.id_usuario
-where  year(ncquiebre.fecha_ingreso)<='$ano' 
-and ncquiebre.validacion='$validacionf' and ncquiebre.zonal='$tienda'
-ORDER BY ncquiebre.fecha_ingreso DESC";
+    $sqlquiebreMovil = " SELECT 
+        ncquiebre.id_quiebre,
+        ncquiebre.fecha_ingreso, 
+        ncquiebre.ruc,
+        ncquiebre.razon_social,
+        ncquiebre.modalidad,
+        ncquiebre.cargo_fijo, 
+        ncquiebre.estado,
+        ncquiebre.validacion,
+        s.nombre,
+        u.personal
+        from quiebre_movil as ncquiebre 
+        left join supervisor as s on ncquiebre.id_supervisor=s.id_supervisor
+        left join usuario as u on u.id_usuario=ncquiebre.id_usuario
+        where  year(ncquiebre.fecha_ingreso)<='$ano' 
+        and ncquiebre.validacion='$validacionf' 
+        and ncquiebre.zonal='$tienda'
+        ORDER BY ncquiebre.fecha_ingreso DESC";
+} else if ($validacionf === 'ATENDIDO') {
+    $sqlquiebreMovil = " SELECT 
+        ncquiebre.id_quiebre,
+        ncquiebre.fecha_ingreso, 
+        ncquiebre.ruc,
+        ncquiebre.razon_social,
+        ncquiebre.modalidad,
+        ncquiebre.cargo_fijo, 
+        ncquiebre.estado,
+        ncquiebre.validacion,
+        s.nombre,
+        u.personal
+        from quiebre_movil as ncquiebre 
+        left join supervisor as s on ncquiebre.id_supervisor=s.id_supervisor
+        left join usuario as u on u.id_usuario=ncquiebre.id_usuario
+        where  year(ncquiebre.fecha_ingreso)<='$ano' 
+        and ncquiebre.validacion='$validacionf' 
+        and ncquiebre.zonal='$tienda'
+        ORDER BY ncquiebre.fecha_ingreso DESC";
+} else if ($validacionf === 'CURSO') {
+    $sqlquiebreMovil = " SELECT 
+        ncquiebre.id_quiebre,
+        ncquiebre.fecha_ingreso, 
+        ncquiebre.ruc,
+        ncquiebre.razon_social,
+        ncquiebre.modalidad,
+        ncquiebre.cargo_fijo, 
+        ncquiebre.estado,
+        ncquiebre.validacion,
+        s.nombre,
+        u.personal
+        from quiebre_movil as ncquiebre 
+        left join supervisor as s on ncquiebre.id_supervisor=s.id_supervisor
+        left join usuario as u on u.id_usuario=ncquiebre.id_usuario
+        where  year(ncquiebre.fecha_ingreso)<='$ano' 
+        and ncquiebre.validacion='$validacionf' 
+        and ncquiebre.zonal='$tienda'
+        ORDER BY ncquiebre.fecha_ingreso DESC";
+} else if ($validacionf === 'DEVUELTO') {
+    $sqlquiebreMovil = " SELECT 
+        ncquiebre.id_quiebre,
+        ncquiebre.fecha_ingreso, 
+        ncquiebre.ruc,
+        ncquiebre.razon_social,
+        ncquiebre.modalidad,
+        ncquiebre.cargo_fijo, 
+        ncquiebre.estado,
+        ncquiebre.validacion,
+        s.nombre,
+        u.personal
+        from quiebre_movil as ncquiebre 
+        left join supervisor as s on ncquiebre.id_supervisor=s.id_supervisor
+        left join usuario as u on u.id_usuario=ncquiebre.id_usuario
+        where  year(ncquiebre.fecha_ingreso)<='$ano' 
+        and ncquiebre.validacion='$validacionf' 
+        and ncquiebre.zonal='$tienda'
+        ORDER BY ncquiebre.fecha_ingreso DESC";
 } else {
+    $sqlquiebreMovil = " SELECT 
+        ncquiebre.id_quiebre,
+        ncquiebre.fecha_ingreso, 
+        ncquiebre.ruc,
+        ncquiebre.razon_social,
+        ncquiebre.modalidad,
+        ncquiebre.cargo_fijo, 
+        ncquiebre.estado,
+        ncquiebre.validacion,
+        s.nombre,
+        u.personal
+        from quiebre_movil as ncquiebre 
+        left join supervisor as s on ncquiebre.id_supervisor=s.id_supervisor
+        left join usuario as u on u.id_usuario=ncquiebre.id_usuario
+        where year(ncquiebre.fecha_ingreso)<='$ano' 
+        and ncquiebre.validacion='CURSO'  and ncquiebre.zonal='$tienda'
 
-    if ($validacionf === 'ATENDIDO') {
+        UNION
 
-        $sqlquiebreMovil = " SELECT ncquiebre.id_quiebre,ncquiebre.fecha_ingreso, ncquiebre.ruc,ncquiebre.razon_social,ncquiebre.modalidad,
- ncquiebre.cargo_fijo, ncquiebre.estado,ncquiebre.validacion,s.nombre,u.personal
- from quiebre_movil as ncquiebre left join supervisor as s on ncquiebre.id_supervisor=s.id_supervisor
-  left join usuario as u on u.id_usuario=ncquiebre.id_usuario
-where month(ncquiebre.fecha_validacion)='$periodo' and year(ncquiebre.fecha_validacion)='$ano' 
-and ncquiebre.validacion='$validacionf' and ncquiebre.zonal='$tienda'
-ORDER BY ncquiebre.fecha_ingreso DESC";
-    } else {
+        SELECT 
+        ncquiebre.id_quiebre,
+        ncquiebre.fecha_ingreso, 
+        ncquiebre.ruc,
+        ncquiebre.razon_social,
+        ncquiebre.modalidad,
+        ncquiebre.cargo_fijo, 
+        ncquiebre.estado,
+        ncquiebre.validacion,
+        s.nombre,
+        u.personal
+        from quiebre_movil as ncquiebre 
+        left join supervisor as s on ncquiebre.id_supervisor=s.id_supervisor
+        left join usuario as u on u.id_usuario=ncquiebre.id_usuario
+        where month(ncquiebre.fecha_validacion)='$periodo' 
+        and year(ncquiebre.fecha_validacion)='$ano' 
+        and ncquiebre.validacion='ATENDIDO'  and ncquiebre.zonal='$tienda'
 
-        if ($validacionf === 'DEVUELTO') {
+        UNION
 
-            $sqlquiebreMovil = " SELECT ncquiebre.id_quiebre,ncquiebre.fecha_ingreso, ncquiebre.ruc,ncquiebre.razon_social,ncquiebre.modalidad,
- ncquiebre.cargo_fijo, ncquiebre.estado,ncquiebre.validacion,s.nombre,u.personal
- from quiebre_movil as ncquiebre left join supervisor as s on ncquiebre.id_supervisor=s.id_supervisor
-  left join usuario as u on u.id_usuario=ncquiebre.id_usuario
-where month(ncquiebre.fecha_ingreso)='$periodo' and year(ncquiebre.fecha_ingreso)='$ano' 
-and ncquiebre.validacion='$validacionf' and ncquiebre.zonal='$tienda'
-ORDER BY ncquiebre.fecha_ingreso DESC";
-        } else {
+        SELECT 
+        ncquiebre.id_quiebre,
+        ncquiebre.fecha_ingreso, 
+        ncquiebre.ruc,
+        ncquiebre.razon_social,
+        ncquiebre.modalidad,
+        ncquiebre.cargo_fijo, 
+        ncquiebre.estado,
+        ncquiebre.validacion,
+        s.nombre,
+        u.personal
+        from quiebre_movil as ncquiebre 
+        left join supervisor as s on ncquiebre.id_supervisor=s.id_supervisor
+        left join usuario as u on u.id_usuario=ncquiebre.id_usuario
+        where month(ncquiebre.fecha_ingreso)='$periodo' 
+        and year(ncquiebre.fecha_ingreso)='$ano' 
+        and ncquiebre.validacion='DEVUELTO' and ncquiebre.zonal='$tienda'
 
-            $sqlquiebreMovil = " SELECT ncquiebre.id_quiebre,ncquiebre.fecha_ingreso, ncquiebre.ruc,ncquiebre.razon_social,ncquiebre.modalidad,
- ncquiebre.cargo_fijo, ncquiebre.estado,ncquiebre.validacion,s.nombre,u.personal
- from quiebre_movil as ncquiebre left join supervisor as s on ncquiebre.id_supervisor=s.id_supervisor
-  left join usuario as u on u.id_usuario=ncquiebre.id_usuario
-where year(ncquiebre.fecha_ingreso)<='$ano' 
-and ncquiebre.validacion='CURSO'  and ncquiebre.zonal='$tienda'
+        UNION
 
-UNION
-
-SELECT ncquiebre.id_quiebre,ncquiebre.fecha_ingreso, ncquiebre.ruc,ncquiebre.razon_social,ncquiebre.modalidad,
-ncquiebre.cargo_fijo, ncquiebre.estado,ncquiebre.validacion,s.nombre,u.personal
-from quiebre_movil as ncquiebre left join supervisor as s on ncquiebre.id_supervisor=s.id_supervisor
- left join usuario as u on u.id_usuario=ncquiebre.id_usuario
-where month(ncquiebre.fecha_validacion)='$periodo' and year(ncquiebre.fecha_validacion)='$ano' 
-and ncquiebre.validacion='ATENDIDO'  and ncquiebre.zonal='$tienda'
-
-UNION
-
-SELECT ncquiebre.id_quiebre,ncquiebre.fecha_ingreso, ncquiebre.ruc,ncquiebre.razon_social,ncquiebre.modalidad,
-ncquiebre.cargo_fijo, ncquiebre.estado,ncquiebre.validacion,s.nombre,u.personal
-from quiebre_movil as ncquiebre left join supervisor as s on ncquiebre.id_supervisor=s.id_supervisor
- left join usuario as u on u.id_usuario=ncquiebre.id_usuario
-where month(ncquiebre.fecha_ingreso)='$periodo' and year(ncquiebre.fecha_ingreso)='$ano' 
-and ncquiebre.validacion='DEVUELTO' and ncquiebre.zonal='$tienda'
-
+        SELECT 
+        ncquiebre.id_quiebre,
+        ncquiebre.fecha_ingreso, 
+        ncquiebre.ruc,
+        ncquiebre.razon_social,
+        ncquiebre.modalidad,
+        ncquiebre.cargo_fijo, 
+        ncquiebre.estado,
+        ncquiebre.validacion,
+        s.nombre,
+        u.personal
+        from quiebre_movil as ncquiebre 
+        left join supervisor as s on ncquiebre.id_supervisor=s.id_supervisor
+        left join usuario as u on u.id_usuario=ncquiebre.id_usuario
+        where month(ncquiebre.fecha_validacion)='$periodo' 
+        and year(ncquiebre.fecha_validacion)='$ano' 
+        and ncquiebre.validacion='PENDIENTE'  and ncquiebre.zonal='$tienda'
 ";
-        }
-    }
 }
 
 

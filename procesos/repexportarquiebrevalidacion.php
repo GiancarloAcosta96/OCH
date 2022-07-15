@@ -16,7 +16,7 @@ $tienda = $_POST["tiendaf"];
 
 
 if ($validacionf === 'PENDIENTE') {
-    $sqlEXCEL = " SELECT usu.personal, sup.nombre, ncquiebre.fecha_ingreso,  ncquiebre.fecha_actualizacion,ncquiebre.ruc, ncquiebre.razon_social, ncquiebre.modalidad,ncquiebre.tipo, ncquiebre.q_lineas, ncquiebre.cargo_fijo, ncquiebre.contacto, ncquiebre.telefono1, ncquiebre.correo, ncquiebre.dni, ncquiebre.comentario_ejecutivo, ncquiebre.estado, ncquiebre.validacion,ncquiebre.fecha_validacion, ncquiebre.oportunidad FROM quiebre_movil as ncquiebre inner join usuario as usu on usu.id_usuario= ncquiebre.id_usuario left JOIN supervisor as sup on sup.id_supervisor= ncquiebre.id_supervisor
+    $sqlEXCEL = " SELECT usu.personal, sup.nombre, ncquiebre.fecha_ingreso,  ncquiebre.fecha_actualizacion,ncquiebre.ruc, ncquiebre.razon_social, ncquiebre.modalidad,ncquiebre.tipo, ncquiebre.q_lineas, ncquiebre.cargo_fijo, ncquiebre.contacto, ncquiebre.telefono1, ncquiebre.correo, ncquiebre.dni, ncquiebre.comentario_ejecutivo, ncquiebre.estado, ncquiebre.validacion,ncquiebre.fecha_validacion, ncquiebre.oportunidad, ncquiebre.casosf FROM quiebre_movil as ncquiebre inner join usuario as usu on usu.id_usuario= ncquiebre.id_usuario left JOIN supervisor as sup on sup.id_supervisor= ncquiebre.id_supervisor
 where  year(ncquiebre.fecha_ingreso)<='$ano' 
 and ncquiebre.validacion='$validacionf' and ncquiebre.zonal='$tienda'
 ORDER BY ncquiebre.fecha_ingreso DESC";
@@ -24,7 +24,7 @@ ORDER BY ncquiebre.fecha_ingreso DESC";
 
     if ($validacionf === 'PROCEDE') {
 
-        $sqlEXCEL = " SELECT usu.personal, sup.nombre, ncquiebre.fecha_ingreso,  ncquiebre.fecha_actualizacion,ncquiebre.ruc, ncquiebre.razon_social, ncquiebre.modalidad,ncquiebre.tipo, ncquiebre.q_lineas, ncquiebre.cargo_fijo, ncquiebre.contacto, ncquiebre.telefono1, ncquiebre.correo, ncquiebre.dni, ncquiebre.comentario_ejecutivo, ncquiebre.estado, ncquiebre.validacion,ncquiebre.fecha_validacion, ncquiebre.oportunidadFROM quiebre_movil as ncquiebre inner join usuario as usu on usu.id_usuario= ncquiebre.id_usuario left JOIN supervisor as sup on sup.id_supervisor= ncquiebre.id_supervisor 
+        $sqlEXCEL = " SELECT usu.personal, sup.nombre, ncquiebre.fecha_ingreso,  ncquiebre.fecha_actualizacion,ncquiebre.ruc, ncquiebre.razon_social, ncquiebre.modalidad,ncquiebre.tipo, ncquiebre.q_lineas, ncquiebre.cargo_fijo, ncquiebre.contacto, ncquiebre.telefono1, ncquiebre.correo, ncquiebre.dni, ncquiebre.comentario_ejecutivo, ncquiebre.estado, ncquiebre.validacion,ncquiebre.fecha_validacion, ncquiebre.oportunidad, ncquiebre.casosf FROM quiebre_movil as ncquiebre inner join usuario as usu on usu.id_usuario= ncquiebre.id_usuario left JOIN supervisor as sup on sup.id_supervisor= ncquiebre.id_supervisor 
 where month(ncquiebre.fecha_validacion)='$periodo' and year(ncquiebre.fecha_validacion)='$ano' 
 and ncquiebre.validacion='$validacionf' and ncquiebre.zonal='$tienda'
 ORDER BY ncquiebre.fecha_ingreso DESC";
@@ -32,25 +32,25 @@ ORDER BY ncquiebre.fecha_ingreso DESC";
 
         if ($validacionf === 'RECHAZADO') {
 
-            $sqlEXCEL = " SELECT usu.personal, sup.nombre, ncquiebre.fecha_ingreso,  ncquiebre.fecha_actualizacion,ncquiebre.ruc, ncquiebre.razon_social, ncquiebre.modalidad,ncquiebre.tipo, ncquiebre.q_lineas, ncquiebre.cargo_fijo, ncquiebre.contacto, ncquiebre.telefono1, ncquiebre.correo, ncquiebre.dni, ncquiebre.comentario_ejecutivo, ncquiebre.estado, ncquiebre.validacion,ncquiebre.fecha_validacion, ncquiebre.oportunidadFROM quiebre_movil as ncquiebre inner join usuario as usu on usu.id_usuario= ncquiebre.id_usuario left JOIN supervisor as sup on sup.id_supervisor= ncquiebre.id_supervisor 
+            $sqlEXCEL = " SELECT usu.personal, sup.nombre, ncquiebre.fecha_ingreso,  ncquiebre.fecha_actualizacion,ncquiebre.ruc, ncquiebre.razon_social, ncquiebre.modalidad,ncquiebre.tipo, ncquiebre.q_lineas, ncquiebre.cargo_fijo, ncquiebre.contacto, ncquiebre.telefono1, ncquiebre.correo, ncquiebre.dni, ncquiebre.comentario_ejecutivo, ncquiebre.estado, ncquiebre.validacion,ncquiebre.fecha_validacion, ncquiebre.oportunidad, ncquiebre.casosf FROM quiebre_movil as ncquiebre inner join usuario as usu on usu.id_usuario= ncquiebre.id_usuario left JOIN supervisor as sup on sup.id_supervisor= ncquiebre.id_supervisor 
 where month(ncquiebre.fecha_ingreso)='$periodo' and year(ncquiebre.fecha_ingreso)='$ano' 
 and ncquiebre.validacion='$validacionf'  and ncquiebre.zonal='$tienda'
 ORDER BY ncquiebre.fecha_ingreso DESC";
         } else {
 
-            $sqlEXCEL = " SELECT usu.personal, sup.nombre, ncquiebre.fecha_ingreso,  ncquiebre.fecha_actualizacion,ncquiebre.ruc, ncquiebre.razon_social, ncquiebre.modalidad,ncquiebre.tipo, ncquiebre.q_lineas, ncquiebre.cargo_fijo, ncquiebre.contacto, ncquiebre.telefono1, ncquiebre.correo, ncquiebre.dni, ncquiebre.comentario_ejecutivo, ncquiebre.estado, ncquiebre.validacion,ncquiebre.fecha_validacion, ncquiebre.oportunidad FROM quiebre_movil as ncquiebre inner join usuario as usu on usu.id_usuario= ncquiebre.id_usuario left JOIN supervisor as sup on sup.id_supervisor= ncquiebre.id_supervisor 
+            $sqlEXCEL = " SELECT usu.personal, sup.nombre, ncquiebre.fecha_ingreso,  ncquiebre.fecha_actualizacion,ncquiebre.ruc, ncquiebre.razon_social, ncquiebre.modalidad,ncquiebre.tipo, ncquiebre.q_lineas, ncquiebre.cargo_fijo, ncquiebre.contacto, ncquiebre.telefono1, ncquiebre.correo, ncquiebre.dni, ncquiebre.comentario_ejecutivo, ncquiebre.estado, ncquiebre.validacion,ncquiebre.fecha_validacion, ncquiebre.oportunidad, ncquiebre.casosf FROM quiebre_movil as ncquiebre inner join usuario as usu on usu.id_usuario= ncquiebre.id_usuario left JOIN supervisor as sup on sup.id_supervisor= ncquiebre.id_supervisor 
 where  year(ncquiebre.fecha_ingreso)<='$ano' 
 and ncquiebre.validacion='PENDIENTE'  and ncquiebre.zonal='$tienda'
 
 UNION
 
-SELECT usu.personal, sup.nombre, ncquiebre.fecha_ingreso,  ncquiebre.fecha_actualizacion,ncquiebre.ruc, ncquiebre.razon_social, ncquiebre.modalidad,ncquiebre.tipo, ncquiebre.q_lineas, ncquiebre.cargo_fijo, ncquiebre.contacto, ncquiebre.telefono1, ncquiebre.correo, ncquiebre.dni, ncquiebre.comentario_ejecutivo, ncquiebre.estado, ncquiebre.validacion,ncquiebre.fecha_validacion, ncquiebre.oportunidad FROM quiebre_movil as ncquiebre inner join usuario as usu on usu.id_usuario= ncquiebre.id_usuario left JOIN supervisor as sup on sup.id_supervisor= ncquiebre.id_supervisor 
+SELECT usu.personal, sup.nombre, ncquiebre.fecha_ingreso,  ncquiebre.fecha_actualizacion,ncquiebre.ruc, ncquiebre.razon_social, ncquiebre.modalidad,ncquiebre.tipo, ncquiebre.q_lineas, ncquiebre.cargo_fijo, ncquiebre.contacto, ncquiebre.telefono1, ncquiebre.correo, ncquiebre.dni, ncquiebre.comentario_ejecutivo, ncquiebre.estado, ncquiebre.validacion,ncquiebre.fecha_validacion, ncquiebre.oportunidad, ncquiebre.casosf FROM quiebre_movil as ncquiebre inner join usuario as usu on usu.id_usuario= ncquiebre.id_usuario left JOIN supervisor as sup on sup.id_supervisor= ncquiebre.id_supervisor 
 where month(ncquiebre.fecha_validacion)='$periodo' and year(ncquiebre.fecha_validacion)='$ano' 
 and ncquiebre.validacion='PROCEDE' and ncquiebre.zonal='$tienda'
 
 UNION
 
-SELECT usu.personal, sup.nombre, ncquiebre.fecha_ingreso,  ncquiebre.fecha_actualizacion,ncquiebre.ruc, ncquiebre.razon_social, ncquiebre.modalidad,ncquiebre.tipo, ncquiebre.q_lineas, ncquiebre.cargo_fijo, ncquiebre.contacto, ncquiebre.telefono1, ncquiebre.correo, ncquiebre.dni, ncquiebre.comentario_ejecutivo, ncquiebre.estado, ncquiebre.validacion,ncquiebre.fecha_validacion, ncquiebre.oportunidad FROM quiebre_movil as ncquiebre inner join usuario as usu on usu.id_usuario= ncquiebre.id_usuario left JOIN supervisor as sup on sup.id_supervisor= ncquiebre.id_supervisor 
+SELECT usu.personal, sup.nombre, ncquiebre.fecha_ingreso,  ncquiebre.fecha_actualizacion,ncquiebre.ruc, ncquiebre.razon_social, ncquiebre.modalidad,ncquiebre.tipo, ncquiebre.q_lineas, ncquiebre.cargo_fijo, ncquiebre.contacto, ncquiebre.telefono1, ncquiebre.correo, ncquiebre.dni, ncquiebre.comentario_ejecutivo, ncquiebre.estado, ncquiebre.validacion,ncquiebre.fecha_validacion, ncquiebre.oportunidad, ncquiebre.casosf FROM quiebre_movil as ncquiebre inner join usuario as usu on usu.id_usuario= ncquiebre.id_usuario left JOIN supervisor as sup on sup.id_supervisor= ncquiebre.id_supervisor 
 where month(ncquiebre.fecha_ingreso)='$periodo' and year(ncquiebre.fecha_ingreso)='$ano' 
 and ncquiebre.validacion='RECHAZADO' and ncquiebre.zonal='$tienda'
 
@@ -88,6 +88,7 @@ $resultEXCEL = mysqli_query($conexion, $sqlEXCEL);
             <th>VALIDACION</th>
             <th>FECHA VALIDACION</th>
             <th>OPORTUNIDAD</th>
+            <th>CASO SF</th>
         </tr>
     </thead>
 
@@ -118,6 +119,7 @@ $resultEXCEL = mysqli_query($conexion, $sqlEXCEL);
                 <td><?php echo utf8_decode($mostrar[17]) ?></td>
 
                 <td><?php echo utf8_decode($mostrar[18]) ?></td>
+                <td><?php echo utf8_decode($mostrar[19]) ?></td>
 
 
 

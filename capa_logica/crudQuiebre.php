@@ -206,8 +206,7 @@ class crudQuiebre
                         ncquiebre.comentario_ejecutivo,
                         ncquiebre.estado,
                         ncquiebre.casosf,
-                        ncquiebre.comentario_validador
-                        
+                        ncquiebre.comentario_validador  
 
                         from quiebre_movil as ncquiebre inner join usuario as usu on ncquiebre.id_usuario=usu.id_usuario
                         left join tienda as t on t.id_tienda=ncquiebre.zonal
