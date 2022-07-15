@@ -20,14 +20,14 @@ if ($tienda === 'TODO') {
         $ncestado === 'INSERTADO' || $ncestado === 'EMITIDO' || $ncestado === 'OBSERVADO' ||
         $ncestado === 'INSTALADO' || $ncestado === 'PENDIENTE' || $ncestado === 'BOLSA'
     ) {
-        $sqlEXCEL = " SELECT usu.personal, sup.nombre, nc.fecha_ingreso, nc.fecha_liquidacion, nc.fecha_actualizacion,nc.ruc, nc.razon_social, nc.modalidad,nc.tipo, nc.subtipo, nc.descripcion, nc.q_lineas, nc.cargo_fijo, nc.direccion, nc.coordenadas, nc.contacto, nc.telefono1, nc.telefono2, nc.comentario, nc.estado, nc.validacion,nc.fecha_validacion, nc.comentario_validador,   nc.peticion, nc.nasignado,  nc.contrata, nc.ejecutivo_telefonica, t.nombre,nc.comentario_back,nc.caso_sf,car.nombre,car.propietario,car.DNI,nc.nodo FROM nc_fija as nc inner join usuario as usu on usu.id_usuario= nc.id_usuario left JOIN supervisor as sup on sup.id_supervisor= nc.id_supervisor LEFT JOIN tienda as t on t.id_tienda=nc.zonal_telefonica LEFT JOIN cartera as car on car.id_cartera=nc.id_cartera
+        $sqlEXCEL = " SELECT usu.personal, sup.nombre, nc.fecha_ingreso, nc.fecha_liquidacion, nc.fecha_actualizacion,nc.ruc, nc.razon_social, nc.modalidad,nc.tipo, nc.subtipo, nc.descripcion, nc.q_lineas, nc.cargo_fijo, nc.direccion, nc.coordenadas, nc.contacto, nc.telefono1, nc.telefono2, nc.comentario, nc.estado, nc.validacion,nc.fecha_validacion, nc.comentario_validador,   nc.peticion, nc.nasignado,  nc.contrata, nc.ejecutivo_telefonica, t.nombre,nc.comentario_back,nc.caso_sf,car.nombre,car.propietario,car.DNI,nc.nodo, nc.ncfinanciera FROM nc_fija as nc inner join usuario as usu on usu.id_usuario= nc.id_usuario left JOIN supervisor as sup on sup.id_supervisor= nc.id_supervisor LEFT JOIN tienda as t on t.id_tienda=nc.zonal_telefonica LEFT JOIN cartera as car on car.id_cartera=nc.id_cartera
         where  year(nc.fecha_validacion)<='$ano' and nc.estado='$ncestado' and nc.validacion='PROCEDE'  
             ORDER BY nc.fecha_ingreso DESC";
     } else {
 
         if ($ncestado === 'LIQUIDADO') {
 
-            $sqlEXCEL = " SELECT usu.personal, sup.nombre, nc.fecha_ingreso, nc.fecha_liquidacion, nc.fecha_actualizacion,nc.ruc, nc.razon_social, nc.modalidad,nc.tipo, nc.subtipo, nc.descripcion, nc.q_lineas, nc.cargo_fijo, nc.direccion, nc.coordenadas, nc.contacto, nc.telefono1, nc.telefono2, nc.comentario, nc.estado, nc.validacion,nc.fecha_validacion, nc.comentario_validador,   nc.peticion, nc.nasignado,  nc.contrata, nc.ejecutivo_telefonica,t.nombre, nc.comentario_back,nc.caso_sf,car.nombre,car.propietario,car.DNI,nc.nodo  FROM nc_fija as nc inner join usuario as usu on usu.id_usuario= nc.id_usuario left JOIN supervisor as sup on sup.id_supervisor= nc.id_supervisor LEFT JOIN tienda as t on t.id_tienda=nc.zonal_telefonica LEFT JOIN cartera as car on car.id_cartera=nc.id_cartera
+            $sqlEXCEL = " SELECT usu.personal, sup.nombre, nc.fecha_ingreso, nc.fecha_liquidacion, nc.fecha_actualizacion,nc.ruc, nc.razon_social, nc.modalidad,nc.tipo, nc.subtipo, nc.descripcion, nc.q_lineas, nc.cargo_fijo, nc.direccion, nc.coordenadas, nc.contacto, nc.telefono1, nc.telefono2, nc.comentario, nc.estado, nc.validacion,nc.fecha_validacion, nc.comentario_validador,   nc.peticion, nc.nasignado,  nc.contrata, nc.ejecutivo_telefonica,t.nombre, nc.comentario_back,nc.caso_sf,car.nombre,car.propietario,car.DNI,nc.nodo, nc.ncfinanciera  FROM nc_fija as nc inner join usuario as usu on usu.id_usuario= nc.id_usuario left JOIN supervisor as sup on sup.id_supervisor= nc.id_supervisor LEFT JOIN tienda as t on t.id_tienda=nc.zonal_telefonica LEFT JOIN cartera as car on car.id_cartera=nc.id_cartera
 where month(nc.fecha_liquidacion)='$periodo' and year(nc.fecha_liquidacion)='$ano' and nc.estado=
 '$ncestado' and nc.validacion='PROCEDE'  
 ORDER BY nc.fecha_ingreso DESC";
@@ -35,13 +35,13 @@ ORDER BY nc.fecha_ingreso DESC";
 
             if ($ncestado === 'CAIDO') {
 
-                $sqlEXCEL = " SELECT usu.personal, sup.nombre, nc.fecha_ingreso, nc.fecha_liquidacion, nc.fecha_actualizacion,nc.ruc, nc.razon_social, nc.modalidad,nc.tipo, nc.subtipo, nc.descripcion, nc.q_lineas, nc.cargo_fijo, nc.direccion, nc.coordenadas, nc.contacto, nc.telefono1, nc.telefono2, nc.comentario, nc.estado, nc.validacion,nc.fecha_validacion, nc.comentario_validador,   nc.peticion, nc.nasignado,  nc.contrata, nc.ejecutivo_telefonica,t.nombre,nc.comentario_back,nc.caso_sf,car.nombre,car.propietario,car.DNI,nc.nodo  FROM nc_fija as nc inner join usuario as usu on usu.id_usuario= nc.id_usuario left JOIN supervisor as sup  on sup.id_supervisor= nc.id_supervisor LEFT JOIN tienda as t on t.id_tienda=nc.zonal_telefonica LEFT JOIN cartera as car on car.id_cartera=nc.id_cartera
+                $sqlEXCEL = " SELECT usu.personal, sup.nombre, nc.fecha_ingreso, nc.fecha_liquidacion, nc.fecha_actualizacion,nc.ruc, nc.razon_social, nc.modalidad,nc.tipo, nc.subtipo, nc.descripcion, nc.q_lineas, nc.cargo_fijo, nc.direccion, nc.coordenadas, nc.contacto, nc.telefono1, nc.telefono2, nc.comentario, nc.estado, nc.validacion,nc.fecha_validacion, nc.comentario_validador,   nc.peticion, nc.nasignado,  nc.contrata, nc.ejecutivo_telefonica,t.nombre,nc.comentario_back,nc.caso_sf,car.nombre,car.propietario,car.DNI,nc.nodo, nc.ncfinanciera  FROM nc_fija as nc inner join usuario as usu on usu.id_usuario= nc.id_usuario left JOIN supervisor as sup  on sup.id_supervisor= nc.id_supervisor LEFT JOIN tienda as t on t.id_tienda=nc.zonal_telefonica LEFT JOIN cartera as car on car.id_cartera=nc.id_cartera
 where month(nc.fecha_validacion)='$periodo' and year(nc.fecha_validacion)='$ano' and nc.estado=
 '$ncestado' and nc.validacion='PROCEDE'  
 ORDER BY nc.fecha_ingreso DESC";
             } else {
 
-                $sqlEXCEL = " SELECT usu.personal, sup.nombre, nc.fecha_ingreso, nc.fecha_liquidacion, nc.fecha_actualizacion,nc.ruc, nc.razon_social, nc.modalidad,nc.tipo, nc.subtipo, nc.descripcion, nc.q_lineas, nc.cargo_fijo, nc.direccion, nc.coordenadas, nc.contacto, nc.telefono1, nc.telefono2, nc.comentario, nc.estado, nc.validacion,nc.fecha_validacion, nc.comentario_validador,   nc.peticion, nc.nasignado,  nc.contrata, nc.ejecutivo_telefonica,t.nombre, nc.comentario_back,nc.caso_sf,car.nombre,car.propietario,car.DNI,nc.nodo  FROM nc_fija as nc inner join usuario as usu on usu.id_usuario= nc.id_usuario left JOIN supervisor as sup 
+                $sqlEXCEL = " SELECT usu.personal, sup.nombre, nc.fecha_ingreso, nc.fecha_liquidacion, nc.fecha_actualizacion,nc.ruc, nc.razon_social, nc.modalidad,nc.tipo, nc.subtipo, nc.descripcion, nc.q_lineas, nc.cargo_fijo, nc.direccion, nc.coordenadas, nc.contacto, nc.telefono1, nc.telefono2, nc.comentario, nc.estado, nc.validacion,nc.fecha_validacion, nc.comentario_validador,   nc.peticion, nc.nasignado,  nc.contrata, nc.ejecutivo_telefonica,t.nombre, nc.comentario_back,nc.caso_sf,car.nombre,car.propietario,car.DNI,nc.nodo, nc.ncfinanciera  FROM nc_fija as nc inner join usuario as usu on usu.id_usuario= nc.id_usuario left JOIN supervisor as sup 
         on sup.id_supervisor= nc.id_supervisor LEFT JOIN tienda as t on t.id_tienda=nc.zonal_telefonica LEFT JOIN cartera as car on car.id_cartera=nc.id_cartera
         where  year(nc.fecha_validacion)<='$ano'  and 
 nc.estado in ('INSERTADO','EMITIDO','OBSERVADO','INSTALADO','PENDIENTE','BOLSA') and nc.validacion='PROCEDE'  
@@ -49,7 +49,7 @@ nc.estado in ('INSERTADO','EMITIDO','OBSERVADO','INSTALADO','PENDIENTE','BOLSA')
 
 UNION 
 
-SELECT usu.personal, sup.nombre, nc.fecha_ingreso, nc.fecha_liquidacion, nc.fecha_actualizacion,nc.ruc, nc.razon_social, nc.modalidad,nc.tipo, nc.subtipo, nc.descripcion, nc.q_lineas, nc.cargo_fijo, nc.direccion, nc.coordenadas, nc.contacto, nc.telefono1, nc.telefono2, nc.comentario, nc.estado, nc.validacion,nc.fecha_validacion, nc.comentario_validador,   nc.peticion, nc.nasignado,  nc.contrata, nc.ejecutivo_telefonica,t.nombre, nc.comentario_back,nc.caso_sf,car.nombre,car.propietario,car.DNI,nc.nodo  FROM nc_fija as nc inner join usuario as usu on usu.id_usuario= nc.id_usuario left JOIN supervisor as sup 
+SELECT usu.personal, sup.nombre, nc.fecha_ingreso, nc.fecha_liquidacion, nc.fecha_actualizacion,nc.ruc, nc.razon_social, nc.modalidad,nc.tipo, nc.subtipo, nc.descripcion, nc.q_lineas, nc.cargo_fijo, nc.direccion, nc.coordenadas, nc.contacto, nc.telefono1, nc.telefono2, nc.comentario, nc.estado, nc.validacion,nc.fecha_validacion, nc.comentario_validador,   nc.peticion, nc.nasignado,  nc.contrata, nc.ejecutivo_telefonica,t.nombre, nc.comentario_back,nc.caso_sf,car.nombre,car.propietario,car.DNI,nc.nodo, nc.ncfinanciera  FROM nc_fija as nc inner join usuario as usu on usu.id_usuario= nc.id_usuario left JOIN supervisor as sup 
         on sup.id_supervisor= nc.id_supervisor LEFT JOIN tienda as t on t.id_tienda=nc.zonal_telefonica LEFT JOIN cartera as car on car.id_cartera=nc.id_cartera
 where month(nc.fecha_liquidacion)='$periodo' and year(nc.fecha_liquidacion)='$ano' and nc.estado=
 'LIQUIDADO' and nc.validacion='PROCEDE' 
@@ -57,7 +57,7 @@ where month(nc.fecha_liquidacion)='$periodo' and year(nc.fecha_liquidacion)='$an
 
 UNION 
 
-SELECT usu.personal, sup.nombre, nc.fecha_ingreso, nc.fecha_liquidacion, nc.fecha_actualizacion,nc.ruc, nc.razon_social, nc.modalidad,nc.tipo, nc.subtipo, nc.descripcion, nc.q_lineas, nc.cargo_fijo, nc.direccion, nc.coordenadas, nc.contacto, nc.telefono1, nc.telefono2, nc.comentario, nc.estado, nc.validacion,nc.fecha_validacion, nc.comentario_validador,   nc.peticion, nc.nasignado,  nc.contrata, nc.ejecutivo_telefonica,t.nombre, nc.comentario_back,nc.caso_sf,car.nombre,car.propietario,car.DNI,nc.nodo  FROM nc_fija as nc inner join usuario as usu on usu.id_usuario= nc.id_usuario left JOIN supervisor as sup 
+SELECT usu.personal, sup.nombre, nc.fecha_ingreso, nc.fecha_liquidacion, nc.fecha_actualizacion,nc.ruc, nc.razon_social, nc.modalidad,nc.tipo, nc.subtipo, nc.descripcion, nc.q_lineas, nc.cargo_fijo, nc.direccion, nc.coordenadas, nc.contacto, nc.telefono1, nc.telefono2, nc.comentario, nc.estado, nc.validacion,nc.fecha_validacion, nc.comentario_validador,   nc.peticion, nc.nasignado,  nc.contrata, nc.ejecutivo_telefonica,t.nombre, nc.comentario_back,nc.caso_sf,car.nombre,car.propietario,car.DNI,nc.nodo, nc.ncfinanciera  FROM nc_fija as nc inner join usuario as usu on usu.id_usuario= nc.id_usuario left JOIN supervisor as sup 
         on sup.id_supervisor= nc.id_supervisor LEFT JOIN tienda as t on t.id_tienda=nc.zonal_telefonica LEFT JOIN cartera as car on car.id_cartera=nc.id_cartera
 where month(nc.fecha_validacion)='$periodo' and year(nc.fecha_validacion)='$ano' and nc.estado=
 'CAIDO' and nc.validacion='PROCEDE' 
@@ -73,14 +73,14 @@ where month(nc.fecha_validacion)='$periodo' and year(nc.fecha_validacion)='$ano'
         $ncestado === 'INSERTADO' || $ncestado === 'EMITIDO' || $ncestado === 'OBSERVADO' ||
         $ncestado === 'INSTALADO' || $ncestado === 'PENDIENTE' || $ncestado === 'BOLSA'
     ) {
-        $sqlEXCEL = " SELECT usu.personal, sup.nombre, nc.fecha_ingreso, nc.fecha_liquidacion, nc.fecha_actualizacion,nc.ruc, nc.razon_social, nc.modalidad,nc.tipo, nc.subtipo, nc.descripcion, nc.q_lineas, nc.cargo_fijo, nc.direccion, nc.coordenadas, nc.contacto, nc.telefono1, nc.telefono2, nc.comentario, nc.estado, nc.validacion,nc.fecha_validacion, nc.comentario_validador,   nc.peticion, nc.nasignado,  nc.contrata, nc.ejecutivo_telefonica, t.nombre,nc.comentario_back,nc.caso_sf,car.nombre,car.propietario,car.DNI,nc.nodo  FROM nc_fija as nc inner join usuario as usu on usu.id_usuario= nc.id_usuario left JOIN supervisor as sup on sup.id_supervisor= nc.id_supervisor LEFT JOIN tienda as t on t.id_tienda=nc.zonal_telefonica LEFT JOIN cartera as car on car.id_cartera=nc.id_cartera
+        $sqlEXCEL = " SELECT usu.personal, sup.nombre, nc.fecha_ingreso, nc.fecha_liquidacion, nc.fecha_actualizacion,nc.ruc, nc.razon_social, nc.modalidad,nc.tipo, nc.subtipo, nc.descripcion, nc.q_lineas, nc.cargo_fijo, nc.direccion, nc.coordenadas, nc.contacto, nc.telefono1, nc.telefono2, nc.comentario, nc.estado, nc.validacion,nc.fecha_validacion, nc.comentario_validador,   nc.peticion, nc.nasignado,  nc.contrata, nc.ejecutivo_telefonica, t.nombre,nc.comentario_back,nc.caso_sf,car.nombre,car.propietario,car.DNI,nc.nodo, nc.ncfinanciera  FROM nc_fija as nc inner join usuario as usu on usu.id_usuario= nc.id_usuario left JOIN supervisor as sup on sup.id_supervisor= nc.id_supervisor LEFT JOIN tienda as t on t.id_tienda=nc.zonal_telefonica LEFT JOIN cartera as car on car.id_cartera=nc.id_cartera
         where  year(nc.fecha_validacion)<='$ano' and nc.estado='$ncestado' and nc.validacion='PROCEDE'  and nc.zonal='$tienda'
             ORDER BY nc.fecha_ingreso DESC";
     } else {
 
         if ($ncestado === 'LIQUIDADO') {
 
-            $sqlEXCEL = " SELECT usu.personal, sup.nombre, nc.fecha_ingreso, nc.fecha_liquidacion, nc.fecha_actualizacion,nc.ruc, nc.razon_social, nc.modalidad,nc.tipo, nc.subtipo, nc.descripcion, nc.q_lineas, nc.cargo_fijo, nc.direccion, nc.coordenadas, nc.contacto, nc.telefono1, nc.telefono2, nc.comentario, nc.estado, nc.validacion,nc.fecha_validacion, nc.comentario_validador,   nc.peticion, nc.nasignado,  nc.contrata, nc.ejecutivo_telefonica,t.nombre, nc.comentario_back,nc.caso_sf,car.nombre,car.propietario,car.DNI,nc.nodo  FROM nc_fija as nc inner join usuario as usu on usu.id_usuario= nc.id_usuario left JOIN supervisor as sup on sup.id_supervisor= nc.id_supervisor LEFT JOIN tienda as t on t.id_tienda=nc.zonal_telefonica LEFT JOIN cartera as car on car.id_cartera=nc.id_cartera
+            $sqlEXCEL = " SELECT usu.personal, sup.nombre, nc.fecha_ingreso, nc.fecha_liquidacion, nc.fecha_actualizacion,nc.ruc, nc.razon_social, nc.modalidad,nc.tipo, nc.subtipo, nc.descripcion, nc.q_lineas, nc.cargo_fijo, nc.direccion, nc.coordenadas, nc.contacto, nc.telefono1, nc.telefono2, nc.comentario, nc.estado, nc.validacion,nc.fecha_validacion, nc.comentario_validador,   nc.peticion, nc.nasignado,  nc.contrata, nc.ejecutivo_telefonica,t.nombre, nc.comentario_back,nc.caso_sf,car.nombre,car.propietario,car.DNI,nc.nodo, nc.ncfinanciera  FROM nc_fija as nc inner join usuario as usu on usu.id_usuario= nc.id_usuario left JOIN supervisor as sup on sup.id_supervisor= nc.id_supervisor LEFT JOIN tienda as t on t.id_tienda=nc.zonal_telefonica LEFT JOIN cartera as car on car.id_cartera=nc.id_cartera
 where month(nc.fecha_liquidacion)='$periodo' and year(nc.fecha_liquidacion)='$ano' and nc.estado=
 '$ncestado' and nc.validacion='PROCEDE'  and nc.zonal='$tienda'
 ORDER BY nc.fecha_ingreso DESC";
@@ -88,13 +88,13 @@ ORDER BY nc.fecha_ingreso DESC";
 
             if ($ncestado === 'CAIDO') {
 
-                $sqlEXCEL = " SELECT usu.personal, sup.nombre, nc.fecha_ingreso, nc.fecha_liquidacion, nc.fecha_actualizacion,nc.ruc, nc.razon_social, nc.modalidad,nc.tipo, nc.subtipo, nc.descripcion, nc.q_lineas, nc.cargo_fijo, nc.direccion, nc.coordenadas, nc.contacto, nc.telefono1, nc.telefono2, nc.comentario, nc.estado, nc.validacion,nc.fecha_validacion, nc.comentario_validador,   nc.peticion, nc.nasignado,  nc.contrata, nc.ejecutivo_telefonica,t.nombre,nc.comentario_back,nc.caso_sf,car.nombre,car.propietario,car.DNI,nc.nodo  FROM nc_fija as nc inner join usuario as usu on usu.id_usuario= nc.id_usuario left JOIN supervisor as sup  on sup.id_supervisor= nc.id_supervisor LEFT JOIN tienda as t on t.id_tienda=nc.zonal_telefonica LEFT JOIN cartera as car on car.id_cartera=nc.id_cartera
+                $sqlEXCEL = " SELECT usu.personal, sup.nombre, nc.fecha_ingreso, nc.fecha_liquidacion, nc.fecha_actualizacion,nc.ruc, nc.razon_social, nc.modalidad,nc.tipo, nc.subtipo, nc.descripcion, nc.q_lineas, nc.cargo_fijo, nc.direccion, nc.coordenadas, nc.contacto, nc.telefono1, nc.telefono2, nc.comentario, nc.estado, nc.validacion,nc.fecha_validacion, nc.comentario_validador,   nc.peticion, nc.nasignado,  nc.contrata, nc.ejecutivo_telefonica,t.nombre,nc.comentario_back,nc.caso_sf,car.nombre,car.propietario,car.DNI,nc.nodo, nc.ncfinanciera  FROM nc_fija as nc inner join usuario as usu on usu.id_usuario= nc.id_usuario left JOIN supervisor as sup  on sup.id_supervisor= nc.id_supervisor LEFT JOIN tienda as t on t.id_tienda=nc.zonal_telefonica LEFT JOIN cartera as car on car.id_cartera=nc.id_cartera
 where month(nc.fecha_validacion)='$periodo' and year(nc.fecha_validacion)='$ano' and nc.estado=
 '$ncestado' and nc.validacion='PROCEDE'  and nc.zonal='$tienda'
 ORDER BY nc.fecha_ingreso DESC";
             } else {
 
-                $sqlEXCEL = " SELECT usu.personal, sup.nombre, nc.fecha_ingreso, nc.fecha_liquidacion, nc.fecha_actualizacion,nc.ruc, nc.razon_social, nc.modalidad,nc.tipo, nc.subtipo, nc.descripcion, nc.q_lineas, nc.cargo_fijo, nc.direccion, nc.coordenadas, nc.contacto, nc.telefono1, nc.telefono2, nc.comentario, nc.estado, nc.validacion,nc.fecha_validacion, nc.comentario_validador,   nc.peticion, nc.nasignado,  nc.contrata, nc.ejecutivo_telefonica,t.nombre, nc.comentario_back,nc.caso_sf,car.nombre,car.propietario,car.DNI,nc.nodo  FROM nc_fija as nc inner join usuario as usu on usu.id_usuario= nc.id_usuario left JOIN supervisor as sup 
+                $sqlEXCEL = " SELECT usu.personal, sup.nombre, nc.fecha_ingreso, nc.fecha_liquidacion, nc.fecha_actualizacion,nc.ruc, nc.razon_social, nc.modalidad,nc.tipo, nc.subtipo, nc.descripcion, nc.q_lineas, nc.cargo_fijo, nc.direccion, nc.coordenadas, nc.contacto, nc.telefono1, nc.telefono2, nc.comentario, nc.estado, nc.validacion,nc.fecha_validacion, nc.comentario_validador,   nc.peticion, nc.nasignado,  nc.contrata, nc.ejecutivo_telefonica,t.nombre, nc.comentario_back,nc.caso_sf,car.nombre,car.propietario,car.DNI,nc.nodo, nc.ncfinanciera FROM nc_fija as nc inner join usuario as usu on usu.id_usuario= nc.id_usuario left JOIN supervisor as sup 
         on sup.id_supervisor= nc.id_supervisor LEFT JOIN tienda as t on t.id_tienda=nc.zonal_telefonica LEFT JOIN cartera as car on car.id_cartera=nc.id_cartera
         where  year(nc.fecha_validacion)<='$ano'  and 
 nc.estado in ('INSERTADO','EMITIDO','OBSERVADO','INSTALADO','PENDIENTE','BOLSA') and nc.validacion='PROCEDE'  and nc.zonal='$tienda'
@@ -102,7 +102,7 @@ nc.estado in ('INSERTADO','EMITIDO','OBSERVADO','INSTALADO','PENDIENTE','BOLSA')
 
 UNION 
 
-SELECT usu.personal, sup.nombre, nc.fecha_ingreso, nc.fecha_liquidacion, nc.fecha_actualizacion,nc.ruc, nc.razon_social, nc.modalidad,nc.tipo, nc.subtipo, nc.descripcion, nc.q_lineas, nc.cargo_fijo, nc.direccion, nc.coordenadas, nc.contacto, nc.telefono1, nc.telefono2, nc.comentario, nc.estado, nc.validacion,nc.fecha_validacion, nc.comentario_validador,   nc.peticion, nc.nasignado,  nc.contrata, nc.ejecutivo_telefonica,t.nombre, nc.comentario_back,nc.caso_sf,car.nombre,car.propietario,car.DNI,nc.nodo  FROM nc_fija as nc inner join usuario as usu on usu.id_usuario= nc.id_usuario left JOIN supervisor as sup 
+SELECT usu.personal, sup.nombre, nc.fecha_ingreso, nc.fecha_liquidacion, nc.fecha_actualizacion,nc.ruc, nc.razon_social, nc.modalidad,nc.tipo, nc.subtipo, nc.descripcion, nc.q_lineas, nc.cargo_fijo, nc.direccion, nc.coordenadas, nc.contacto, nc.telefono1, nc.telefono2, nc.comentario, nc.estado, nc.validacion,nc.fecha_validacion, nc.comentario_validador,   nc.peticion, nc.nasignado,  nc.contrata, nc.ejecutivo_telefonica,t.nombre, nc.comentario_back,nc.caso_sf,car.nombre,car.propietario,car.DNI,nc.nodo, nc.ncfinanciera  FROM nc_fija as nc inner join usuario as usu on usu.id_usuario= nc.id_usuario left JOIN supervisor as sup 
         on sup.id_supervisor= nc.id_supervisor LEFT JOIN tienda as t on t.id_tienda=nc.zonal_telefonica LEFT JOIN cartera as car on car.id_cartera=nc.id_cartera
 where month(nc.fecha_liquidacion)='$periodo' and year(nc.fecha_liquidacion)='$ano' and nc.estado=
 'LIQUIDADO' and nc.validacion='PROCEDE'  and nc.zonal='$tienda'
@@ -110,7 +110,7 @@ where month(nc.fecha_liquidacion)='$periodo' and year(nc.fecha_liquidacion)='$an
 
 UNION 
 
-SELECT usu.personal, sup.nombre, nc.fecha_ingreso, nc.fecha_liquidacion, nc.fecha_actualizacion,nc.ruc, nc.razon_social, nc.modalidad,nc.tipo, nc.subtipo, nc.descripcion, nc.q_lineas, nc.cargo_fijo, nc.direccion, nc.coordenadas, nc.contacto, nc.telefono1, nc.telefono2, nc.comentario, nc.estado, nc.validacion,nc.fecha_validacion, nc.comentario_validador,   nc.peticion, nc.nasignado,  nc.contrata, nc.ejecutivo_telefonica,t.nombre, nc.comentario_back,nc.caso_sf,car.nombre,car.propietario,car.DNI,nc.nodo  FROM nc_fija as nc inner join usuario as usu on usu.id_usuario= nc.id_usuario left JOIN supervisor as sup 
+SELECT usu.personal, sup.nombre, nc.fecha_ingreso, nc.fecha_liquidacion, nc.fecha_actualizacion,nc.ruc, nc.razon_social, nc.modalidad,nc.tipo, nc.subtipo, nc.descripcion, nc.q_lineas, nc.cargo_fijo, nc.direccion, nc.coordenadas, nc.contacto, nc.telefono1, nc.telefono2, nc.comentario, nc.estado, nc.validacion,nc.fecha_validacion, nc.comentario_validador,   nc.peticion, nc.nasignado,  nc.contrata, nc.ejecutivo_telefonica,t.nombre, nc.comentario_back,nc.caso_sf,car.nombre,car.propietario,car.DNI,nc.nodo, nc.ncfinanciera  FROM nc_fija as nc inner join usuario as usu on usu.id_usuario= nc.id_usuario left JOIN supervisor as sup 
         on sup.id_supervisor= nc.id_supervisor LEFT JOIN tienda as t on t.id_tienda=nc.zonal_telefonica LEFT JOIN cartera as car on car.id_cartera=nc.id_cartera
 where month(nc.fecha_validacion)='$periodo' and year(nc.fecha_validacion)='$ano' and nc.estado=
 'CAIDO' and nc.validacion='PROCEDE'  and nc.zonal='$tienda'
@@ -164,7 +164,7 @@ $resultEXCEL = mysqli_query($conexion, $sqlEXCEL);
             <th>CASO SF</th>
             <th>CARTERA</th>
             <th>NODO</th>
-
+            <th>CUENTA FINANCIERA</th>
 
 
 
@@ -210,6 +210,7 @@ $resultEXCEL = mysqli_query($conexion, $sqlEXCEL);
                 <td><?php echo utf8_decode($mostrar[29]) ?></td>
                 <td><?php echo utf8_decode($mostrar[30]) ?></td>
                 <td><?php echo utf8_decode($mostrar[33]) ?></td>
+                <td><?php echo utf8_decode($mostrar[34]) ?></td>
 
 
 
