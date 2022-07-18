@@ -10,7 +10,7 @@ $periodo = $_GET["periodo"];
 $estado = $_GET["estado"];
 $idusu = $_GET["idusu"];
 
-if ($estado === 'PENDIENTE' || $estado === 'CURSO') {
+if ($estado === 'PENDIENTE') {
     $sqlquiebreMovil = " SELECT 
     ncquiebre.id_quiebre,
     ncquiebre.fecha_ingreso, 
@@ -18,65 +18,80 @@ if ($estado === 'PENDIENTE' || $estado === 'CURSO') {
     ncquiebre.razon_social,
     ncquiebre.modalidad,
     ncquiebre.cargo_fijo, 
+    ncquiebre.estado,
     ncquiebre.validacion,
-    ncquiebre.validacion, 
     ncquiebre.dni
     from quiebre_movil as ncquiebre 
-    where  year(ncquiebre.fecha_ingreso)<='$ano' 
+    where year(ncquiebre.fecha_ingreso)<='$ano' 
     and ncquiebre.id_usuario='$idusu' 
     and ncquiebre.validacion='$estado'
     ORDER BY ncquiebre.fecha_ingreso DESC";
-} else {
+} else if ($estado === 'ATENDIDO') {
 
-    if ($estado === 'ATENDIDO') {
-        $sqlquiebreMovil = " SELECT 
+    $sqlquiebreMovil = " SELECT 
         ncquiebre.id_quiebre,
         ncquiebre.fecha_ingreso, 
         ncquiebre.ruc,
         ncquiebre.razon_social,
         ncquiebre.modalidad,
         ncquiebre.cargo_fijo, 
+        ncquiebre.estado,
         ncquiebre.validacion,
-        ncquiebre.validacion, 
         ncquiebre.dni
         from quiebre_movil as ncquiebre 
-        where month(ncquiebre.fecha_actualizacion)='$periodo' 
-        and year(ncquiebre.fecha_actualizacion)='$ano' 
+        where year(ncquiebre.fecha_actualizacion)='$ano' 
         and ncquiebre.id_usuario='$idusu' 
         and ncquiebre.validacion='$estado'
         ORDER BY ncquiebre.fecha_ingreso DESC";
-    } else {
-
-        if ($estado === 'DEVUELTO') {
-            $sqlquiebreMovil = " SELECT 
+} else if ($estado === 'CURSO') {
+    $sqlquiebreMovil = " SELECT 
+        ncquiebre.id_quiebre,
+        ncquiebre.fecha_ingreso, 
+        ncquiebre.ruc,
+        ncquiebre.razon_social,
+        ncquiebre.modalidad,
+        ncquiebre.cargo_fijo, 
+        ncquiebre.estado,
+        ncquiebre.validacion, 
+        ncquiebre.dni
+        from quiebre_movil as ncquiebre 
+        where year(ncquiebre.fecha_actualizacion)='$ano' 
+        and ncquiebre.id_usuario='$idusu' 
+        and ncquiebre.validacion='$estado'
+        ORDER BY ncquiebre.fecha_ingreso DESC";
+} else if ($estado === 'DEVUELTO') {
+    $sqlquiebreMovil = " SELECT 
             ncquiebre.id_quiebre,
             ncquiebre.fecha_ingreso, 
             ncquiebre.ruc,
             ncquiebre.razon_social,
             ncquiebre.modalidad,
             ncquiebre.cargo_fijo, 
-            ncquiebre.validacion,
+            ncquiebre.estado,
             ncquiebre.validacion, 
             ncquiebre.dni
             from quiebre_movil as ncquiebre 
-            where month(ncquiebre.fecha_ingreso)='$periodo' and year(ncquiebre.fecha_ingreso)='$ano' and 
-            ncquiebre.id_usuario='$idusu' and ncquiebre.validacion='$estado'
+            where month(ncquiebre.fecha_ingreso)='$periodo' 
+            and year(ncquiebre.fecha_ingreso)='$ano' and 
+            ncquiebre.id_usuario='$idusu' 
+            and ncquiebre.validacion='$estado'
             ORDER BY ncquiebre.fecha_ingreso DESC";
-        } else {
+} else {
 
-            $sqlquiebreMovil = " SELECT 
+    $sqlquiebreMovil = " SELECT 
             ncquiebre.id_quiebre,
             ncquiebre.fecha_ingreso, 
             ncquiebre.ruc,
             ncquiebre.razon_social,
             ncquiebre.modalidad,
             ncquiebre.cargo_fijo, 
-            ncquiebre.validacion,
+            ncquiebre.estado,
             ncquiebre.validacion, 
             ncquiebre.dni
             from quiebre_movil as ncquiebre 
             where  year(ncquiebre.fecha_ingreso)<='$ano' 
-            and ncquiebre.id_usuario='$idusu' and ncquiebre.validacion in ('PENDIENTE','ATENDIDO','CURSO','DEVUELTO')
+            and ncquiebre.id_usuario='$idusu' 
+            and ncquiebre.validacion = 'PENDIENTE'
 
             UNION 
 
@@ -87,14 +102,30 @@ if ($estado === 'PENDIENTE' || $estado === 'CURSO') {
             ncquiebre.razon_social,
             ncquiebre.modalidad,
             ncquiebre.cargo_fijo, 
-            ncquiebre.validacion,
+            ncquiebre.estado,
             ncquiebre.validacion, 
             ncquiebre.dni
             from quiebre_movil as ncquiebre 
-            where month(ncquiebre.fecha_actualizacion)='$periodo' 
-            and year(ncquiebre.fecha_actualizacion)='$ano' 
+            where year(ncquiebre.fecha_actualizacion)='$ano' 
             and ncquiebre.id_usuario='$idusu' 
             and ncquiebre.validacion='ATENDIDO'
+
+            UNION 
+
+            SELECT 
+            ncquiebre.id_quiebre,
+            ncquiebre.fecha_ingreso, 
+            ncquiebre.ruc,
+            ncquiebre.razon_social,
+            ncquiebre.modalidad,
+            ncquiebre.cargo_fijo, 
+            ncquiebre.estado,
+            ncquiebre.validacion, 
+            ncquiebre.dni
+            from quiebre_movil as ncquiebre 
+            where year(ncquiebre.fecha_actualizacion)='$ano' 
+            and ncquiebre.id_usuario='$idusu' 
+            and ncquiebre.validacion='CURSO'
 
             UNION
 
@@ -105,17 +136,14 @@ if ($estado === 'PENDIENTE' || $estado === 'CURSO') {
             ncquiebre.razon_social,
             ncquiebre.modalidad,
             ncquiebre.cargo_fijo, 
-            ncquiebre.validacion,
+            ncquiebre.estado,
             ncquiebre.validacion, 
             ncquiebre.dni
             from quiebre_movil as ncquiebre 
-            where month(ncquiebre.fecha_ingreso)='$periodo' 
-            and year(ncquiebre.fecha_ingreso)='$ano' 
+            where  year(ncquiebre.fecha_ingreso)='$ano' 
             and ncquiebre.id_usuario='$idusu' 
             and ncquiebre.validacion='DEVUELTO'
 ";
-        }
-    }
 }
 
 
@@ -137,7 +165,7 @@ $resultquiebreMovil = mysqli_query($conexion, $sqlquiebreMovil);
                             <th>MODALIDAD</th>
                             <th>CARGO FIJO</th>
                             <!-- <th>ESTADO</th> -->
-                            <th>VALIDADO</th>
+                            <th>ESTADO</th>
                             <th>DNI</th>
                             <th>DETALLE</th>
                         </tr>

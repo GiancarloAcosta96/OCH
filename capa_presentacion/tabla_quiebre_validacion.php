@@ -103,7 +103,7 @@ if ($validacionf === 'PENDIENTE') {
         left join supervisor as s on ncquiebre.id_supervisor=s.id_supervisor
         left join usuario as u on u.id_usuario=ncquiebre.id_usuario
         where year(ncquiebre.fecha_ingreso)<='$ano' 
-        and ncquiebre.validacion='CURSO'  and ncquiebre.zonal='$tienda'
+        and ncquiebre.validacion='PENDIENTE'
 
         UNION
 
@@ -123,7 +123,7 @@ if ($validacionf === 'PENDIENTE') {
         left join usuario as u on u.id_usuario=ncquiebre.id_usuario
         where month(ncquiebre.fecha_validacion)='$periodo' 
         and year(ncquiebre.fecha_validacion)='$ano' 
-        and ncquiebre.validacion='ATENDIDO'  and ncquiebre.zonal='$tienda'
+        and ncquiebre.validacion='ATENDIDO'
 
         UNION
 
@@ -143,7 +143,7 @@ if ($validacionf === 'PENDIENTE') {
         left join usuario as u on u.id_usuario=ncquiebre.id_usuario
         where month(ncquiebre.fecha_ingreso)='$periodo' 
         and year(ncquiebre.fecha_ingreso)='$ano' 
-        and ncquiebre.validacion='DEVUELTO' and ncquiebre.zonal='$tienda'
+        and ncquiebre.validacion='CURSO'
 
         UNION
 
@@ -163,8 +163,7 @@ if ($validacionf === 'PENDIENTE') {
         left join usuario as u on u.id_usuario=ncquiebre.id_usuario
         where month(ncquiebre.fecha_validacion)='$periodo' 
         and year(ncquiebre.fecha_validacion)='$ano' 
-        and ncquiebre.validacion='PENDIENTE'  and ncquiebre.zonal='$tienda'
-";
+        and ncquiebre.validacion='DEVUELTO' ";
 }
 
 

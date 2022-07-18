@@ -526,7 +526,7 @@ class crudNotadecargo
         $sqlquiebreMovil = "UPDATE nc_movil SET 
                             comentario_ejecutivo='$datos[1]',
                             telefono1='$datos[2]',
-                            correo='$datos[3]',
+                            telefono2='$datos[3]',
                             q_lineas='$datos[4]',
                             cargo_fijo='$datos[5]',
                             dni='$datos[6]'
@@ -543,9 +543,30 @@ class crudNotadecargo
         $obj = new conectar();
         $conexion = $obj->conexion();
 
-        $sql = "SELECT nc.q_lineas,nc.modalidad,nc.cargo_fijo,nc.ruc,
-                nc.razon_social,nc.contacto,nc.telefono1,nc.telefono2,
-                t.nombre,usu.personal,nc.comentario_ejecutivo,nc.estado, nc.fecha_ingreso,nc.fecha_validacion,nc.validacion,nc.comentario_validador,nc.estado, nc.ejecutivo_telefonica, nc.comentario_back, nc.zonal_telefonica, nc.fecha_actualizacion, nc.oportunidad,nc.id_cartera,nc.nodo
+        $sql = "SELECT nc.q_lineas,
+                        nc.modalidad,
+                        nc.cargo_fijo,
+                        nc.ruc,
+                        nc.razon_social,
+                        nc.contacto,
+                        nc.telefono1,
+                        nc.telefono2,
+                        t.nombre,
+                        usu.personal,
+                        nc.comentario_ejecutivo,
+                        nc.estado, 
+                        nc.fecha_ingreso,
+                        nc.fecha_validacion,
+                        nc.validacion,
+                        nc.comentario_validador,
+                        nc.estado, 
+                        nc.ejecutivo_telefonica, 
+                        nc.comentario_back, 
+                        nc.zonal_telefonica, 
+                        nc.fecha_actualizacion, 
+                        nc.oportunidad,
+                        nc.id_cartera,
+                        nc.nodo
                     from nc_movil as nc inner join usuario as usu on nc.id_usuario=usu.id_usuario
                     left join tienda as t on t.id_tienda=nc.zonal
                     where id_cargo ='$idcargo' ";
@@ -606,17 +627,11 @@ class crudNotadecargo
 
     public function agregarNCmovilcomentarioback($datos)
     {
-
-
         $obj = new conectar();
         $conexion = $obj->conexion();
-
-
         $sqlnotadecargo = "UPDATE nc_movil SET q_lineas='$datos[1]',cargo_fijo='$datos[2]'
             WHERE id_cargo='$datos[0]' ";
-
         $rpta = mysqli_query($conexion, $sqlnotadecargo);
-
         return $rpta;
     }
 
