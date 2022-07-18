@@ -24,7 +24,6 @@ if ($estado === 'PENDIENTE') {
         from quiebre_movil as ncquiebre 
         where  year(ncquiebre.fecha_ingreso)<='$ano' 
         and ncquiebre.validacion='$estado' 
-        and ncquiebre.zonal='$tienda'
         ORDER BY ncquiebre.fecha_ingreso DESC";
 } else if ($estado === 'ATENDIDO') {
     $sqlquiebreMovil = " SELECT 
@@ -40,7 +39,6 @@ if ($estado === 'PENDIENTE') {
         from quiebre_movil as ncquiebre 
         where  year(ncquiebre.fecha_ingreso)<='$ano' 
         and ncquiebre.validacion='$estado' 
-        and ncquiebre.zonal='$tienda'
         ORDER BY ncquiebre.fecha_ingreso DESC";
 } else if ($estado === 'CURSO') {
     $sqlquiebreMovil = " SELECT 
@@ -56,7 +54,6 @@ if ($estado === 'PENDIENTE') {
         from quiebre_movil as ncquiebre 
         where  year(ncquiebre.fecha_ingreso)<='$ano' 
         and ncquiebre.validacion='$estado' 
-        and ncquiebre.zonal='$tienda'
         ORDER BY ncquiebre.fecha_ingreso DESC";
 } else if ($estado === 'DEVUELTO') {
     $sqlquiebreMovil = " SELECT 
@@ -68,11 +65,10 @@ if ($estado === 'PENDIENTE') {
         ncquiebre.cargo_fijo, 
         ncquiebre.estado,
         ncquiebre.validacion,
-        nquiebre.dni
+        ncquiebre.dni
         from quiebre_movil as ncquiebre 
         where  year(ncquiebre.fecha_ingreso)<='$ano' 
         and ncquiebre.validacion='$estado' 
-        and ncquiebre.zonal='$tienda'
         ORDER BY ncquiebre.fecha_ingreso DESC";
 } else {
     $sqlquiebreMovil = " SELECT 
