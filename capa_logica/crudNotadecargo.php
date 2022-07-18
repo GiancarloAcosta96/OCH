@@ -517,23 +517,17 @@ class crudNotadecargo
 
     public function agregarNCmovilcomentario($datos)
     {
-
-
         $obj = new conectar();
         $conexion = $obj->conexion();
 
-
-        $sqlquiebreMovil = "UPDATE nc_movil SET 
-                            comentario_ejecutivo='$datos[1]',
-                            telefono1='$datos[2]',
-                            telefono2='$datos[3]',
-                            q_lineas='$datos[4]',
-                            cargo_fijo='$datos[5]',
-                            dni='$datos[6]'
-                            WHERE id_quiebre='$datos[0]' ";
-
-        $rpta = mysqli_query($conexion, $sqlquiebreMovil);
-
+        $sqlnotadecargo = " UPDATE nc_movil 
+                            SET comentario_ejecutivo='$datos[1]',
+                                telefono1='$datos[2]',
+                                telefono2='$datos[3]',
+                                q_lineas='$datos[4]',
+                                cargo_fijo='$datos[5]'
+                            WHERE id_cargo='$datos[0]' ";
+        $rpta = mysqli_query($conexion, $sqlnotadecargo);
         return $rpta;
     }
 
