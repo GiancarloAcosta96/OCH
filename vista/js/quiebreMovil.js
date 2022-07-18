@@ -63,11 +63,11 @@ $("#btnRegistrar").click(function () {
           $("#ncnomcontacto").val("");
           $("#nctelefono1").val("");
           $("#nccorreo").val("");
+          $("#ncdni").val("");
           $("#ncobservaciones").val("");
           $("#ncoportunidad").val("");
           $("#ncqlineas").val("");
           $("#nvoruc").val("");
-          $("#ncdni").val("");
           var estado = $("#ncestado").val();
           var idusu = $("#idusu").val();
           var ano = $("#ncano").val();

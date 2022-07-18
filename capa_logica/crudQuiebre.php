@@ -27,7 +27,7 @@ class crudQuiebre
                                             correo,
                                             estado,
                                             validacion,
-                                            zonal,
+                                            zonal_telefonica,
                                             comentario_ejecutivo,
                                             oportunidad,
                                             nodo,
@@ -90,7 +90,7 @@ class crudQuiebre
                         ncquiebre.casosf                       
 
                         from quiebre_movil as ncquiebre inner join usuario as usu on ncquiebre.id_usuario=usu.id_usuario
-                        left join tienda as t on t.id_tienda=ncquiebre.zonal
+                        left join tienda as t on t.id_tienda=ncquiebre.zonal_telefonica
                         where id_quiebre ='$idquiebre' ";
 
         $result = mysqli_query($conexion, $sql);
