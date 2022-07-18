@@ -12,22 +12,21 @@ $idusu = $_GET["idusu"];
 
 if ($estado === 'PENDIENTE') {
     $sqlquiebreMovil = " SELECT 
-    ncquiebre.id_quiebre,
-    ncquiebre.fecha_ingreso, 
-    ncquiebre.ruc,
-    ncquiebre.razon_social,
-    ncquiebre.modalidad,
-    ncquiebre.cargo_fijo, 
-    ncquiebre.estado,
-    ncquiebre.validacion,
-    ncquiebre.dni
-    from quiebre_movil as ncquiebre 
-    where year(ncquiebre.fecha_ingreso)<='$ano' 
-    and ncquiebre.id_usuario='$idusu' 
-    and ncquiebre.validacion='$estado'
-    ORDER BY ncquiebre.fecha_ingreso DESC";
+        ncquiebre.id_quiebre,
+        ncquiebre.fecha_ingreso, 
+        ncquiebre.ruc,
+        ncquiebre.razon_social,
+        ncquiebre.modalidad,
+        ncquiebre.cargo_fijo, 
+        ncquiebre.estado,
+        ncquiebre.validacion,
+        ncquiebre.dni
+        from quiebre_movil as ncquiebre 
+        where  year(ncquiebre.fecha_ingreso)<='$ano' 
+        and ncquiebre.validacion='$estado' 
+        and ncquiebre.zonal='$tienda'
+        ORDER BY ncquiebre.fecha_ingreso DESC";
 } else if ($estado === 'ATENDIDO') {
-
     $sqlquiebreMovil = " SELECT 
         ncquiebre.id_quiebre,
         ncquiebre.fecha_ingreso, 
@@ -39,9 +38,9 @@ if ($estado === 'PENDIENTE') {
         ncquiebre.validacion,
         ncquiebre.dni
         from quiebre_movil as ncquiebre 
-        where year(ncquiebre.fecha_actualizacion)='$ano' 
-        and ncquiebre.id_usuario='$idusu' 
-        and ncquiebre.validacion='$estado'
+        where  year(ncquiebre.fecha_ingreso)<='$ano' 
+        and ncquiebre.validacion='$estado' 
+        and ncquiebre.zonal='$tienda'
         ORDER BY ncquiebre.fecha_ingreso DESC";
 } else if ($estado === 'CURSO') {
     $sqlquiebreMovil = " SELECT 
@@ -52,99 +51,96 @@ if ($estado === 'PENDIENTE') {
         ncquiebre.modalidad,
         ncquiebre.cargo_fijo, 
         ncquiebre.estado,
-        ncquiebre.validacion, 
+        ncquiebre.validacion,
         ncquiebre.dni
         from quiebre_movil as ncquiebre 
-        where year(ncquiebre.fecha_actualizacion)='$ano' 
-        and ncquiebre.id_usuario='$idusu' 
-        and ncquiebre.validacion='$estado'
+        where  year(ncquiebre.fecha_ingreso)<='$ano' 
+        and ncquiebre.validacion='$estado' 
+        and ncquiebre.zonal='$tienda'
         ORDER BY ncquiebre.fecha_ingreso DESC";
 } else if ($estado === 'DEVUELTO') {
     $sqlquiebreMovil = " SELECT 
-            ncquiebre.id_quiebre,
-            ncquiebre.fecha_ingreso, 
-            ncquiebre.ruc,
-            ncquiebre.razon_social,
-            ncquiebre.modalidad,
-            ncquiebre.cargo_fijo, 
-            ncquiebre.estado,
-            ncquiebre.validacion, 
-            ncquiebre.dni
-            from quiebre_movil as ncquiebre 
-            where month(ncquiebre.fecha_ingreso)='$periodo' 
-            and year(ncquiebre.fecha_ingreso)='$ano' and 
-            ncquiebre.id_usuario='$idusu' 
-            and ncquiebre.validacion='$estado'
-            ORDER BY ncquiebre.fecha_ingreso DESC";
+        ncquiebre.id_quiebre,
+        ncquiebre.fecha_ingreso, 
+        ncquiebre.ruc,
+        ncquiebre.razon_social,
+        ncquiebre.modalidad,
+        ncquiebre.cargo_fijo, 
+        ncquiebre.estado,
+        ncquiebre.validacion,
+        nquiebre.dni
+        from quiebre_movil as ncquiebre 
+        where  year(ncquiebre.fecha_ingreso)<='$ano' 
+        and ncquiebre.validacion='$estado' 
+        and ncquiebre.zonal='$tienda'
+        ORDER BY ncquiebre.fecha_ingreso DESC";
 } else {
-
     $sqlquiebreMovil = " SELECT 
-            ncquiebre.id_quiebre,
-            ncquiebre.fecha_ingreso, 
-            ncquiebre.ruc,
-            ncquiebre.razon_social,
-            ncquiebre.modalidad,
-            ncquiebre.cargo_fijo, 
-            ncquiebre.estado,
-            ncquiebre.validacion, 
-            ncquiebre.dni
-            from quiebre_movil as ncquiebre 
-            where  year(ncquiebre.fecha_ingreso)<='$ano' 
-            and ncquiebre.id_usuario='$idusu' 
-            and ncquiebre.validacion = 'PENDIENTE'
+        ncquiebre.id_quiebre,
+        ncquiebre.fecha_ingreso, 
+        ncquiebre.ruc,
+        ncquiebre.razon_social,
+        ncquiebre.modalidad,
+        ncquiebre.cargo_fijo, 
+        ncquiebre.estado,
+        ncquiebre.validacion,
+        ncquiebre.dni
+        from quiebre_movil as ncquiebre 
+        where year(ncquiebre.fecha_ingreso)<='$ano' 
+        and ncquiebre.validacion='PENDIENTE'
 
-            UNION 
+        UNION
 
-            SELECT 
-            ncquiebre.id_quiebre,
-            ncquiebre.fecha_ingreso, 
-            ncquiebre.ruc,
-            ncquiebre.razon_social,
-            ncquiebre.modalidad,
-            ncquiebre.cargo_fijo, 
-            ncquiebre.estado,
-            ncquiebre.validacion, 
-            ncquiebre.dni
-            from quiebre_movil as ncquiebre 
-            where year(ncquiebre.fecha_actualizacion)='$ano' 
-            and ncquiebre.id_usuario='$idusu' 
-            and ncquiebre.validacion='ATENDIDO'
+        SELECT 
+        ncquiebre.id_quiebre,
+        ncquiebre.fecha_ingreso, 
+        ncquiebre.ruc,
+        ncquiebre.razon_social,
+        ncquiebre.modalidad,
+        ncquiebre.cargo_fijo, 
+        ncquiebre.estado,
+        ncquiebre.validacion,
+        ncquiebre.dni
+        from quiebre_movil as ncquiebre 
+        where month(ncquiebre.fecha_validacion)='$periodo' 
+        and year(ncquiebre.fecha_validacion)='$ano' 
+        and ncquiebre.validacion='ATENDIDO'
 
-            UNION 
+        UNION
 
-            SELECT 
-            ncquiebre.id_quiebre,
-            ncquiebre.fecha_ingreso, 
-            ncquiebre.ruc,
-            ncquiebre.razon_social,
-            ncquiebre.modalidad,
-            ncquiebre.cargo_fijo, 
-            ncquiebre.estado,
-            ncquiebre.validacion, 
-            ncquiebre.dni
-            from quiebre_movil as ncquiebre 
-            where year(ncquiebre.fecha_actualizacion)='$ano' 
-            and ncquiebre.id_usuario='$idusu' 
-            and ncquiebre.validacion='CURSO'
+        SELECT 
+        ncquiebre.id_quiebre,
+        ncquiebre.fecha_ingreso, 
+        ncquiebre.ruc,
+        ncquiebre.razon_social,
+        ncquiebre.modalidad,
+        ncquiebre.cargo_fijo, 
+        ncquiebre.estado,
+        ncquiebre.validacion,
+        ncquiebre.dni
+        from quiebre_movil as ncquiebre 
+        where month(ncquiebre.fecha_ingreso)='$periodo' 
+        and year(ncquiebre.fecha_ingreso)='$ano' 
+        and ncquiebre.validacion='CURSO'
 
-            UNION
+        UNION
 
-            SELECT 
-            ncquiebre.id_quiebre,
-            ncquiebre.fecha_ingreso, 
-            ncquiebre.ruc,
-            ncquiebre.razon_social,
-            ncquiebre.modalidad,
-            ncquiebre.cargo_fijo, 
-            ncquiebre.estado,
-            ncquiebre.validacion, 
-            ncquiebre.dni
-            from quiebre_movil as ncquiebre 
-            where  year(ncquiebre.fecha_ingreso)='$ano' 
-            and ncquiebre.id_usuario='$idusu' 
-            and ncquiebre.validacion='DEVUELTO'
-";
+        SELECT 
+        ncquiebre.id_quiebre,
+        ncquiebre.fecha_ingreso, 
+        ncquiebre.ruc,
+        ncquiebre.razon_social,
+        ncquiebre.modalidad,
+        ncquiebre.cargo_fijo, 
+        ncquiebre.estado,
+        ncquiebre.validacion,
+        ncquiebre.dni
+        from quiebre_movil as ncquiebre 
+        where month(ncquiebre.fecha_validacion)='$periodo' 
+        and year(ncquiebre.fecha_validacion)='$ano' 
+        and ncquiebre.validacion='DEVUELTO' ";
 }
+
 
 
 
