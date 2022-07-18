@@ -196,8 +196,8 @@ $resultquiebreMovil = mysqli_query($conexion, $sqlquiebreMovil);
                         ?>
                             <tr>
                                 <td><?php echo $mostrar[1] ?></td>
-                                <td><?php echo $mostrar[2] ?></td>
                                 <td><?php echo $mostrar[3] ?></td>
+                                <td><?php echo $mostrar[2] ?></td>
                                 <td><?php echo $mostrar[9] ?></td>
                                 <td><?php echo $mostrar[8] ?></td>
                                 <td><?php echo $mostrar[5] ?></td>
