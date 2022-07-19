@@ -2,49 +2,83 @@ $(document).ready(function () {
   TraerDatosAnoMes();
 });
 
+function mostrarOpciones() {
+  let seleccionarValor = document.getElementById("quiebre_problemas").value;
+  switch (seleccionarValor) {
+    case "SI":
+      document.getElementById("quiebre_detalle").style.display = "inline-block";
+      document
+        .getElementById("quiebre_detalle")
+        .setAttribute("required", "required");
+      break;
+    case "NO":
+      document.getElementById("quiebre_detalle").style.display = "none";
+      document
+        .getElementById("quiebre_detalle")
+        .setAttribute("required", "required");
+  }
+}
+
+function mostrarOpcionesTicket() {
+  let seleccionarValorTicket = document.getElementById("quiebre_ticket").value;
+  switch (seleccionarValorTicket) {
+    case "SI":
+      document.getElementById("fechaTicket").style.display = "inline-block";
+      document.getElementById("quiebre_numero_ticket").style.display =
+        "inline-block";
+      break;
+    case "NO":
+      document.getElementById("fechaTicket").style.display = "none";
+      document.getElementById("quiebre_numero_ticket").style.display = "none";
+  }
+}
+
 $("#cerrar1").click(function () {
   $("#ncregion").empty().append("whatever");
-  $("#nccargofijo").val("");
-  $("#ncruc").val("");
+  $("#fechaActivacion").val("");
+  $("#fechaInicio").val("");
   $("#ncrazonsocial").val("");
-  $("#ncnomcontacto").val("");
-  $("#nctelefono1").val("");
-  $("#nccorreo").val("");
-  $("#ncobservaciones").val("");
-  $("#ncoportunidad").val("");
-  $("#ncqlineas").val("");
-  $("#ncdni").val("");
+  $("#quiebre_servicio").val("");
+  $("#quiebre_tipo_averia").val("");
+  $("#quiebre_contacto1").val("");
+  $("#quiebre_contacto2").val("");
+  $("#quiebre_celular1").val("");
+  $("#quiebre_celular2").val("");
+  $("#quiebre_numero_problema").val("");
+  $("#quiebre_observaciones").val("");
 });
 
 $("#cerrar2").click(function () {
   $("#ncregion").empty().append("whatever");
-  $("#nccargofijo").val("");
-  $("#ncruc").val("");
+  $("#fechaActivacion").val("");
+  $("#fechaInicio").val("");
   $("#ncrazonsocial").val("");
-  $("#ncnomcontacto").val("");
-  $("#nctelefono1").val("");
-  $("#nccorreo").val("");
-  $("#ncobservaciones").val("");
-  $("#ncoportunidad").val("");
-  $("#ncdni").val("");
+  $("#quiebre_servicio").val("");
+  $("#quiebre_tipo_averia").val("");
+  $("#quiebre_contacto1").val("");
+  $("#quiebre_contacto2").val("");
+  $("#quiebre_celular1").val("");
+  $("#quiebre_celular2").val("");
+  $("#quiebre_numero_problema").val("");
+  $("#quiebre_observaciones").val("");
 });
 
 $("#btnRegistrar").click(function () {
   if (
-    $("#ncqlineas").val() == "0" ||
     $("#ncregion").val() == "0" ||
-    $("#nccargofijo").val() == "0" ||
-    $("#nccargofijo").val() == "" ||
-    $("#ncnomcontacto").val() == "" ||
-    $("#nctelefono1").val() == "" ||
-    $("#nccorreo").val() == "" ||
-    $("#ncdireccion").val() == "" ||
-    $("#ncdni").val() == "0" ||
-    $("#ncdni").val() == ""
+    $("#fechaActivacion").val() == null ||
+    $("#fechaInicio").val() == null ||
+    $("#fechaTicket").val() == null ||
+    $("#quiebre_contacto1").val() == "" ||
+    $("#quiebre_contacto1").val() == "0" ||
+    $("#quiebre_celular1").val() == "" ||
+    $("#quiebre_celular1").val() == "0" ||
+    $("#quiebre_numero_problema").val() == null ||
+    $("#quiebre_observaciones").val() == null
   ) {
     alertify.error("REVISE LOS DATOS");
   } else {
-    datos = $("#frmQuiebreMovil").serialize();
+    datos = $("#frmQuiebre").serialize();
     $.ajax({
       type: "POST",
       data: datos,
@@ -55,7 +89,6 @@ $("#btnRegistrar").click(function () {
           alertify.success("Registrado con exito");
 
           $("#modalEditar").modal("hide");
-
           $("#ncregion").empty().append("whatever");
           $("#nccargofijo").val("");
           $("#ncfruc").val("");
