@@ -78,49 +78,56 @@ $("#btnRegistrar").click(function () {
   ) {
     alertify.error("REVISE LOS DATOS");
   } else {
-    datos = $("#frmQuiebre").serialize();
-    $.ajax({
-      type: "POST",
-      data: datos,
-      url: "../procesos/agregarQuiebreMnvo.php",
-      success: function (r) {
-        console.log(datos);
-        if (r != 1) {
-          alertify.success("Registrado con exito");
+    try {
+      datos = $("#frmQuiebre").serialize();
+      $.ajax({
+        type: "POST",
+        data: datos,
+        url: "../procesos/agregarQuiebreMnvo.php",
+        success: function (r) {
+          console.log(datos);
+          if (r != 1) {
+            alertify.success("Registrado con exito");
 
-          $("#modalEditar").modal("hide");
-          $("#ncregion").empty().append("whatever");
-          $("#nccargofijo").val("");
-          $("#ncfruc").val("");
-          $("#ncfrazonsocial").val("");
-          $("#ncnomcontacto").val("");
-          $("#nctelefono1").val("");
-          $("#nccorreo").val("");
-          $("#ncdni").val("");
-          $("#ncobservaciones").val("");
-          $("#ncoportunidad").val("");
-          $("#ncqlineas").val("");
-          $("#nvoruc").val("");
-          var estado = $("#ncestado").val();
-          var idusu = $("#idusu").val();
-          var ano = $("#ncano").val();
-          var periodo = $("#ncperiodo").val();
+            $("#modalEditar").modal("hide");
+            $("#ncregion").empty().append("whatever");
+            $("#nccargofijo").val("");
+            $("#ncfruc").val("");
+            $("#ncfrazonsocial").val("");
+            $("#fechaTicket").val("");
+            $("#fechaActivacion").val("");
+            $("#fechaInicio").val("");
+            $("#quiebre_numero_ticket").val("");
+            $("#quiebre_contacto1").val("");
+            $("#quiebre_celular1").val("");
+            $("#quiebre_contacto2").val("");
+            $("#quiebre_celular2").val("");
+            $("#quiebre_numero_problema").val("");
+            $("#ncregion").val("");
+            $("#quiebre_observaciones").val("");
+            var estado = $("#ncestado").val();
+            var idusu = $("#idusu").val();
+            var ano = $("#ncano").val();
+            var periodo = $("#ncperiodo").val();
 
-          $("#tablaDatatable").load(
-            "../capa_presentacion/tabla_quiebre_movil.php?ano=" +
-              ano +
-              "&periodo=" +
-              periodo +
-              "&estado=" +
-              estado +
-              "&idusu=" +
-              idusu
-          );
-        } else {
-          alertify.error("Fallo al agregar");
-        }
-      },
-    });
+            $("#tablaDatatable").load(
+              "../capa_presentacion/tabla_quiebre_movil.php?ano=" +
+                ano +
+                "&periodo=" +
+                periodo +
+                "&estado=" +
+                estado +
+                "&idusu=" +
+                idusu
+            );
+          } else {
+            alertify.error("Fallo al agregar");
+          }
+        },
+      });
+    } catch (e) {
+      console.log("error: ", e);
+    }
   }
 });
 
@@ -230,33 +237,32 @@ function TraerDatosTabla(idquiebre) {
       try {
         datos = jQuery.parseJSON(data);
         $("#idquiebre").val(idquiebre);
-        $("#ncqlineass").val(datos["q_lineas"]);
-        $("#ncmodalidadquiebres").val(datos["modalidad"]);
-        $("#nccargofijos").val(datos["cargo_fijo"]);
+        $("#fechaActivacions").val(datos["fecha_activacion"]);
+        $("#fechaInicios").val(datos["fecha_inicio"]);
         $("#ncrucs").val(datos["ruc"]);
         $("#ncrazonsocials").val(datos["razon_social"]);
-        $("#ncnomcontactos").val(datos["contacto"]);
-        $("#nctelefono1s").val(datos["telefono1"]);
-        $("#nctelefono1m").val(datos["telefono1"]);
-        $("#nccorreos").val(datos["correo"]);
-        $("#nccorreom").val(datos["correo"]);
-        $("#ncdnis").val(datos["dni"]);
-        $("#ncdnim").val(datos["dni"]);
-        $("#ncregions").val(datos["zonal"]);
-        $("#ncpersonals").val(datos["personal"]);
-        $("#ncobservacionesejes").val(datos["comentario"]);
-        $("#ncestados").val(datos["estado"]);
-        $("#ncsupervisors").val(datos["supervisor"]);
-        $("#fechaingresos").val(datos["fecha_ingreso"]);
-        $("#fechavalidacions").val(datos["fecha_validacion"]);
-        $("#ncvalidacions").val(datos["validacion"]);
-        $("#ncvalidadors").val(datos["validador"]);
-        $("#ncobservacionesvals").val(datos["comentario_validador"]);
-        $("#ncestadoacts").val(datos["estado_actual"]);
-        $("#ncfechaacts").val(datos["fecha_actualizacion"]);
-        $("#ncoportunidads").val(datos["oportunidad"]);
-        $("#nccomentariobacks").val(datos["comentario_back"]);
+        $("#quiebre_servicios").val(datos["servicio"]);
+        $("#quiebre_tipo_averias").val(datos["tipo_averia"]);
+        $("#quiebre_problemas").val(datos["problema_equipo"]);
+        $("#quiebre_detalles").val(datos["detalle_equipo"]);
+        $("#quiebre_tickets").val(datos["ticket_atencion"]);
+        $("#fechaTickets").val(datos["fecha_ticket_atencion"]);
+        $("#quiebre_numero_tickets").val(datos["numero_ticket"]);
+        $("#quiebre_contacto1").val(datos["contacto1"]);
+        $("#quiebre_celular1").val(datos["celular1"]);
+        $("#quiebre_contacto2").val(datos["celular2"]);
+        $("#quiebre_celular2").val(datos["celular2"]);
+        $("#quiebre_numero_problemas").val(datos["numero_problema"]);
+        $("#ncregions").val(datos["zonal_telefonica"]);
+        $("#ncrucss").val(datos["ruc"]);
+        $("#ncrazonss").val(datos["razon_social"]);
+        $("#quiebre_tipo_averiass").val(datos["tipo_averia"]);
         $("#casosf").val(datos["casosf"]);
+        $("#fechavalidacions").val(datos["fecha_validacion"]);
+        $("#ncobservacioness").val(datos["fecha_validacion"]);
+        $("#ncvalidadors").val(datos["id_validador"]);
+        $("#ncvalidacions").val(datos["validacion"]);
+        $("#ncobservacionesvals").val(datos["comentario_validador"]);
       } catch (error) {
         console.log("Error parsing JSON:", error, data);
       }

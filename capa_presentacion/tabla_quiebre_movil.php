@@ -12,129 +12,105 @@ $idusu = $_GET["idusu"];
 
 if ($estado === 'PENDIENTE') {
     $sqlquiebreMovil = " SELECT 
-        ncquiebre.id_quiebre,
-        ncquiebre.fecha_ingreso, 
-        ncquiebre.ruc,
-        ncquiebre.razon_social,
-        ncquiebre.modalidad,
-        ncquiebre.cargo_fijo, 
-        ncquiebre.estado,
-        ncquiebre.validacion,
-        ncquiebre.dni
-        from quiebre_movil as ncquiebre 
-        where  year(ncquiebre.fecha_ingreso)<='$ano' 
-        and ncquiebre.validacion='$estado' 
-        ORDER BY ncquiebre.fecha_ingreso DESC";
+        quiebre.id_quiebre,
+        quiebre.fecha_inicio_averia, 
+        quiebre.ruc,
+        quiebre.razon_social,
+        quiebre.servicio,
+        quiebre.estado, 
+        from quiebre as quiebre 
+        where  year(quiebre.fechaInicio)<='$ano' 
+        and quiebre.validacion='$estado' 
+        ORDER BY quiebre.fechaInicio DESC";
 } else if ($estado === 'ATENDIDO') {
     $sqlquiebreMovil = " SELECT 
-        ncquiebre.id_quiebre,
-        ncquiebre.fecha_ingreso, 
-        ncquiebre.ruc,
-        ncquiebre.razon_social,
-        ncquiebre.modalidad,
-        ncquiebre.cargo_fijo, 
-        ncquiebre.estado,
-        ncquiebre.validacion,
-        ncquiebre.dni
-        from quiebre_movil as ncquiebre 
-        where  year(ncquiebre.fecha_ingreso)<='$ano' 
-        and ncquiebre.validacion='$estado' 
-        ORDER BY ncquiebre.fecha_ingreso DESC";
+        quiebre.id_quiebre,
+        quiebre.fecha_inicio_averia, 
+        quiebre.ruc,
+        quiebre.razon_social,
+        quiebre.servicio,
+        quiebre.estado, 
+        from quiebre as quiebre 
+        where  year(quiebre.fechaInicio)<='$ano' 
+        and quiebre.validacion='$estado' 
+        ORDER BY quiebre.fechaInicio DESC";
 } else if ($estado === 'CURSO') {
     $sqlquiebreMovil = " SELECT 
-        ncquiebre.id_quiebre,
-        ncquiebre.fecha_ingreso, 
-        ncquiebre.ruc,
-        ncquiebre.razon_social,
-        ncquiebre.modalidad,
-        ncquiebre.cargo_fijo, 
-        ncquiebre.estado,
-        ncquiebre.validacion,
-        ncquiebre.dni
-        from quiebre_movil as ncquiebre 
-        where  year(ncquiebre.fecha_ingreso)<='$ano' 
-        and ncquiebre.validacion='$estado' 
-        ORDER BY ncquiebre.fecha_ingreso DESC";
+        quiebre.id_quiebre,
+        quiebre.fecha_inicio_averia, 
+        quiebre.ruc,
+        quiebre.razon_social,
+        quiebre.servicio,
+        quiebre.estado, 
+        from quiebre as quiebre 
+        where  year(quiebre.fechaInicio)<='$ano' 
+        and quiebre.validacion='$estado' 
+        ORDER BY quiebre.fechaInicio DESC";
 } else if ($estado === 'DEVUELTO') {
     $sqlquiebreMovil = " SELECT 
-        ncquiebre.id_quiebre,
-        ncquiebre.fecha_ingreso, 
-        ncquiebre.ruc,
-        ncquiebre.razon_social,
-        ncquiebre.modalidad,
-        ncquiebre.cargo_fijo, 
-        ncquiebre.estado,
-        ncquiebre.validacion,
-        ncquiebre.dni
-        from quiebre_movil as ncquiebre 
-        where  year(ncquiebre.fecha_ingreso)<='$ano' 
-        and ncquiebre.validacion='$estado' 
-        ORDER BY ncquiebre.fecha_ingreso DESC";
+        quiebre.id_quiebre,
+        quiebre.fecha_inicio_averia, 
+        quiebre.ruc,
+        quiebre.razon_social,
+        quiebre.servicio,
+        quiebre.estado, 
+        from quiebre as quiebre 
+        where  year(quiebre.fechaInicio)<='$ano' 
+        and quiebre.validacion='$estado' 
+        ORDER BY quiebre.fechaInicio DESC";
 } else {
     $sqlquiebreMovil = " SELECT 
-        ncquiebre.id_quiebre,
-        ncquiebre.fecha_ingreso, 
-        ncquiebre.ruc,
-        ncquiebre.razon_social,
-        ncquiebre.modalidad,
-        ncquiebre.cargo_fijo, 
-        ncquiebre.estado,
-        ncquiebre.validacion,
-        ncquiebre.dni
-        from quiebre_movil as ncquiebre 
-        where year(ncquiebre.fecha_ingreso)<='$ano' 
-        and ncquiebre.validacion='PENDIENTE'
+        quiebre.id_quiebre,
+        quiebre.fecha_inicio_averia, 
+        quiebre.ruc,
+        quiebre.razon_social,
+        quiebre.servicio,
+        quiebre.estado, 
+        from quiebre as quiebre  
+        where year(quiebre.fecha_ingreso)<='$ano' 
+        and quiebre.validacion='PENDIENTE'
 
         UNION
 
         SELECT 
-        ncquiebre.id_quiebre,
-        ncquiebre.fecha_ingreso, 
-        ncquiebre.ruc,
-        ncquiebre.razon_social,
-        ncquiebre.modalidad,
-        ncquiebre.cargo_fijo, 
-        ncquiebre.estado,
-        ncquiebre.validacion,
-        ncquiebre.dni
-        from quiebre_movil as ncquiebre 
-        where month(ncquiebre.fecha_validacion)='$periodo' 
-        and year(ncquiebre.fecha_validacion)='$ano' 
-        and ncquiebre.validacion='ATENDIDO'
+        quiebre.id_quiebre,
+        quiebre.fecha_inicio_averia, 
+        quiebre.ruc,
+        quiebre.razon_social,
+        quiebre.servicio,
+        quiebre.estado, 
+        from quiebre as quiebre 
+        where month(quiebre.fecha_validacion)='$periodo' 
+        and year(quiebre.fecha_validacion)='$ano' 
+        and quiebre.validacion='ATENDIDO'
 
         UNION
 
         SELECT 
-        ncquiebre.id_quiebre,
-        ncquiebre.fecha_ingreso, 
-        ncquiebre.ruc,
-        ncquiebre.razon_social,
-        ncquiebre.modalidad,
-        ncquiebre.cargo_fijo, 
-        ncquiebre.estado,
-        ncquiebre.validacion,
-        ncquiebre.dni
-        from quiebre_movil as ncquiebre 
-        where month(ncquiebre.fecha_ingreso)='$periodo' 
-        and year(ncquiebre.fecha_ingreso)='$ano' 
-        and ncquiebre.validacion='CURSO'
+        quiebre.id_quiebre,
+        quiebre.fecha_inicio_averia, 
+        quiebre.ruc,
+        quiebre.razon_social,
+        quiebre.servicio,
+        quiebre.estado, 
+        from quiebre as quiebre 
+        where month(quiebre.fecha_ingreso)='$periodo' 
+        and year(quiebre.fecha_ingreso)='$ano' 
+        and quiebre.validacion='CURSO'
 
         UNION
 
         SELECT 
-        ncquiebre.id_quiebre,
-        ncquiebre.fecha_ingreso, 
-        ncquiebre.ruc,
-        ncquiebre.razon_social,
-        ncquiebre.modalidad,
-        ncquiebre.cargo_fijo, 
-        ncquiebre.estado,
-        ncquiebre.validacion,
-        ncquiebre.dni
-        from quiebre_movil as ncquiebre 
-        where month(ncquiebre.fecha_validacion)='$periodo' 
-        and year(ncquiebre.fecha_validacion)='$ano' 
-        and ncquiebre.validacion='DEVUELTO' ";
+        quiebre.id_quiebre,
+        quiebre.fecha_inicio_averia, 
+        quiebre.ruc,
+        quiebre.razon_social,
+        quiebre.servicio,
+        quiebre.estado, 
+        from quiebre as quiebre 
+        where month(quiebre.fecha_validacion)='$periodo' 
+        and year(quiebre.fecha_validacion)='$ano' 
+        and quiebre.validacion='DEVUELTO' ";
 }
 
 
@@ -151,14 +127,11 @@ $resultquiebreMovil = mysqli_query($conexion, $sqlquiebreMovil);
                 <table class="table table-hover table-condensed table-bordered" id="iddatatable">
                     <thead style="background-color: #fc9c1c;color: white; font-weight: bold;">
                         <tr>
-                            <th>INGRESO</th>
+                            <th>INICIO DE AVERÍA</th>
                             <th>RUC</th>
                             <th>RAZON SOCIAL</th>
-                            <th>MODALIDAD</th>
-                            <th>CARGO FIJO</th>
-                            <!-- <th>ESTADO</th> -->
+                            <th>SERVICIO</th>
                             <th>ESTADO</th>
-                            <th>DNI</th>
                             <th>DETALLE</th>
                         </tr>
                     </thead>
@@ -168,13 +141,10 @@ $resultquiebreMovil = mysqli_query($conexion, $sqlquiebreMovil);
                         ?>
                             <tr>
                                 <td><?php echo $mostrar[1] ?></td>
-                                <td><?php echo $mostrar[3] ?></td>
                                 <td><?php echo $mostrar[2] ?></td>
+                                <td><?php echo $mostrar[3] ?></td>
                                 <td><?php echo $mostrar[4] ?></td>
                                 <td><?php echo $mostrar[5] ?></td>
-                                <!-- <td>?php echo $mostrar[6] ?></td> -->
-                                <td><?php echo $mostrar[7] ?></td>
-                                <td><?php echo $mostrar[8] ?></td>
                                 <td style="text-align: center;">
                                     <span class="btn btn-success btn-sm" data-toggle="modal" data-target="#modalSeguimiento" onclick="TraerDatosTabla('<?php echo $mostrar[0] ?>')"> <span class="fa fa-check-circle"></span>
                                     </span>
