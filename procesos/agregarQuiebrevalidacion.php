@@ -4,10 +4,10 @@ require_once "../capa_logica/crudQuiebre.php";
 $obj = new crudQuiebre();
 
 $datos = array(
-    $_POST['fechahoy'], //0
+    $_POST['fechaInicio'], //0
     $_POST['idusu'], //1
-    $_POST['ncvalidacion'], //2
-    $_POST['ncobservacionesval'], //3
+    $_POST['ncvalidacions'], //2
+    $_POST['ncobservacionesvals'], //3
     $_POST['idquiebre'], //4
     $_POST['casosf'] //5
 );

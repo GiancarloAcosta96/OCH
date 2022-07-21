@@ -12,12 +12,20 @@ $idusu = $_GET["idusu"];
 
 if ($estado === 'INGRESADO' || $estado === 'PROCESANDO' || $estado === 'PENDIENTE' || $estado === 'DELIVERY' || $estado === 'BOLSA' || $estado === 'SALIDAANTICIPADA') {
 
-    $sqlncMovil = " SELECT ncf.id_cargo,ncf.fecha_ingreso, ncf.ruc,ncf.razon_social,ncf.modalidad,
-  ncf.cargo_fijo, ncf.estado,ncf.validacion
- from nc_movil as ncf 
-where  year(ncf.fecha_ingreso)<='$ano' and 
-ncf.id_usuario='$idusu' and ncf.estado='$estado'
-ORDER BY ncf.fecha_ingreso DESC";
+    $sqlncMovil = " SELECT 
+    ncf.id_cargo,
+    ncf.fecha_ingreso, 
+    ncf.ruc,
+    ncf.razon_social,
+    ncf.modalidad,
+    ncf.cargo_fijo, 
+    ncf.estado,
+    ncf.validacion
+    from nc_movil as ncf 
+    where  year(ncf.fecha_ingreso)<='$ano' 
+    and ncf.id_usuario='$idusu' 
+    and ncf.estado='$estado'
+    ORDER BY ncf.fecha_ingreso DESC";
 } else {
 
     if ($estado === 'ACTIVADO') {

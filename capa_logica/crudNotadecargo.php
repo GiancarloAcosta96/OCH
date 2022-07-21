@@ -537,7 +537,7 @@ class crudNotadecargo
         $obj = new conectar();
         $conexion = $obj->conexion();
 
-        $sql = "SELECT nc.q_lineas,
+        $sql = "SELECT  nc.q_lineas,
                         nc.modalidad,
                         nc.cargo_fijo,
                         nc.ruc,
@@ -612,8 +612,6 @@ class crudNotadecargo
             'fecha_actualizacion' => $ver[20],
             'oportunidad' => $ver[21],
             'nodo' => $ver[23]
-
-
         );
         return $datos;
     }
@@ -659,10 +657,6 @@ class crudNotadecargo
             'personal' => $ver[9],
             'comentario' => $ver[10],
             'estado' => $ver[11]
-
-
-
-
         );
         return $datos;
     }

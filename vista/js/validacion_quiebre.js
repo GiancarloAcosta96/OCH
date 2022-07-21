@@ -48,20 +48,25 @@ $("#btnRegistrar").click(function () {
           alertify.success("Registrado con exito");
 
           $("#modalEditar").modal("hide");
-          $("#ncregion").val("");
-          $("#nccargofijo").val("");
-          $("#ncruc").val("");
-          $("#ncrazonsocial").val("");
-          $("#ncnomcontacto").val("");
-          $("#nctelefono1").val("");
-          $("#nccorreo").val("");
-          $("#ncdni").val("");
-          $("#ncobservacioneseje").val("");
-          $("#ncpersonal").val("");
-          $("#ncqlineas").val("");
-          $("#ncmodalidad").val("");
-          $("#ncobservacionesval").val("");
-          $("#casosf").val("");
+
+          $("#fechaActivacions").val("");
+          $("#fechaInicios").val("");
+          $("#ncrucs").val("");
+          $("#ncrazonsocials").val("");
+          $("#quiebre_servicios").val("");
+          $("#quiebre_tipo_averias").val("");
+          $("#quiebre_problemas").val("");
+          $("#quiebre_detalles").val("");
+          $("#quiebre_tickets").val("");
+          $("#fechaTickets").val("");
+          $("#quiebre_numero_tickets").val("");
+          $("#quiebre_contacto1").val("");
+          $("#quiebre_celular1").val("");
+          $("#quiebre_contacto2").val("");
+          $("#quiebre_celular2").val("");
+          $("#quiebre_numero_problemas").val("");
+          $("#ncregions").val("");
+          $("#ncobservacioness").val("");
 
           var validacionf = $("#ncvalidacionf").val();
           var tienda = $("#tienda").val();
@@ -142,21 +147,31 @@ function TraerDatosTabla(idquiebre) {
       try {
         datos = jQuery.parseJSON(data);
         $("#idquiebre").val(idquiebre);
-        $("#ncqlineas").val(datos["q_lineas"]);
-        $("#ncmodalidad").val(datos["modalidad"]);
-        $("#nccargofijo").val(datos["cargo_fijo"]);
-        $("#ncruc").val(datos["ruc"]);
-        $("#ncrazonsocial").val(datos["razon_social"]);
-        $("#ncnomcontacto").val(datos["contacto"]);
-        $("#nctelefono1").val(datos["telefono1"]);
-        $("#nccorreo").val(datos["correo"]);
-        $("#ncdni").val(datos["dni"]);
-        $("#ncregion").val(datos["zonal"]);
-        $("#ncpersonal").val(datos["personal"]);
-        $("#ncobservacioneseje").val(datos["comentario"]);
-        $("#ncestado").val(datos["estado"]);
+        $("#fechaActivacions").val(datos["fecha_activacion"]);
+        $("#fechaInicios").val(datos["fecha_inicio"]);
+        $("#ncrucs").val(datos["ruc"]);
+        $("#ncrazonsocials").val(datos["razon_social"]);
+        $("#quiebre_servicios").val(datos["servicio"]);
+        $("#quiebre_tipo_averias").val(datos["tipo_averia"]);
+        $("#quiebre_problemas").val(datos["problema_equipo"]);
+        $("#quiebre_detalles").val(datos["detalle_equipo"]);
+        $("#quiebre_tickets").val(datos["ticket_atencion"]);
+        $("#fechaTickets").val(datos["fecha_ticket_atencion"]);
+        $("#quiebre_numero_tickets").val(datos["numero_ticket"]);
+        $("#quiebre_contacto1").val(datos["contacto1"]);
+        $("#quiebre_celular1").val(datos["celular1"]);
+        $("#quiebre_contacto2").val(datos["contacto2"]);
+        $("#quiebre_celular2").val(datos["celular2"]);
+        $("#quiebre_numero_problemas").val(datos["numero_problema"]);
+        $("#ncregions").val(datos["zonal_telefonica"]);
+        $("#ncobservacioness").val(datos["comentario_ejecutivo"]);
+
+        $("#quiebre_tipo_averiass").val(datos["tipo_averia"]);
         $("#casosf").val(datos["casosf"]);
-        $("#ncobservacionesval").val(datos["comentario_validador"]);
+        $("#fechavalidacions").val(datos["fecha_validacion"]);
+        $("#ncvalidadors").val(datos["id_validador"]);
+        $("#ncvalidacions").val(datos["validacion"]);
+        $("#ncobservacionesvals").val(datos["comentario_validador"]);
       } catch (error) {
         console.log("Error parsing JSON:", error, data);
       }

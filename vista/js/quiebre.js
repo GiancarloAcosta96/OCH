@@ -90,6 +90,7 @@ $("#btnRegistrar").click(function () {
             alertify.success("Registrado con exito");
 
             $("#modalEditar").modal("hide");
+
             $("#ncregion").empty().append("whatever");
             $("#nccargofijo").val("");
             $("#ncfruc").val("");
@@ -111,7 +112,7 @@ $("#btnRegistrar").click(function () {
             var periodo = $("#ncperiodo").val();
 
             $("#tablaDatatable").load(
-              "../capa_presentacion/tabla_quiebre_movil.php?ano=" +
+              "../capa_presentacion/tabla_quiebre.php?ano=" +
                 ano +
                 "&periodo=" +
                 periodo +
@@ -170,7 +171,7 @@ $("#btnfiltrar").click(function () {
   var ano = $("#ncano").val();
   var periodo = $("#ncperiodo").val();
   $("#tablaDatatable").load(
-    "../capa_presentacion/tabla_quiebre_movil.php?ano=" +
+    "../capa_presentacion/tabla_quiebre.php?ano=" +
       ano +
       "&periodo=" +
       periodo +
@@ -217,7 +218,7 @@ function TraerDatosAnoMes() {
   }
 
   $("#tablaDatatable").load(
-    "../capa_presentacion/tabla_quiebre_movil.php?ano=" +
+    "../capa_presentacion/tabla_quiebre.php?ano=" +
       ano +
       "&periodo=" +
       periodo +
@@ -254,12 +255,13 @@ function TraerDatosTabla(idquiebre) {
         $("#quiebre_celular2").val(datos["celular2"]);
         $("#quiebre_numero_problemas").val(datos["numero_problema"]);
         $("#ncregions").val(datos["zonal_telefonica"]);
+        $("#ncobservacioness").val(datos["comentario_ejecutivo"]);
+
         $("#ncrucss").val(datos["ruc"]);
         $("#ncrazonss").val(datos["razon_social"]);
         $("#quiebre_tipo_averiass").val(datos["tipo_averia"]);
         $("#casosf").val(datos["casosf"]);
         $("#fechavalidacions").val(datos["fecha_validacion"]);
-        $("#ncobservacioness").val(datos["fecha_validacion"]);
         $("#ncvalidadors").val(datos["id_validador"]);
         $("#ncvalidacions").val(datos["validacion"]);
         $("#ncobservacionesvals").val(datos["comentario_validador"]);
@@ -298,7 +300,7 @@ $("#btnActualizar").click(function () {
             var ano = $("#ncano").val();
             var periodo = $("#ncperiodo").val();
             $("#tablaDatatable").load(
-              "../capa_presentacion/tabla_quiebre_movil.php?ano=" +
+              "../capa_presentacion/tabla_quiebre.php?ano=" +
                 ano +
                 "&periodo=" +
                 periodo +

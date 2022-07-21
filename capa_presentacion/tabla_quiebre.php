@@ -6,12 +6,11 @@ $obj = new conectar();
 $conexion = $obj->conexion();
 
 $ano = $_GET["ano"];
-// $periodo = $_GET["periodo"];
-$validacionf = $_GET["validacionf"];
-$tienda = $_GET["tienda"];
+$periodo = $_GET["periodo"];
+$estado = $_GET["estado"];
+$idusu = $_GET["idusu"];
 
-
-if ($validacionf === 'PENDIENTE') {
+if ($estado === 'PENDIENTE') {
     $sqlquiebreMovil = " SELECT 
         quiebre.id_quiebre,
         quiebre.fecha_inicio, 
@@ -20,9 +19,9 @@ if ($validacionf === 'PENDIENTE') {
         quiebre.servicio,
         quiebre.estado
         from quiebre as quiebre 
-        where  year(quiebre.fecha_inicio)<='$ano' 
-        and quiebre.estado='$validacionf'
-        and quiebre.zonal_telefonica='$tienda'
+        where  year(quiebre.fecha.inicio)<='$ano' 
+        and quiebre.id_usuario = '$idusu'
+        and quiebre.estado='$estado' 
         ORDER BY quiebre.fecha_inicio DESC";
 } else {
     $sqlquiebreMovil = " SELECT 
@@ -32,19 +31,13 @@ if ($validacionf === 'PENDIENTE') {
         quiebre.razon_social,
         quiebre.servicio,
         quiebre.estado
-        s.nombre,
-        u.personal
         from quiebre as quiebre 
-        left join supervisor as s on quiebre.id_supervisor = s.id_supervisor
-        left join usuario as u on u.id_usuario = quiebre.id_usuario
-        where year(quiebre.fecha_inicio)<='$ano' 
-        and quiebre.validacion='PENDIENTE' ";
+        where year(quiebre.fecha_inicio)<='$ano'
+        and quiebre.id_usuario = '$idusu' 
+        and quiebre.estado='PENDIENTE' ";
 }
 
-
 $resultquiebreMovil = mysqli_query($conexion, $sqlquiebreMovil);
-
-
 ?>
 
 <form class="form form-horizontal">
@@ -73,7 +66,7 @@ $resultquiebreMovil = mysqli_query($conexion, $sqlquiebreMovil);
                                 <td><?php echo $mostrar[4] ?></td>
                                 <td><?php echo $mostrar[5] ?></td>
                                 <td style="text-align: center;">
-                                    <span class="btn btn-success btn-sm" data-toggle="modal" data-target="#modalEditar" onclick="TraerDatosTabla('<?php echo $mostrar[0] ?>')"> <span class="fa fa-check-circle"></span>
+                                    <span class="btn btn-success btn-sm" data-toggle="modal" data-target="#modalSeguimiento" onclick="TraerDatosTabla('<?php echo $mostrar[0] ?>')"> <span class="fa fa-check-circle"></span>
                                     </span>
                                 </td>
                             </tr>
@@ -81,6 +74,7 @@ $resultquiebreMovil = mysqli_query($conexion, $sqlquiebreMovil);
                         }
                         ?>
                     </tbody>
+
                 </table>
             </div>
         </div>

@@ -68,32 +68,34 @@ class crudQuiebre
         $obj = new conectar();
         $conexion = $obj->conexion();
 
-        $sql = "SELECT  ncquiebre.estado,                 
-                        ncquiebre.fechaInicio,               
-                        ncquiebre.ruc,               
-                        ncquiebre.razonsocial,                      
-                        ncquiebre.quiebre_servicio,             
-                        ncquiebre.quiebre_numero_problema,                
-                        ncquiebre.fechaActivacion,                
-                        ncquiebre.quiebre_tipo_averia,                                          
-                        ncquiebre.fechaInicio,     
-                        ncquiebre.quiebre_problemas,                   
-                        ncquiebre.quiebre_detalle,            
-                        ncquiebre.quiebre_contacto1,         
-                        ncquiebre.quiebre_celular1,               
-                        ncquiebre.quiebre_contacto2,     
-                        ncquiebre.quiebre_celular2,                   
-                        ncquiebre.quiebre_ticket,     
-                        ncquiebre.quiebre_numero_ticket,          
-                        ncquiebre.fechaTicket,         
-                        ncquiebre.ncregion,      
-                        ncquiebre.quiebre_observaciones,              
-                        ncquiebre.fecha_validacion,
+        $sql = "SELECT  ncquiebre.estado,
+                        ncquiebre.fecha_inicio_averia,
+                        ncquiebre.ruc,
+                        ncquiebre.razon_social,
+                        ncquiebre.servicio,
+                        ncquiebre.numero_problema,
+                        ncquiebre.fecha_activacion,
+                        ncquiebre.tipo_averia,
+                        ncquiebre.fecha_inicio,
+                        ncquiebre.problema_equipo,
+                        ncquiebre.detalle_equipo,
+                        ncquiebre.contacto1,
+                        ncquiebre.celular1,
+                        ncquiebre.contacto2,
+                        ncquiebre.celular2,
+                        ncquiebre.ticket_atencion,
+                        ncquiebre.numero_ticket,
+                        ncquiebre.fecha_ticket_atencion,
+                        ncquiebre.zonal_telefonica,
+                        ncquiebre.comentario_ejecutivo,
                         ncquiebre.id_validador,
                         ncquiebre.validacion,
+                        ncquiebre.fecha_validacion,
+                        ncquiebre.casosf,
                         ncquiebre.comentario_validador                      
 
-                        from quiebre as ncquiebre inner join usuario as usu on ncquiebre.id_usuario=usu.id_usuario
+                        from quiebre as ncquiebre 
+                        inner join usuario as usu on ncquiebre.id_usuario=usu.id_usuario
                         left join tienda as t on t.id_tienda=ncquiebre.zonal_telefonica
                         where id_quiebre ='$idquiebre' ";
 
@@ -117,36 +119,33 @@ class crudQuiebre
         $resultval = mysqli_query($conexion, $sqlval);
         $verval = mysqli_fetch_array($resultval);
 
-
         $datos = array(
             'estado' => $ver[0],
-            'fechaInicio' => $ver[1],
-            'ncrucs' => $ver[2],
-            'ncrazonsocials' => $ver[3],
-            'quiebre_servicios' => $ver[4],
-            'quiebre_numero_problemas' => $ver[5],
-            'fechaActivacion' => $ver[6],
-            'quiebre_tipo_averias' => $ver[7],
-            'fechaInicios' => $ver[8],
-            'quiebre_problemas' => $ver[9],
-            'quiebre_detalles' => $ver[10],
-            'quiebre_contacto1' => $ver[11],
-            'quiebre_celular1' => $ver[12],
-            'quiebre_contacto2' => $ver[13],
-            'quiebre_celular2' => $ver[14],
-            'quiebre_tickets' => $ver[15],
-            'quiebre_numero_tickets' => $ver[16],
-            'fechaTickets' => $ver[17],
-            'ncregions' => $ver[18],
-            'ncrucss' => $ver[19],
-            'ncrazonss' => $ver[20],
-            'quiebre_tipo_averiass' => $ver[21],
-            'casof' => $ver[22],
-            'fechavalidacions' => $ver[23],
-            'ncobservacioness' => $ver[24],
-            'ncvalidadors' => $ver[25],
-            'ncvalidacions' => $ver[26],
-            'ncobservacionesvals' => $ver[27],
+            'fecha_inicio_averia' => $ver[1],
+            'ruc' => $ver[2],
+            'razon_social' => $ver[3],
+            'servicio' => $ver[4],
+            'numero_problema' => $ver[5],
+            'fecha_activacion' => $ver[6],
+            'tipo_averia' => $ver[7],
+            'fecha_inicio' => $ver[8],
+            'problema_equipo' => $ver[9],
+            'detalle_equipo' => $ver[10],
+            'contacto1' => $ver[11],
+            'celular1' => $ver[12],
+            'contacto2' => $ver[13],
+            'celular2' => $ver[14],
+            'ticket_atencion' => $ver[15],
+            'numero_ticket' => $ver[16],
+            'fecha_ticket_atencion' => $ver[17],
+            'zonal_telefonica' => $ver[18],
+            'comentario_ejecutivo' => $ver[19],
+            'validador' => $verval[0],
+            'validacion' => $ver[20],
+            'fecha_validacion' => $ver[21],
+            'casosf' => $ver[22],
+            'comentario_validador' => $ver[23]
+
         );
         return $datos;
     }
@@ -197,21 +196,26 @@ class crudQuiebre
         $obj = new conectar();
         $conexion = $obj->conexion();
 
-        $sql = "SELECT  ncquiebre.q_lineas,
-                        ncquiebre.modalidad,
-                        ncquiebre.cargo_fijo,
+        $sql = "SELECT  ncquiebre.fecha_activacion,
+                        ncquiebre.fecha_inicio_averia,
                         ncquiebre.ruc,
                         ncquiebre.razon_social,
-                        ncquiebre.contacto,
-                        ncquiebre.telefono1,
-                        ncquiebre.correo,
-                        ncquiebre.dni,
+                        ncquiebre.servicio,
+                        ncquiebre.tipo_averia,
+                        ncquiebre.problema_equipo,
+                        ncquiebre.detalle_equipo,
+                        ncquiebre.ticket_atencion,
+                        ncquiebre.fecha_ticket_atencion,
+                        ncquiebre.numero_ticket,
+                        ncquiebre.contacto1,
+                        ncquiebre.celular1,
+                        ncquiebre.contacto2,
+                        ncquiebre.celular2,
+                        ncquiebre.numero_problema,
                         t.nombre,
-                        usu.personal,
                         ncquiebre.comentario_ejecutivo,
-                        ncquiebre.estado,
-                        ncquiebre.casosf,
-                        ncquiebre.comentario_validador  
+                        usu.personal
+
 
                         from quiebre as ncquiebre inner join usuario as usu on ncquiebre.id_usuario=usu.id_usuario
                         left join tienda as t on t.id_tienda=ncquiebre.zonal_telefonica
@@ -221,22 +225,27 @@ class crudQuiebre
         $ver = mysqli_fetch_array($result);
 
         $datos = array(
-            'q_lineas' => $ver[0],
-            'modalidad' => $ver[1],
-            'cargo_fijo' => $ver[2],
-            'ruc' => $ver[4],
-            'razon_social' => $ver[3],
-            'contacto' => $ver[5],
-            'telefono1' => $ver[6],
-            'correo' => $ver[7],
-            'dni' => $ver[8],
-            'zonal' => $ver[9],
-            'personal' => $ver[10],
-            'comentario' => $ver[11],
-            'estado' => $ver[12],
-            'casosf' => $ver[13],
-            'comentario_validador' => $ver[14]
-
+            'fecha_activacion' => $ver[0],
+            'fecha_inicio_averia' => $ver[1],
+            'ruc' => $ver[2],
+            'razon_social' => $ver[4],
+            'servicio' => $ver[3],
+            'tipo_averia' => $ver[5],
+            'problema_equipo' => $ver[6],
+            'detalle_equipo' => $ver[7],
+            'ticket_atencion' => $ver[8],
+            'fecha_ticket_atencion' => $ver[9],
+            'numero_ticket' => $ver[10],
+            'contacto1' => $ver[11],
+            'celular1' => $ver[12],
+            'contacto2' => $ver[13],
+            'celular2' => $ver[14],
+            'numero_problema' => $ver[11],
+            'zonal_telefonica' => $ver[12],
+            'comentario_ejecutivo' => $ver[13],
+            'id_validador' => $ver[14],
+            'casosf' => $ver[15],
+            'comentario_validador' => $ver[16]
         );
         return $datos;
     }

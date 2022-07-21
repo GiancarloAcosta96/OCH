@@ -175,13 +175,13 @@ if (isset($_SESSION["idusu"])) {
                                             </div>
 
                                             <div class="col-xs-4">
-                                                <label>Q lineas</label>
-                                                <input type="number" class="form-control input-sm" id="ncqlineas" name="ncqlineas" disabled="">
+                                                <label>Fecha Activacion</label>
+                                                <input type="number" class="form-control input-sm" id="fechaActivacions" name="fechaActivacions" disabled="">
 
                                             </div>
                                             <div class="col-xs-4">
-                                                <label>Modalidad</label>
-                                                <input type="text" disabled="" class="form-control input-sm" id="ncmodalidad" name="ncmodalidad">
+                                                <label>Fecha Inicio</label>
+                                                <input type="text" disabled="" class="form-control input-sm" id="fechaInicios" name="fechaInicios">
 
                                             </div>
 
@@ -194,15 +194,15 @@ if (isset($_SESSION["idusu"])) {
                                             <div class="row">
 
                                                 <div class="col-xs-6">
-                                                    <label>Cargo Fijo</label>
-                                                    <input type="text" disabled="" class="form-control input-sm" id="nccargofijo" name="nccargofijo">
+                                                    <label>RUC</label>
+                                                    <input type="text" disabled="" class="form-control input-sm" id="ncrucs" name="ncrucs">
 
                                                 </div>
 
 
                                                 <div class="col-xs-6">
-                                                    <label>RUC</label>
-                                                    <input type="text" disabled="" class="form-control input-sm" id="ncruc" name="ncruc" required>
+                                                    <label>Razon Social</label>
+                                                    <input type="text" disabled="" class="form-control input-sm" id="ncrazonsocials" name="ncrazonsocials" required>
 
                                                 </div>
 
@@ -214,9 +214,15 @@ if (isset($_SESSION["idusu"])) {
                                             <div class="row">
 
 
-                                                <div class="col-xs-12">
-                                                    <label>Razon Social</label>
-                                                    <input type="text" disabled="" class="form-control input-sm" id="ncrazonsocial" name="ncrazonsocial">
+                                                <div class="col-xs-6">
+                                                    <label>Servicio</label>
+                                                    <input type="text" disabled="" class="form-control input-sm" id="quiebre_servicios" name="quiebre_servicios">
+
+                                                </div>
+
+                                                <div class="col-xs-6">
+                                                    <label>Tipo de Avería</label>
+                                                    <input type="text" disabled="" class="form-control input-sm" id="quiebre_tipo_averias" name="quiebre_tipo_averias">
 
                                                 </div>
 
@@ -237,14 +243,14 @@ if (isset($_SESSION["idusu"])) {
 
 
                                                 <div class="col-xs-6">
-                                                    <label>Nombre contacto</label>
-                                                    <input type="text" disabled="" class="form-control input-sm" id="ncnomcontacto" name="ncnomcontacto">
+                                                    <label>Problema</label>
+                                                    <input type="text" disabled="" class="form-control input-sm" id="quiebre_problemas" name="quiebre_problemas">
 
                                                 </div>
 
                                                 <div class="col-xs-6">
-                                                    <label>Telefono1</label>
-                                                    <input type="text" disabled="" class="form-control input-sm" id="nctelefono1" name="nctelefono1" required>
+                                                    <label>Detalle</label>
+                                                    <input type="text" disabled="" class="form-control input-sm" id="quiebre_detalles" name="quiebre_detalles" required>
 
                                                 </div>
 
@@ -253,15 +259,21 @@ if (isset($_SESSION["idusu"])) {
 
 
                                             <div class="row">
-                                                <div class="col-xs-6">
-                                                    <label>Correo</label>
-                                                    <input type="text" disabled="" class="form-control input-sm" id="nccorreo" name="nccorreo" required>
+                                                <div class="col-xs-4">
+                                                    <label>Ticket de Quiebre</label>
+                                                    <input type="text" disabled="" class="form-control input-sm" id="quiebre_tickets" name="quiebre_tickets" required>
 
                                                 </div>
 
-                                                <div class="col-xs-6">
-                                                    <label>DNI</label>
-                                                    <input type="text" disabled="" class="form-control input-sm" id="ncdni" name="ncdni" required>
+                                                <div class="col-xs-4">
+                                                    <label>Fecha de Ticket</label>
+                                                    <input type="text" disabled="" class="form-control input-sm" id="fechaTickets" name="fechaTickets" required>
+
+                                                </div>
+
+                                                <div class="col-xs-4">
+                                                    <label>Número de Ticket</label>
+                                                    <input type="text" disabled="" class="form-control input-sm" id="quiebre_numero_tickets" name="quiebre_numero_tickets" required>
 
                                                 </div>
                                             </div>
@@ -279,16 +291,48 @@ if (isset($_SESSION["idusu"])) {
 
                                             <div class="row">
                                                 <div class="col-xs-6">
-                                                    <label>Region</label>
+                                                    <label>Contacto 1</label>
 
-                                                    <input type="text" disabled="" class="form-control input-sm" id="ncregion" name="ncregion">
+                                                    <input type="text" disabled="" class="form-control input-sm" id="quiebre_contacto1" name="quiebre_contacto1">
 
                                                 </div>
 
                                                 <div class="col-xs-6">
-                                                    <label>EJECUTIVO</label>
+                                                    <label>Celular 1</label>
 
-                                                    <input type="text" disabled="" class="form-control input-sm" id="ncpersonal" name="ncpersonal">
+                                                    <input type="text" disabled="" class="form-control input-sm" id="quiebre_celular1" name="quiebre_celular1">
+
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-xs-6">
+                                                    <label>Contacto 2</label>
+
+                                                    <input type="text" disabled="" class="form-control input-sm" id="quiebre_contacto2" name="quiebre_contacto2">
+
+                                                </div>
+
+                                                <div class="col-xs-6">
+                                                    <label>Celular 2</label>
+
+                                                    <input type="text" disabled="" class="form-control input-sm" id="quiebre_celular2" name="quiebre_celular2">
+
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-xs-6">
+                                                    <label>Número de problema</label>
+
+                                                    <input type="text" disabled="" class="form-control input-sm" id="quiebre_numero_problemas" name="quiebre_numero_problemas">
+
+                                                </div>
+
+                                                <div class="col-xs-6">
+                                                    <label>Región</label>
+
+                                                    <input type="text" disabled="" class="form-control input-sm" id="ncregions" name="ncregions">
 
                                                 </div>
                                             </div>
@@ -297,7 +341,7 @@ if (isset($_SESSION["idusu"])) {
                                                 <div class="col-xs-12">
                                                     <label for="comment">Comentario Ejecutivo:</label>
                                                     <div class="form-group">
-                                                        <textarea disabled="" class="form-control" rows="3" id="ncobservacioneseje" name="ncobservacioneseje"></textarea>
+                                                        <textarea disabled="" class="form-control" rows="3" id="ncobservacioness" name="ncobservacioness"></textarea>
                                                     </div>
                                                 </div>
                                             </div>
