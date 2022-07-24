@@ -160,27 +160,23 @@ if (isset($_SESSION["idusu"])) {
                                             <!--- div para elegir el tipo de respuesta-->
                                             <div class="col-xs-4">
                                                 <input type="hidden" class="form-control input-sm" id="idusu" name="idusu" value="<?php echo $idusu ?>">
-
                                                 <input type="hidden" class="form-control input-sm" id="tienda" name="tienda" value="<?php echo $tienda ?>">
                                                 <input type="hidden" class="form-control input-sm" id="idquiebre" name="idquiebre">
-                                                <input type="hidden" class="form-control input-sm" id="ncestado" name="ncestado">
+                                                <input type="text" class="form-control input-sm" id="ncestado" name="ncestado">
 
 
 
-                                                <label>Fecha Validacion:</label>
-                                                <input type="date" disabled="" class="form-control input-sm" id="fechahoy" name="fechahoy" value="<?php
-                                                                                                                                                    date_default_timezone_set("America/Lima");
-                                                                                                                                                    $hoy = date("Y-m-d");
-                                                                                                                                                    echo $hoy ?>">
+                                                <label>Fecha Registro Quiebre:</label>
+                                                <input type="date" disabled="" class="form-control input-sm" id="fecha_registro_quiebre" name="fecha_registro_quiebre">
                                             </div>
 
                                             <div class="col-xs-4">
-                                                <label>Fecha Activacion</label>
+                                                <label>Activación del servicio</label>
                                                 <input type="number" class="form-control input-sm" id="fechaActivacions" name="fechaActivacions" disabled="">
 
                                             </div>
                                             <div class="col-xs-4">
-                                                <label>Fecha Inicio</label>
+                                                <label>Fecha Inicio de avería</label>
                                                 <input type="text" disabled="" class="form-control input-sm" id="fechaInicios" name="fechaInicios">
 
                                             </div>
@@ -350,7 +346,6 @@ if (isset($_SESSION["idusu"])) {
                                                 <div class="col-xs-6">
                                                     <label for="comment">VALIDACION:</label>
                                                     <select name="ncvalidacion" class="form-control" id='ncvalidacion'>
-
                                                         <option value="PENDIENTE" selected>PENDIENTE</option>
                                                         <option value="ATENDIDO">ATENDIDO</option>
                                                         <option value="CURSO">EN CURSO</option>

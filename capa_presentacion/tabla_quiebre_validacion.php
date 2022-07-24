@@ -6,7 +6,7 @@ $obj = new conectar();
 $conexion = $obj->conexion();
 
 $ano = $_GET["ano"];
-// $periodo = $_GET["periodo"];
+$periodo = $_GET["periodo"];
 $validacionf = $_GET["validacionf"];
 $tienda = $_GET["tienda"];
 
@@ -38,7 +38,7 @@ if ($validacionf === 'PENDIENTE') {
         left join supervisor as s on quiebre.id_supervisor = s.id_supervisor
         left join usuario as u on u.id_usuario = quiebre.id_usuario
         where year(quiebre.fecha_inicio)<='$ano' 
-        and quiebre.validacion='PENDIENTE' ";
+        and quiebre.estado = 'PENDIENTE' ";
 }
 
 

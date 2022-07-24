@@ -190,7 +190,7 @@ if (isset($_SESSION["idusu"])) {
                                                 <input type="hidden" class="form-control input-sm" id="ncfrazonsocial" name="ncfrazonsocial">
 
 
-                                                <label>Fecha Activación del servicio:</label>
+                                                <label>Fecha Activación del servicio: </label>
                                                 <input type="date" class="form-control input-sm" id="fechaActivacion" name="fechaActivacion">
                                             </div>
 
@@ -287,7 +287,8 @@ if (isset($_SESSION["idusu"])) {
                                                 <div class="col-xs-6">
                                                     <label>Detalle del equipo</label>
                                                     <select name="quiebre_detalle" class="form-control" id='quiebre_detalle'>
-                                                        <option value="DECO" selected>DECO</option>
+                                                        <option value="" selected></option>
+                                                        <option value="DECO">DECO</option>
                                                         <option value="MODEM">MODEM</option>
                                                         <option value="CELULAR">CELULAR</option>
                                                         <option value="TELEFONO">TELEFONO</option>

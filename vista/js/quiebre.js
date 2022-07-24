@@ -13,6 +13,8 @@ function mostrarOpciones() {
       break;
     case "NO":
       document.getElementById("quiebre_detalle").style.display = "none";
+      $("#fechaTicket").val("");
+      $("#quiebre_detalle").val("");
       document
         .getElementById("quiebre_detalle")
         .setAttribute("required", "required");
@@ -29,6 +31,8 @@ function mostrarOpcionesTicket() {
       break;
     case "NO":
       document.getElementById("fechaTicket").style.display = "none";
+      $("#fechaTicket").val("");
+      $("#quiebre_numero_ticket").val("");
       document.getElementById("quiebre_numero_ticket").style.display = "none";
   }
 }

@@ -49,6 +49,7 @@ $("#btnRegistrar").click(function () {
 
           $("#modalEditar").modal("hide");
 
+          $("#fecha_registro_quiebre").val("");
           $("#fechaActivacions").val("");
           $("#fechaInicios").val("");
           $("#ncrucs").val("");
@@ -68,7 +69,11 @@ $("#btnRegistrar").click(function () {
           $("#ncregions").val("");
           $("#ncobservacioness").val("");
 
-          var validacionf = $("#ncvalidacionf").val();
+          $("#ncvalidacion").val("");
+          $("#casosf").val("");
+          $("#ncobservacionesval").val("");
+
+          var validacionf = $("#ncvalidacion").val();
           var tienda = $("#tienda").val();
           var ano = $("#ncano").val();
           var periodo = $("#ncperiodo").val();
@@ -88,7 +93,7 @@ $("#btnRegistrar").click(function () {
       },
     });
   } else {
-    alertify.error("EL PEDIDO ESTA:" + $("#ncestado").val());
+    alertify.error("EL PEDIDO ESTA: " + $("#ncestado").val());
   }
 });
 
@@ -147,8 +152,9 @@ function TraerDatosTabla(idquiebre) {
       try {
         datos = jQuery.parseJSON(data);
         $("#idquiebre").val(idquiebre);
+        $("#fecha_registro_quiebre").val(datos["fecha_inicio"]);
         $("#fechaActivacions").val(datos["fecha_activacion"]);
-        $("#fechaInicios").val(datos["fecha_inicio"]);
+        $("#fechaInicios").val(datos["fecha_inicio_averia"]);
         $("#ncrucs").val(datos["ruc"]);
         $("#ncrazonsocials").val(datos["razon_social"]);
         $("#quiebre_servicios").val(datos["servicio"]);
@@ -170,8 +176,8 @@ function TraerDatosTabla(idquiebre) {
         $("#casosf").val(datos["casosf"]);
         $("#fechavalidacions").val(datos["fecha_validacion"]);
         $("#ncvalidadors").val(datos["id_validador"]);
-        $("#ncvalidacions").val(datos["validacion"]);
-        $("#ncobservacionesvals").val(datos["comentario_validador"]);
+        $("#ncvalidacion").val(datos["validacion"]);
+        $("#ncobservacionesval").val(datos["comentario_validador"]);
       } catch (error) {
         console.log("Error parsing JSON:", error, data);
       }

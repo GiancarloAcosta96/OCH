@@ -168,56 +168,37 @@ class crudQuiebre
         return $rpta;
     }
 
-    public function agregarQuiebreValidacion($datos)
-    {
-
-        date_default_timezone_set("America/Lima");
-        $hoy = date("Y-m-d");
-
-        $obj = new conectar();
-        $conexion = $obj->conexion();
-
-
-        $sqlquiebreMovil = "UPDATE quiebre 
-                            SET validacion='$datos[2]',
-                                id_validador='$datos[1]',
-                                fecha_validacion='$hoy',
-                                casosf='$datos[5]',
-                                comentario_validador='$datos[3]'
-                                
-                                WHERE id_quiebre='$datos[4]' ";
-        $rpta = mysqli_query($conexion, $sqlquiebreMovil);
-
-        return $rpta;
-    }
-
     public function obtenQuiebreValid($idquiebre)
     {
         $obj = new conectar();
         $conexion = $obj->conexion();
 
-        $sql = "SELECT  ncquiebre.fecha_activacion,
-                        ncquiebre.fecha_inicio_averia,
-                        ncquiebre.ruc,
-                        ncquiebre.razon_social,
-                        ncquiebre.servicio,
-                        ncquiebre.tipo_averia,
-                        ncquiebre.problema_equipo,
-                        ncquiebre.detalle_equipo,
-                        ncquiebre.ticket_atencion,
-                        ncquiebre.fecha_ticket_atencion,
-                        ncquiebre.numero_ticket,
-                        ncquiebre.contacto1,
-                        ncquiebre.celular1,
-                        ncquiebre.contacto2,
-                        ncquiebre.celular2,
-                        ncquiebre.numero_problema,
-                        t.nombre,
-                        ncquiebre.comentario_ejecutivo,
-                        usu.personal
+        $sql = "SELECT  ncquiebre.fecha_inicio, /* 0 */
+                        ncquiebre.fecha_activacion, /* 1 */
+                        ncquiebre.fecha_inicio_averia, /* 2 */
+                        ncquiebre.ruc, /* 3 */
+                        ncquiebre.razon_social, /* 4 */
+                        ncquiebre.servicio, /* 5 */
+                        ncquiebre.tipo_averia, /* 6 */
+                        ncquiebre.problema_equipo, /* 7 */
+                        ncquiebre.detalle_equipo, /* 8 */
+                        ncquiebre.ticket_atencion, /* 9 */
+                        ncquiebre.fecha_ticket_atencion, /* 10 */
+                        ncquiebre.numero_ticket, /* 11 */
+                        ncquiebre.contacto1, /* 12 */
+                        ncquiebre.celular1, /* 13 */
+                        ncquiebre.contacto2, /* 14 */
+                        ncquiebre.celular2, /* 15 */
+                        ncquiebre.numero_problema, /* 16 */
+                        t.nombre, /* 17 */
+                        ncquiebre.comentario_ejecutivo, /* 18 */
+                        usu.personal, /* 19 */
+                        ncquiebre.casosf, /* 20 */
+                        ncquiebre.comentario_validador /* 21 */
 
 
-                        from quiebre as ncquiebre inner join usuario as usu on ncquiebre.id_usuario=usu.id_usuario
+                        from quiebre as ncquiebre 
+                        inner join usuario as usu on ncquiebre.id_usuario=usu.id_usuario
                         left join tienda as t on t.id_tienda=ncquiebre.zonal_telefonica
                         where id_quiebre ='$idquiebre' ";
 
@@ -225,28 +206,49 @@ class crudQuiebre
         $ver = mysqli_fetch_array($result);
 
         $datos = array(
-            'fecha_activacion' => $ver[0],
-            'fecha_inicio_averia' => $ver[1],
-            'ruc' => $ver[2],
+            'fecha_inicio' => $ver[0],
+            'fecha_activacion' => $ver[1],
+            'fecha_inicio_averia' => $ver[2],
+            'ruc' => $ver[3],
             'razon_social' => $ver[4],
-            'servicio' => $ver[3],
-            'tipo_averia' => $ver[5],
-            'problema_equipo' => $ver[6],
-            'detalle_equipo' => $ver[7],
-            'ticket_atencion' => $ver[8],
-            'fecha_ticket_atencion' => $ver[9],
-            'numero_ticket' => $ver[10],
-            'contacto1' => $ver[11],
-            'celular1' => $ver[12],
-            'contacto2' => $ver[13],
-            'celular2' => $ver[14],
-            'numero_problema' => $ver[11],
-            'zonal_telefonica' => $ver[12],
-            'comentario_ejecutivo' => $ver[13],
-            'id_validador' => $ver[14],
-            'casosf' => $ver[15],
-            'comentario_validador' => $ver[16]
+            'servicio' => $ver[5],
+            'tipo_averia' => $ver[6],
+            'problema_equipo' => $ver[7],
+            'detalle_equipo' => $ver[8],
+            'ticket_atencion' => $ver[9],
+            'fecha_ticket_atencion' => $ver[10],
+            'numero_ticket' => $ver[11],
+            'contacto1' => $ver[12],
+            'celular1' => $ver[13],
+            'contacto2' => $ver[14],
+            'celular2' => $ver[15],
+            'numero_problema' => $ver[16],
+            'zonal_telefonica' => $ver[17],
+            'comentario_ejecutivo' => $ver[18],
+            'id_validador' => $ver[19],
+            'casosf' => $ver[20],
+            'comentario_validador' => $ver[21]
         );
         return $datos;
+    }
+
+    public function agregarQuiebreValidacion($datos)
+    {
+        date_default_timezone_set("America/Lima");
+        $hoy = date("Y-m-d");
+
+        $obj = new conectar();
+        $conexion = $obj->conexion();
+        $sqlquiebreMovil = "UPDATE quiebre 
+                            SET 
+                                id_validador='$datos[1]',
+                                estado='$datos[2]',
+                                fecha_validacion='$hoy',
+                                casosf='$datos[4]',
+                                comentario_validador='$datos[3]'
+                                WHERE id_quiebre='$datos[5]' ";
+        $rpta = mysqli_query($conexion, $sqlquiebreMovil);
+
+        return $rpta;
     }
 }

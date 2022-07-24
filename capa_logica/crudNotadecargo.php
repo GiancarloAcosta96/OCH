@@ -664,20 +664,19 @@ class crudNotadecargo
 
     public function agregarncmValidacion($datos)
     {
-
         date_default_timezone_set("America/Lima");
         $hoy = date("Y-m-d");
 
         $obj = new conectar();
         $conexion = $obj->conexion();
 
-
-        $sqlnotadecargo = "UPDATE nc_movil SET validacion='$datos[2]',id_validador='$datos[1]',
-            fecha_validacion='$hoy' , comentario_validador='$datos[3]' WHERE id_cargo='$datos[4]'
-                                    ";
-
+        $sqlnotadecargo = "UPDATE nc_movil 
+        SET validacion='$datos[2]',
+            id_validador='$datos[1]',
+            fecha_validacion='$hoy', 
+            comentario_validador='$datos[3]' 
+            WHERE id_cargo='$datos[4]' ";
         $rpta = mysqli_query($conexion, $sqlnotadecargo);
-
         return $rpta;
     }
 
